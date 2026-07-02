@@ -464,7 +464,6 @@ h1 strong,h1 em{ -webkit-text-fill-color:currentColor!important;background:none!
 <!-- ─── NAV ─── -->
 <div id="erjNavMount"></div>
 <script>window.ERJ_NAV={active:'blog',onPage:[{label:'Latest posts',href:'#grid'},{label:'Browse by category',href:'#catBar'}]};</script>
-<button class="nav-bell" id="bellBtn" onclick="handleBellClick()" title="Get notified of new posts" style="position:fixed;left:16px;bottom:70px;z-index:480;width:44px;height:44px;border-radius:50%;background:var(--card,#1B1814);border:1px solid var(--border2,rgba(0,0,0,.12));color:inherit;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.18)">🔔<span class="bell-dot" id="bellDot"></span></button>
 
 
 <!-- ── NEW POST NOTIFICATION BAR ── -->
@@ -1540,7 +1539,7 @@ function showPostNotif(post) {
   _notifPostId = post.id;
   document.getElementById('postNotifTitle').textContent = post.title;
   document.getElementById('postNotifBar').classList.add('show');
-  document.getElementById('bellDot').classList.add('show');
+  document.getElementById('bellDot')?.classList.add('show');
   // Auto-dismiss after 12 seconds
   setTimeout(() => dismissPostNotif(), 12000);
 }
@@ -1551,7 +1550,7 @@ function dismissPostNotif(e) {
   bar.classList.remove('show');
   if (_notifPostId) { markSeen(_notifPostId); _notifPostId = null; }
   // Remove bell dot if no more new posts
-  if (!getNewPost()) document.getElementById('bellDot').classList.remove('show');
+  if (!getNewPost()) document.getElementById('bellDot')?.classList.remove('show');
 }
 
 function openNotifPost() {

@@ -363,7 +363,6 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
 <!-- NAV -->
 <div id="erjNavMount"></div>
 <script>window.ERJ_NAV={active:'stories',onPage:[{label:'Success stories',href:'#stories'},{label:'Private Job Board',href:'#jobboard'},{label:'Register for Cohort 9',href:'register.html'}]};</script>
-<button class="nav-btn" id="bellBtn" onclick="handleJobBell()" title="Get notified of new jobs" style="position:fixed;left:16px;bottom:70px;z-index:480;width:44px;height:44px;border-radius:50%;background:var(--card,#13182f);border:1px solid var(--border,rgba(0,0,0,.12));color:inherit;font-size:1.1rem;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.18)">🔔<span class="nav-dot" id="bellDot"></span></button>
 
 <!-- NEW JOB NOTIFICATION BAR -->
 <div class="job-notif-bar" id="jobNotifBar">
@@ -1156,7 +1155,7 @@ function showJobNotif(job) {
   _newJobId = job.id;
   document.getElementById('jobNotifTitle').textContent = job.role + ' @ ' + job.company;
   document.getElementById('jobNotifBar').classList.add('show');
-  document.getElementById('bellDot').classList.add('on');
+  document.getElementById('bellDot')?.classList.add('on');
   setTimeout(() => dismissJobNotif(), 10000);
   if (Notification.permission === 'granted') {
     try { new Notification('🌍 New Remote Job', { body: job.role + ' at ' + job.company + ' — ' + job.salary, icon:'/icon192.png', tag:'erj-job-'+job.id }); } catch {}
@@ -1170,7 +1169,7 @@ function dismissJobNotif(e) {
     seen.push(_newJobId); localStorage.setItem(JOBS_SEEN_KEY,JSON.stringify(seen));
     _newJobId = null;
   }
-  if (!getUnseenNewJob()) document.getElementById('bellDot').classList.remove('on');
+  if (!getUnseenNewJob()) document.getElementById('bellDot')?.classList.remove('on');
 }
 document.getElementById('jobNotifBar').addEventListener('click', e => {
   if (e.target.closest('.jnb-close')) return;
@@ -1216,7 +1215,7 @@ document.addEventListener('click', function(e) {
 function initBoard() {
   renderJobs();
   const nj = getUnseenNewJob();
-  if (nj) { document.getElementById('bellDot').classList.add('on'); setTimeout(()=>showJobNotif(nj), 2000); }
+  if (nj) { document.getElementById('bellDot')?.classList.add('on'); setTimeout(()=>showJobNotif(nj), 2000); }
   // Poll every 60s for new jobs added by admin (localStorage update)
   setInterval(() => { renderJobs(); }, 60000);
 }

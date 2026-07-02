@@ -26,9 +26,8 @@
     { key: 'mastery', label: 'Mastery Training',  href: 'masterytraining/' },
     { key: 'remote',  label: 'Get a Remote Job',  href: 'howtogetaremotejob/' },
     { key: 'inner',   label: 'Inner Circle',      href: 'innercircle/' },
-    { key: 'pricing', label: 'Register',          href: 'register.html' },
     { key: 'stories', label: 'Success Stories',   href: 'testimonials.html' },
-    { key: 'jobs',    label: 'Private Job Board',  href: 'testimonials.html#jobboard' },
+    { key: 'pricing', label: 'Register',          href: 'register.html' },
     { key: 'blog',    label: 'Blog',              href: 'blog.html' },
     { key: 'login',   label: 'Participant Login', href: 'login.html' }
   ];

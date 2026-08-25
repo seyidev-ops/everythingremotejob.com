@@ -1,7 +1,6 @@
 "use strict";
 /* ═══════════════════════════════════════════════════════
-   ERJ UNIFIED NAVIGATION · v3 (TypeScript source)
-   Compile: tsc erj-nav.ts --target es2017 --outFile erj-nav.js
+   ERJ UNIFIED NAVIGATION
 
    FIVE top-level items, everywhere:
      Home · Your Starting Line ▾ · Free For You ▾ ·
@@ -81,6 +80,11 @@
         '.erj-nav,.erj-panel,.erj-scrim{--enInk:var(--ink,#fff);--enPaper:var(--paper,#000);',
         '--enAccent:var(--accent,#FF5722);--enFaint:var(--ink-faint,#8a8a8a);--enSoft:var(--ink-soft,#a1a1a1);',
         '--enLine:var(--line,rgba(255,255,255,0.10));}',
+        /* Some lightweight pages (notably blog articles) define --bg/--text rather than
+           --paper/--ink. Make the shared navigation theme self-contained so Day mode
+           cannot leave a black desktop header sitting on an off-white page. */
+        'html[data-theme="night"] .erj-nav,html[data-theme="night"] .erj-panel{--enInk:#fff;--enPaper:#000;--enAccent:#FF5722;--enFaint:#8a8a8a;--enSoft:#a1a1a1;--enLine:rgba(255,255,255,.10);}',
+        'html[data-theme="day"] .erj-nav,html[data-theme="day"] .erj-panel{--enInk:#14110E;--enPaper:#FAFAF8;--enAccent:#AD350A;--enFaint:#6E6C65;--enSoft:#52514C;--enLine:rgba(20,17,14,.12);}',
         '.erj-nav{font-family:var(--font-body,system-ui,sans-serif);position:fixed;top:0;left:0;right:0;z-index:1000;',
         'display:flex;align-items:center;justify-content:space-between;gap:1rem;',
         'padding:0.7rem clamp(1.1rem,4vw,2.2rem);background:var(--enPaper);',

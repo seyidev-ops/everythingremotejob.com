@@ -21,7 +21,7 @@ The public website combines free diagnostic resources, live training, self-paced
 
 Cold or uncertain visitors should not be asked to choose among ERJ products first. The current acquisition path is:
 
-1. **Your Starting Line** — `starting-line.html` is the default cold-traffic destination for social posts, ads, QR codes, generic learn-more links and first-contact campaigns.
+1. **Your Starting Line** — `starthere.html` is the default cold-traffic destination for social posts, ads, QR codes, generic learn-more links and first-contact campaigns.
 2. **Find Your Leak** — the free Four-Point diagnostic identifies the earliest failing point: Supply, Representation, Aim or Conversion.
 3. **Free first action** — the visitor receives a useful next move before any paid recommendation.
 4. **AUDIT on WhatsApp** — optional human review when the visitor wants ERJ to inspect the evidence.
@@ -107,6 +107,7 @@ The site is a static HTML/CSS/JavaScript website hosted on **GitHub Pages** with
 Key production areas include:
 
 - `/` — main website
+- `/starthere.html` — first-contact / diagnostic gateway
 - `/register.html` — offer chooser, prices and enrolment
 - `/diagnose/` — Four-Point Job Search Diagnostic and branded PDF result
 - `/cvscan/` — 10-Point CV Self-Scan
@@ -124,7 +125,9 @@ Key production areas include:
 
 ## Blog publishing
 
-The blog archive follows the **Africa/Lagos (WAT)** daily publication schedule. The archive should expose posts according to their scheduled date rather than simply displaying every pre-generated article file at once.
+The blog archive follows the **Africa/Lagos (WAT)** daily publication schedule. The archive exposes posts according to their scheduled date rather than simply displaying every pre-generated article file at once.
+
+The current editorial queue includes a conversion-led daily series from **25 August through 7 September 2026**. Each article has one conversion job — diagnosis, CV scan, Clinic registration, COHORT FIT, AUDIT, Done-For-You or the correct post-diagnosis route — rather than sending every reader to the same product.
 
 ## Private-content treatment
 

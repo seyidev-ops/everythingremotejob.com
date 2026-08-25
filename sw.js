@@ -2,7 +2,7 @@
    EVERYTHING REMOTE JOB — SERVICE WORKER
    Cache-first for app shell, network-first for fonts
 ═══════════════════════════════════════════════════════ */
-const CACHE = 'erj-v136-conversion-entry-cv';
+const CACHE = 'erj-v137-starthere-blog-series';
 const OFFLINE = '/offline.html';
 
 const SHELL = [
@@ -23,7 +23,7 @@ const SHELL = [
   '/blog.html',
   '/blog/index.html',
   '/free.html',
-  '/starting-line.html',
+  '/starthere.html',
   '/testimonials.html',
   '/erj-nav.js',
   '/erj-track.js',
@@ -76,7 +76,7 @@ self.addEventListener('install', e => {
       .then(c => Promise.all(
         SHELL.map(u => c.add(new Request(u, { cache: 'reload' })).catch(function(){ return null; }))
       ))
-      .then(() => self.skipWaiting())
+      .then(() => firstInstall ? self.skipWaiting() : undefined)
   );
 });
 

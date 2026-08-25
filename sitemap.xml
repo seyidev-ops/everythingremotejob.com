@@ -37,7 +37,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://everythingremotejob.com/starting-line.html</loc>
+    <loc>https://everythingremotejob.com/starthere.html</loc>
     <lastmod>2026-08-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -777,4 +777,11 @@
 
   <url><loc>https://everythingremotejob.com/terms.html</loc><lastmod>2026-08-23</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
   <url><loc>https://everythingremotejob.com/privacy.html</loc><lastmod>2026-08-23</lastmod><changefreq>yearly</changefreq><priority>0.2</priority></url>
+
+  <url>
+    <loc>https://everythingremotejob.com/blog/before-you-touch-your-cv-again-find-the-leak/</loc>
+    <lastmod>2026-08-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

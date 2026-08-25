@@ -536,11 +536,31 @@ h1,h2,h3,h4,.ask,.cost-h,.rung-title,.shelf-title,.fb-title,.pledge-h,.joint-t,.
 <meta content="Your Starting Line — Know Where to Start" property="og:title"/><meta content="Four free questions. About 90 seconds. One clear starting point." property="og:description"/>
 <style id="erjStartingLineGateway">
   .sl-hero{padding-top:clamp(3.2rem,8vw,6.5rem);padding-bottom:clamp(3.8rem,9vw,7rem);}
+  .sl-hero-wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);gap:clamp(2rem,5vw,4rem);align-items:start;}
   .sl-hero h1{max-width:13ch;}
   .sl-hero .lede{max-width:62ch;margin-bottom:1.65rem;}
   .sl-actions{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem;}
-  .sl-trust{display:flex;flex-wrap:wrap;gap:.55rem 1rem;margin-top:1.4rem;color:var(--ink-soft);font-size:.78rem;}
-  .sl-trust span::before{content:'✓';color:var(--accent);font-weight:800;margin-right:.36rem;}
+  .sl-sidecard{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:clamp(1.25rem,3vw,2rem);display:grid;gap:1rem;box-shadow:0 14px 34px rgba(0,0,0,.06);}
+  .sl-sidecard-row{padding-bottom:1rem;border-bottom:1px solid var(--line-soft);}
+  .sl-sidecard-row:last-child{padding-bottom:0;border-bottom:0;}
+  .sl-sidecard-row b{display:block;font-family:var(--font-display);font-size:1.02rem;color:var(--ink);margin-bottom:.2rem;}
+  .sl-sidecard-row span{display:block;font-size:.88rem;line-height:1.55;color:var(--ink-soft);}
+
+  .btn-primary-ui,.btn-secondary-ui{min-height:64px;padding:1rem 1.45rem;border-radius:999px;font-size:1.04rem;font-weight:700;letter-spacing:-0.01em;display:inline-flex;align-items:center;justify-content:center;gap:.75rem;transition:transform .22s ease,box-shadow .22s ease,background-color .22s ease,border-color .22s ease,color .22s ease;}
+  .btn-primary-ui{box-shadow:0 10px 24px rgba(255,87,34,.18);}
+  .btn-primary-ui:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(255,87,34,.24);}
+  .btn-secondary-ui{background:var(--card);box-shadow:0 7px 18px rgba(0,0,0,.04);}
+  .btn-secondary-ui:hover{transform:translateY(-2px);background:rgba(255,87,34,.06);border-color:rgba(255,87,34,.35);box-shadow:0 12px 24px rgba(0,0,0,.07);}
+  .btn-primary-ui:active,.btn-secondary-ui:active{transform:translateY(0) scale(.985);box-shadow:none;}
+  .btn-primary-ui:focus-visible,.btn-secondary-ui:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  .arrow-wrap{display:inline-flex;align-items:center;justify-content:center;width:2rem;height:2rem;flex:0 0 2rem;border-radius:999px;background:rgba(255,255,255,.14);}
+  .btn-secondary-ui .arrow-wrap{background:rgba(10,10,10,.06);}
+  html[data-theme="night"] .btn-secondary-ui .arrow-wrap{background:rgba(255,255,255,.08);}
+  .btn-primary-ui .arrow,.btn-secondary-ui .arrow{transition:transform .22s ease;}
+  .btn-primary-ui:hover .arrow,.btn-secondary-ui:hover .arrow{transform:translateX(4px);}
+
+  .sl-trust{display:flex;flex-wrap:wrap;gap:.7rem 1.1rem;margin-top:1.4rem;color:var(--ink-soft);font-size:.84rem;}
+  .sl-trust span::before{content:'✓';color:var(--accent);font-weight:800;margin-right:.38rem;}
   .sl-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:2rem;}
   .sl-point{background:var(--card);padding:clamp(1.2rem,2.7vw,1.8rem);min-height:190px;}
   .sl-num{font-family:var(--font-display);font-size:.72rem;font-weight:700;letter-spacing:.12em;color:var(--accent);margin-bottom:.9rem;}
@@ -558,8 +578,9 @@ h1,h2,h3,h4,.ask,.cost-h,.rung-title,.shelf-title,.fb-title,.pledge-h,.joint-t,.
   .sl-final{border:1px solid var(--line);border-radius:18px;background:var(--card);padding:clamp(1.6rem,5vw,3rem);text-align:center;}
   .sl-final h2{max-width:16ch;margin-left:auto;margin-right:auto;}
   .sl-final p{max-width:58ch;margin:.8rem auto 1.5rem;color:var(--ink-soft);}
+  @media(max-width:900px){.sl-hero-wrap{grid-template-columns:1fr;gap:1.5rem;}.sl-sidecard{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;}}
   @media(max-width:840px){.sl-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.sl-reassure{grid-template-columns:1fr;}}
-  @media(max-width:620px){.sl-grid,.sl-process{grid-template-columns:1fr;}.sl-actions{flex-direction:column;align-items:stretch}.sl-actions .btn-yes,.sl-actions .btn-more{width:100%;justify-content:center}.sl-point{min-height:0;}}
+  @media(max-width:620px){.sl-grid,.sl-process{grid-template-columns:1fr;}.sl-actions{flex-direction:column;align-items:stretch}.sl-actions .btn-yes,.sl-actions .btn-more{width:100%;justify-content:center}.btn-primary-ui,.btn-secondary-ui{min-height:60px;font-size:1rem;padding:.85rem 1.1rem;}.sl-sidecard{grid-template-columns:1fr;padding:1.1rem 1.2rem;gap:.75rem;}.sl-sidecard-row{padding-bottom:.75rem;}.sl-sidecard-row span{font-size:.84rem;}.sl-point{min-height:0;}}
 </style></head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -568,15 +589,25 @@ h1,h2,h3,h4,.ask,.cost-h,.rung-title,.shelf-title,.fb-title,.pledge-h,.joint-t,.
 <main>
 <a aria-label="We will not let you go until you're hired." class="pledge-marq" href="index.html#pledge"><span>We will not let you go <em>until you're hired.</em></span></a>
 <section class="hero wrap sl-hero" id="start">
+<div class="sl-hero-wrap">
+<div class="sl-copy">
 <p class="section-label"><span class="mark"></span> Your Starting Line</p>
-<h1>Know where to <em>start.</em></h1>
+<h1>Know Where To <em>Start.</em></h1>
 <p class="lede">Whether you are preparing your first remote application, already applying without replies, or getting interviews without offers, the first step is the same: identify what needs attention first. Four questions. About 90 seconds. One clear starting point.</p>
 <div class="sl-actions">
-<a class="btn-yes" href="diagnose/">Find my starting point — free <span class="arrow">→</span></a>
-<a class="btn-more" href="index.html#promise">Explore Everything Remote Job</a>
+<a class="btn-yes btn-primary-ui" href="diagnose/"><span>Find My Starting Point — Free</span><span class="arrow-wrap"><span class="arrow">→</span></span></a>
+<a class="btn-more btn-secondary-ui" href="index.html#promise"><span>Explore Everything Remote Job</span><span class="arrow-wrap"><span class="arrow">↓</span></span></a>
 </div>
 <div aria-label="Diagnostic facts" class="sl-trust">
-<span>4 questions</span><span>about 90 seconds</span><span>instant result</span><span>no payment required</span>
+<span>4 Questions</span><span>About 90 Seconds</span><span>Instant Result</span><span>No Payment Required</span>
+</div>
+</div>
+<aside class="sl-sidecard" aria-label="What to expect">
+<div class="sl-sidecard-row"><b>4 Questions</b><span>See which part of your search needs attention first.</span></div>
+<div class="sl-sidecard-row"><b>Instant Result</b><span>Know what to work on before your next move.</span></div>
+<div class="sl-sidecard-row"><b>Practical Next Step</b><span>Leave with one action you can take immediately.</span></div>
+<div class="sl-sidecard-row"><b>Optional Human Review</b><span>Send your result to ERJ if you want another set of eyes.</span></div>
+</aside>
 </div>
 </section>
 <section class="wrap section-line" id="four-points">
@@ -618,7 +649,7 @@ h1,h2,h3,h4,.ask,.cost-h,.rung-title,.shelf-title,.fb-title,.pledge-h,.joint-t,.
 <p class="section-label" style="justify-content:center"><span class="mark"></span> Start here</p>
 <h2>Your next step should fit where you are <em>now.</em></h2>
 <p>Start with the four questions. You will leave with one clear priority and one practical next step.</p>
-<a class="btn-yes" href="diagnose/">Find my starting point — free <span class="arrow">→</span></a>
+<a class="btn-yes btn-primary-ui" href="diagnose/"><span>Find My Starting Point — Free</span><span class="arrow-wrap"><span class="arrow">→</span></span></a>
 </div>
 </section>
 </main>

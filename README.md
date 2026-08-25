@@ -1,8 +1,8 @@
-# Everything Remote Job — Production Website
+# Everything Remote Job — ERJ Website
 
-This repository contains the current production website for **Everything Remote Job (ERJ)** at **everythingremotejob.com**.
+This repository contains the current **Everything Remote Job (ERJ) website** at **everythingremotejob.com**.
 
-It is a deployment repository, not a changelog. This README describes only the website and commercial structure represented by the files currently in this repository.
+This repository is the current website source, not a changelog. This README describes only the website and commercial structure represented by the files currently present.
 
 ## Business
 
@@ -104,7 +104,7 @@ For the **₦50,000 Cohort 10 reservation**, the prospect completes the Registra
 
 The site is a static HTML/CSS/JavaScript website hosted on **GitHub Pages** with the custom domain defined in `CNAME`.
 
-Key production areas include:
+Key website areas include:
 
 - `/` — main website
 - `/starthere.html` — first-contact / diagnostic gateway
@@ -164,21 +164,21 @@ The current repository social-preview artwork is `github-social-preview.png` (12
 
 ## Deployment
 
-This ZIP is intended to be deployed directly to the GitHub Pages repository root.
+This ZIP contains the current ERJ Website and is intended to be uploaded to the GitHub Pages repository root.
 
 1. Extract the ZIP.
-2. Upload/commit the extracted production files to the repository root.
+2. Upload/commit the extracted website files to the repository root.
 3. Keep `CNAME` in the root so the custom domain remains attached.
-4. Do not add internal campaign notes, historical patch notes, test reports or old versioned deployment files to the public production repository.
-5. Keep this `README.md` current when the live commercial structure or production architecture changes.
+4. Do not add internal campaign notes, historical patch notes, test reports or old versioned deployment files to the public website repository.
+5. Keep this `README.md` current when the website structure or commercial architecture changes.
 
-There is no required build step for ordinary deployment; the repository contains the production-ready static files.
+There is no required build step for ordinary deployment; the repository contains the current static website files.
 
-## Production documentation rule
+## Repository documentation rule
 
-`README.md` is the only production Markdown document required in this package.
+`README.md` is the only Markdown document required in this website package.
 
-It should always describe **what the website is now**. Historical implementation notes, patch records and temporary campaign-working documents belong outside the production repository.
+It should always describe **what the website is now**. Historical implementation notes, patch records and temporary campaign-working documents belong outside the website repository.
 
 ---
 

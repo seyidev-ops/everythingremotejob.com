@@ -2,7 +2,7 @@
    EVERYTHING REMOTE JOB — SERVICE WORKER
    Cache-first for app shell, network-first for fonts
 ═══════════════════════════════════════════════════════ */
-const CACHE = 'erj-v137-starthere-blog-series';
+const CACHE = 'erj-site-20260825';
 const OFFLINE = '/offline.html';
 
 const SHELL = [
@@ -25,7 +25,7 @@ const SHELL = [
   '/free.html',
   '/starthere.html',
   '/testimonials.html',
-  '/erj-nav.js',
+  '/erj-nav.js?site=20260825',
   '/erj-track.js',
   '/founder-oluwaseyi.webp',
   '/erj-theme.js',

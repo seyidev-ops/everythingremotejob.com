@@ -9,8 +9,8 @@
     "standalone",
     "minimal-ui"
   ],
-  "theme_color": "#FAF8F4",
-  "background_color": "#FFFFFF",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "orientation": "portrait-primary",
   "lang": "en",
   "dir": "ltr",

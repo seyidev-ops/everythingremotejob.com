@@ -1,21 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night">
-<head>
-<meta charset="UTF-8">
 
-
-<link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32-dark.png" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32.png">
-
-
-<link rel="apple-touch-icon" href="appletouchicon.png">
-<meta name="theme-color" content="#000000" id="metaThemeColor">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html data-theme="night" lang="en">
+<head><style id="erjCanvasGuard">html{background:#000000}html[data-theme="day"]{background:#FAFAF8}</style>
+<meta charset="utf-8"/>
+<link href="manifest.json" rel="manifest"/>
+<link href="favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
+<link href="favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
+<link href="favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
+<link href="appletouchicon.png" rel="apple-touch-icon"/>
+<meta content="#000000" id="metaThemeColor" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Blog Manager | Everything Remote Job</title>
-
-
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -218,203 +213,179 @@ h1 strong,h1 em{ -webkit-text-fill-color:currentColor!important;background:none!
 .wa-float svg{fill:var(--bg)!important;}
 .wa-float:hover{box-shadow:none!important;}
 </style>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
-<meta property="og:image" content="https://everythingremotejob.com/preview-portal.jpg" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Everything Remote Job" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://everythingremotejob.com/preview-portal.jpg" />
+<link as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/></noscript>
+<meta content="https://everythingremotejob.com/preview-portal.jpg" property="og:image">
+<meta content="website" property="og:type">
+<meta content="Everything Remote Job" property="og:site_name">
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://everythingremotejob.com/preview-portal.jpg" name="twitter:image"/>
 <style id="erjHideLegacy">#themeDropdown,.theme-drop,.theme-drop-menu,#themeMenu,#erjTheme{display:none !important;}</style>
 <style id="erjPortalNavOffset">.topnav{top:61px !important;} .erj-nav{z-index:600 !important;}</style>
-  <meta name="robots" content="noindex,nofollow">
+<meta content="noindex,nofollow" name="robots"/>
 <style>/* the nav mark follows the theme toggle, same rule as every other page */
 html[data-theme="day"] .erj-mark-night{display:none!important;}
 html[data-theme="day"] .erj-mark-day{display:block!important;}</style>
-</head>
+</meta></meta></meta></head>
 <body>
 <div id="erjNavMount"></div>
 <script>window.ERJ_NAV={active:'blogadm',portal:true};</script>
-
-
 <nav class="topnav">
-  <div style="display:flex;align-items:center;gap:.8rem;">
-    <span class="nav-brand" style="display:inline-flex;align-items:center;gap:8px"><img class="erj-mark erj-mark-night" src="erj-mark-dark-128.png" alt="ERJ" width="30" height="30" style="width:30px;height:30px;flex-shrink:0;display:block;"><img class="erj-mark erj-mark-day" src="erj-mark-light-128.png" alt="" aria-hidden="true" width="30" height="30" style="width:30px;height:30px;flex-shrink:0;display:none;">Everything<span class="hi">RemoteJob</span></span>
-    <span class="nav-badge">BLOG MANAGER</span>
-  </div>
-  <div class="nav-right">
-    <a href="blog.html" target="_blank" style="font-size:.78rem;color:var(--electric);text-decoration:none;display:flex;align-items:center;gap:4px">👁 View Blog</a>
-    <button class="nav-btn" id="themeBtn">🌙</button>
-    <a href="admin.html" class="nav-btn" title="Admin Panel" style="text-decoration:none">←</a>
-  </div>
-</nav>
-
-<div class="app">
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="sb-label">Blog</div>
-    <a class="sb-item active" href="#" onclick="showView('all');return false"><span class="sb-icon">📋</span> All Posts</a>
-    <a class="sb-item" href="#" onclick="showView('new');return false"><span class="sb-icon">✏️</span> New Post</a>
-    <a class="sb-item" href="#" onclick="showView('catalogue');return false"><span class="sb-icon">📅</span> Catalogue</a>
-    <div class="sb-label">Links</div>
-    <a class="sb-item" href="blog.html" target="_blank"><span class="sb-icon">🌐</span> View Blog</a>
-    <a class="sb-item" href="admin.html"><span class="sb-icon">🛡️</span> Admin Panel</a>
-  </aside>
-
-  <!-- MAIN -->
-  <main class="main">
-
-    <!-- ── ALL POSTS VIEW ── -->
-    <div id="viewAll" class="view">
-      <div class="page-title">📋 All Blog Posts</div>
-      <div class="page-sub">Manage, edit, publish, or delete posts. New posts appear on the public blog instantly when published.</div>
-
-      <div class="stats-bar" id="statsBar"></div>
-
-      <div class="toolbar">
-        <div class="toolbar-left">
-          <div class="search-bar"><span>🔍</span><input id="tblSearch" placeholder="Search posts…" oninput="renderTable()"></div>
-          <select class="filter-sel" id="tblCatFilter" onchange="renderTable()">
-            <option value="">All Categories</option>
-            <option>Job Search</option><option>Productivity</option>
-            <option>Announcements</option><option>Success Stories</option>
-            <option>CV & LinkedIn</option><option>Industry News</option>
-          </select>
-          <select class="filter-sel" id="tblStatusFilter" onchange="renderTable()">
-            <option value="">All Status</option>
-            <option value="published">Published</option>
-            <option value="draft">Draft</option>
-          </select>
-        </div>
-        <button class="btn-new" onclick="showView('new')">+ New Post</button>
-      </div>
-
-      <div style="overflow-x:auto">
-        <table class="posts-tbl" id="postsTable"></table>
-      </div>
-    </div>
-
-    <!-- ── NEW / EDIT POST VIEW ── -->
-    <div id="viewNew" class="view" style="display:none">
-      <div class="page-title" id="editorTitle">✏️ Write New Post</div>
-      <div class="page-sub">Fill in all fields and click Publish or Save as Draft. Posts appear on the public blog instantly when published.</div>
-
-      <div class="editor-panel">
-        <div class="ep-header">
-          <div class="ep-title" id="epTitle">New Post</div>
-          <div class="ep-actions">
-            <button class="ep-btn preview" onclick="previewPost()">👁 Preview</button>
-            <button class="ep-btn save-draft" onclick="savePost('draft')">💾 Save Draft</button>
-            <button class="ep-btn publish" onclick="savePost('published')">🚀 Publish Now</button>
-          </div>
-        </div>
-
-        <input type="hidden" id="editId">
-
-        <!-- Title -->
-        <div class="field">
-          <label>Post Title *</label>
-          <input type="text" id="fTitle" placeholder="Enter a compelling, specific title…">
-        </div>
-
-        <!-- Excerpt -->
-        <div class="field">
-          <label>Excerpt / Summary (shown in cards) *</label>
-          <input type="text" id="fExcerpt" placeholder="One or two sentences that hook the reader…">
-        </div>
-
-        <!-- Meta row -->
-        <div class="field-row-3">
-          <div class="field">
-            <label>Category *</label>
-            <select id="fCategory">
-              <option value="">Select category…</option>
-              <option>Job Search</option><option>Productivity</option>
-              <option>Announcements</option><option>Success Stories</option>
-              <option>CV & LinkedIn</option><option>Industry News</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Tags (comma-separated)</label>
-            <input type="text" id="fTags" placeholder="remote, cv, linkedin">
-          </div>
-          <div class="field">
-            <label>Read Time (minutes)</label>
-            <input type="number" id="fReadTime" value="5" min="1" max="60">
-          </div>
-        </div>
-
-        <!-- Emoji + Gradient -->
-        <div class="field-row">
-          <div class="field">
-            <label>Cover Emoji</label>
-            <div class="emoji-row" id="emojiRow"></div>
-            <input type="hidden" id="fEmoji" value="📝">
-          </div>
-          <div class="field">
-            <label>Card Gradient</label>
-            <div class="gradient-opts" id="gradientRow"></div>
-            <input type="hidden" id="fGradient">
-          </div>
-        </div>
-
-        <!-- Content -->
-        <div class="field">
-          <label>Post Content * (supports basic HTML)</label>
-          <div class="rte-toolbar">
-            <button class="rte-btn" onclick="fmt('bold')" title="Bold"><b>B</b></button>
-            <button class="rte-btn" onclick="fmt('italic')" title="Italic"><i>I</i></button>
-            <div class="rte-sep"></div>
-            <button class="rte-btn" onclick="wrapSel('<h2>','</h2>')" title="Heading 2">H2</button>
-            <button class="rte-btn" onclick="wrapSel('<h3>','</h3>')" title="Heading 3">H3</button>
-            <div class="rte-sep"></div>
-            <button class="rte-btn" onclick="insertTpl('ul')" title="Bullet list">• List</button>
-            <button class="rte-btn" onclick="insertTpl('bq')" title="Blockquote">❝ Quote</button>
-            <button class="rte-btn" onclick="insertTpl('p')" title="Paragraph">¶ Para</button>
-            <div class="rte-sep"></div>
-            <button class="rte-btn" onclick="insertTpl('strong')" title="Bold text">Bold</button>
-            <button class="rte-btn" onclick="clearContent()" title="Clear" style="color:var(--red)">✕ Clear</button>
-          </div>
-          <textarea id="contentArea" class="field input" rows="14" placeholder="Write your post content here. You can use HTML tags like &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;&lt;li&gt;, &lt;strong&gt;, &lt;blockquote&gt; etc."></textarea>
-        </div>
-
-        <!-- Featured toggle -->
-        <div style="display:flex;align-items:center;gap:.7rem;margin-top:.5rem">
-          <input type="checkbox" id="fFeatured" style="width:16px;height:16px;accent-color:var(--accent)">
-          <label for="fFeatured" style="font-size:.85rem;color:var(--muted);cursor:pointer">⭐ Set as Featured Post (appears prominently on blog home)</label>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ── CATALOGUE VIEW ── -->
-    <div id="viewCatalogue" class="view" style="display:none">
-      <div class="page-title">📅 Post Catalogue</div>
-      <div class="page-sub">All posts organised by month — your daily publishing archive.</div>
-      <div class="catalogue-wrap" id="catalogueWrap"></div>
-    </div>
-
-  </main>
+<div style="display:flex;align-items:center;gap:.8rem;">
+<span class="nav-brand" style="display:inline-flex;align-items:center;gap:8px"><img alt="ERJ" class="erj-mark erj-mark-night" height="30" src="erj-mark-dark-128.png" style="width:30px;height:30px;flex-shrink:0;display:block;" width="30"/><img alt="" aria-hidden="true" class="erj-mark erj-mark-day" height="30" src="erj-mark-light-128.png" style="width:30px;height:30px;flex-shrink:0;display:none;" width="30"/>Everything<span class="hi">RemoteJob</span></span>
+<span class="nav-badge">BLOG MANAGER</span>
 </div>
-
+<div class="nav-right">
+<a href="blog.html" style="font-size:.78rem;color:var(--electric);text-decoration:none;display:flex;align-items:center;gap:4px" target="_blank">👁 View Blog</a>
+<button class="nav-btn" id="themeBtn">🌙</button>
+<a class="nav-btn" href="admin.html" style="text-decoration:none" title="Admin Panel">←</a>
+</div>
+</nav>
+<div class="app">
+<!-- SIDEBAR -->
+<aside class="sidebar">
+<div class="sb-label">Blog</div>
+<a class="sb-item active" href="#" onclick="showView('all');return false"><span class="sb-icon">📋</span> All Posts</a>
+<a class="sb-item" href="#" onclick="showView('new');return false"><span class="sb-icon">✏️</span> New Post</a>
+<a class="sb-item" href="#" onclick="showView('catalogue');return false"><span class="sb-icon">📅</span> Catalogue</a>
+<div class="sb-label">Links</div>
+<a class="sb-item" href="blog.html" target="_blank"><span class="sb-icon">🌐</span> View Blog</a>
+<a class="sb-item" href="admin.html"><span class="sb-icon">🛡️</span> Admin Panel</a>
+</aside>
+<!-- MAIN -->
+<main class="main">
+<!-- ── ALL POSTS VIEW ── -->
+<div class="view" id="viewAll">
+<div class="page-title">📋 All Blog Posts</div>
+<div class="page-sub">Manage, edit, publish, or delete posts. New posts appear on the public blog instantly when published.</div>
+<div class="stats-bar" id="statsBar"></div>
+<div class="toolbar">
+<div class="toolbar-left">
+<div class="search-bar"><span>🔍</span><input id="tblSearch" oninput="renderTable()" placeholder="Search posts…"/></div>
+<select class="filter-sel" id="tblCatFilter" onchange="renderTable()">
+<option value="">All Categories</option>
+<option>Job Search</option><option>Productivity</option>
+<option>Announcements</option><option>Success Stories</option>
+<option>CV &amp; LinkedIn</option><option>Industry News</option>
+</select>
+<select class="filter-sel" id="tblStatusFilter" onchange="renderTable()">
+<option value="">All Status</option>
+<option value="published">Published</option>
+<option value="draft">Draft</option>
+</select>
+</div>
+<button class="btn-new" onclick="showView('new')">+ New Post</button>
+</div>
+<div style="overflow-x:auto">
+<table class="posts-tbl" id="postsTable"></table>
+</div>
+</div>
+<!-- ── NEW / EDIT POST VIEW ── -->
+<div class="view" id="viewNew" style="display:none">
+<div class="page-title" id="editorTitle">✏️ Write New Post</div>
+<div class="page-sub">Fill in all fields and click Publish or Save as Draft. Posts appear on the public blog instantly when published.</div>
+<div class="editor-panel">
+<div class="ep-header">
+<div class="ep-title" id="epTitle">New Post</div>
+<div class="ep-actions">
+<button class="ep-btn preview" onclick="previewPost()">👁 Preview</button>
+<button class="ep-btn save-draft" onclick="savePost('draft')">💾 Save Draft</button>
+<button class="ep-btn publish" onclick="savePost('published')">🚀 Publish Now</button>
+</div>
+</div>
+<input id="editId" type="hidden"/>
+<!-- Title -->
+<div class="field">
+<label>Post Title *</label>
+<input id="fTitle" placeholder="Enter a compelling, specific title…" type="text"/>
+</div>
+<!-- Excerpt -->
+<div class="field">
+<label>Excerpt / Summary (shown in cards) *</label>
+<input id="fExcerpt" placeholder="One or two sentences that hook the reader…" type="text"/>
+</div>
+<!-- Meta row -->
+<div class="field-row-3">
+<div class="field">
+<label>Category *</label>
+<select id="fCategory">
+<option value="">Select category…</option>
+<option>Job Search</option><option>Productivity</option>
+<option>Announcements</option><option>Success Stories</option>
+<option>CV &amp; LinkedIn</option><option>Industry News</option>
+</select>
+</div>
+<div class="field">
+<label>Tags (comma-separated)</label>
+<input id="fTags" placeholder="remote, cv, linkedin" type="text"/>
+</div>
+<div class="field">
+<label>Read Time (minutes)</label>
+<input id="fReadTime" max="60" min="1" type="number" value="5"/>
+</div>
+</div>
+<!-- Emoji + Gradient -->
+<div class="field-row">
+<div class="field">
+<label>Cover Emoji</label>
+<div class="emoji-row" id="emojiRow"></div>
+<input id="fEmoji" type="hidden" value="📝"/>
+</div>
+<div class="field">
+<label>Card Gradient</label>
+<div class="gradient-opts" id="gradientRow"></div>
+<input id="fGradient" type="hidden"/>
+</div>
+</div>
+<!-- Content -->
+<div class="field">
+<label>Post Content * (supports basic HTML)</label>
+<div class="rte-toolbar">
+<button class="rte-btn" onclick="fmt('bold')" title="Bold"><b>B</b></button>
+<button class="rte-btn" onclick="fmt('italic')" title="Italic"><i>I</i></button>
+<div class="rte-sep"></div>
+<button class="rte-btn" onclick="wrapSel('&lt;h2&gt;','&lt;/h2&gt;')" title="Heading 2">H2</button>
+<button class="rte-btn" onclick="wrapSel('&lt;h3&gt;','&lt;/h3&gt;')" title="Heading 3">H3</button>
+<div class="rte-sep"></div>
+<button class="rte-btn" onclick="insertTpl('ul')" title="Bullet list">• List</button>
+<button class="rte-btn" onclick="insertTpl('bq')" title="Blockquote">❝ Quote</button>
+<button class="rte-btn" onclick="insertTpl('p')" title="Paragraph">¶ Para</button>
+<div class="rte-sep"></div>
+<button class="rte-btn" onclick="insertTpl('strong')" title="Bold text">Bold</button>
+<button class="rte-btn" onclick="clearContent()" style="color:var(--red)" title="Clear">✕ Clear</button>
+</div>
+<textarea class="field input" id="contentArea" placeholder="Write your post content here. You can use HTML tags like &lt;h2&gt;, &lt;p&gt;, &lt;ul&gt;&lt;li&gt;, &lt;strong&gt;, &lt;blockquote&gt; etc." rows="14"></textarea>
+</div>
+<!-- Featured toggle -->
+<div style="display:flex;align-items:center;gap:.7rem;margin-top:.5rem">
+<input id="fFeatured" style="width:16px;height:16px;accent-color:var(--accent)" type="checkbox"/>
+<label for="fFeatured" style="font-size:.85rem;color:var(--muted);cursor:pointer">⭐ Set as Featured Post (appears prominently on blog home)</label>
+</div>
+</div>
+</div>
+<!-- ── CATALOGUE VIEW ── -->
+<div class="view" id="viewCatalogue" style="display:none">
+<div class="page-title">📅 Post Catalogue</div>
+<div class="page-sub">All posts organised by month — your daily publishing archive.</div>
+<div class="catalogue-wrap" id="catalogueWrap"></div>
+</div>
+</main>
+</div>
 <!-- CONFIRM DIALOG -->
 <div class="confirm-overlay" id="confirmOverlay">
-  <div class="confirm-box">
-    <div class="confirm-icon">🗑️</div>
-    <div class="confirm-title">Delete Post?</div>
-    <div class="confirm-sub">This action cannot be undone. The post will be permanently removed from the blog.</div>
-    <div class="confirm-btns">
-      <button class="conf-btn cancel" onclick="closeConfirm()">Cancel</button>
-      <button class="conf-btn confirm" id="confirmBtn">Delete</button>
-    </div>
-  </div>
+<div class="confirm-box">
+<div class="confirm-icon">🗑️</div>
+<div class="confirm-title">Delete Post?</div>
+<div class="confirm-sub">This action cannot be undone. The post will be permanently removed from the blog.</div>
+<div class="confirm-btns">
+<button class="conf-btn cancel" onclick="closeConfirm()">Cancel</button>
+<button class="conf-btn confirm" id="confirmBtn">Delete</button>
 </div>
-
+</div>
+</div>
 <!-- TOAST -->
 <div class="toast-ct" id="toastCt"></div>
-
 <script>
 /* ════════════════════════════════════════
    AUTH CHECK
@@ -851,6 +822,6 @@ renderTable();
 })();
 </script>
 <!-- ===== /Unified Theme Control ===== -->
-<script src="erj-nav.js" defer></script>
+<script defer="" src="erj-nav.js"></script>
 </body>
 </html>

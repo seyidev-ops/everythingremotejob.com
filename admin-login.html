@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night">
-<head>
-<link rel="manifest" href="manifest.json">
-<meta charset="UTF-8">
 
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32-dark.png" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32.png">
-
-
-<link rel="apple-touch-icon" href="appletouchicon.png">
-<meta name="theme-color" content="#000000" id="metaThemeColor">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html data-theme="night" lang="en">
+<head><style id="erjCanvasGuard">html{background:#000000}html[data-theme="day"]{background:#FAFAF8}</style>
+<link href="manifest.json" rel="manifest"/>
+<meta charset="utf-8"/>
+<link href="favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
+<link href="favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
+<link href="favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
+<link href="appletouchicon.png" rel="apple-touch-icon"/>
+<meta content="#000000" id="metaThemeColor" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Admin Portal | Everything Remote Job</title>
-
-
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
@@ -157,81 +153,67 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
 .featured-badge,.badge,.tag,.pill{box-shadow:none!important;}
 .cover,.post-cover,.art-cover,.card-cover,.featured-img{filter:saturate(0.6);}
 </style>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
-<meta property="og:image" content="https://everythingremotejob.com/preview-portal.jpg" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Everything Remote Job" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://everythingremotejob.com/preview-portal.jpg" />
+<link as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/></noscript>
+<meta content="https://everythingremotejob.com/preview-portal.jpg" property="og:image">
+<meta content="website" property="og:type">
+<meta content="Everything Remote Job" property="og:site_name">
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://everythingremotejob.com/preview-portal.jpg" name="twitter:image"/>
 <style id="erjHideLegacy">#themeDropdown,.theme-drop,.theme-drop-menu,#themeMenu,#erjTheme{display:none !important;}</style>
-  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
-<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-</head>
+<meta content="noindex,nofollow,noarchive,nosnippet,noimageindex" name="robots"/>
+<meta content="no-store, no-cache, must-revalidate, max-age=0" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+</meta></meta></meta></head>
 <body>
-
 <canvas id="particles"></canvas>
 <div class="grid-overlay"></div>
 <div class="radial-glow"></div>
-
 <!-- Nav -->
 <div id="erjNavMount"></div>
 <script>window.ERJ_NAV={active:'login',onPage:[{label:'Participant Login',href:'login.html'},{label:'Instructor Login',href:'instructor-login.html'}]};</script>
-
 <div class="page-wrap">
-
-  <!-- Shield Badge -->
-  <div class="admin-badge">
-    <div>
-      <div style="display:flex;justify-content:center;margin-bottom:.7rem"><div class="shield">🛡️</div></div>
-      <div class="badge-text">ADMIN PORTAL</div>
-    </div>
-  </div>
-
-  <!-- Card -->
-  <div class="auth-card">
-
-    <div class="card-title">Admin Sign In</div>
-    <div class="card-sub">Restricted access — authorised personnel only.</div>
-
-    <!-- Alerts -->
-    <div class="alert alert-error" id="alertBox"><span>⚠</span><span id="alertMsg"></span></div>
-    <div class="alert alert-success" id="successBox"><span>✓</span><span id="successMsg"></span></div>
-
-    <!-- Form -->
-    <div class="field">
-      <label for="adminUser">Username</label>
-      <input type="text" id="adminUser" placeholder="Enter admin username" autocomplete="username" autofocus>
-    </div>
-    <div class="field">
-      <label for="adminPw">Password</label>
-      <div class="pw-wrap">
-        <input type="password" id="adminPw" placeholder="••••••••••" autocomplete="current-password">
-        <button class="pw-toggle" type="button" onclick="togglePw()" title="Show/hide">👁</button>
-      </div>
-    </div>
-
-    <button class="btn-login" id="loginBtn" onclick="doLogin()">
-      <span class="btn-text">🛡️ Access Admin Panel</span>
-      <span class="spinner"></span>
-    </button>
-
-    <div class="attempt-warn" id="attemptWarn"></div>
-
-    <div class="security-note">
-      <strong>🔒 Secure Zone.</strong> All admin actions are logged. Unauthorised access attempts are recorded.
-    </div>
-
-    <div class="card-footer">
-      Not an admin? <a href="login.html">← Participant Login</a> &nbsp;·&nbsp; <a href="index.html">Back to site</a>
-    </div>
-
-  </div>
+<!-- Shield Badge -->
+<div class="admin-badge">
+<div>
+<div style="display:flex;justify-content:center;margin-bottom:.7rem"><div class="shield">🛡️</div></div>
+<div class="badge-text">ADMIN PORTAL</div>
 </div>
-
+</div>
+<!-- Card -->
+<div class="auth-card">
+<div class="card-title">Admin Sign In</div>
+<div class="card-sub">Restricted access — authorised personnel only.</div>
+<!-- Alerts -->
+<div class="alert alert-error" id="alertBox"><span>⚠</span><span id="alertMsg"></span></div>
+<div class="alert alert-success" id="successBox"><span>✓</span><span id="successMsg"></span></div>
+<!-- Form -->
+<div class="field">
+<label for="adminUser">Username</label>
+<input autocomplete="username" autofocus="" id="adminUser" placeholder="Enter admin username" type="text"/>
+</div>
+<div class="field">
+<label for="adminPw">Password</label>
+<div class="pw-wrap">
+<input autocomplete="current-password" id="adminPw" placeholder="••••••••••" type="password"/>
+<button class="pw-toggle" onclick="togglePw()" title="Show/hide" type="button">👁</button>
+</div>
+</div>
+<button class="btn-login" id="loginBtn" onclick="doLogin()">
+<span class="btn-text">🛡️ Access Admin Panel</span>
+<span class="spinner"></span>
+</button>
+<div class="attempt-warn" id="attemptWarn"></div>
+<div class="security-note">
+<strong>🔒 Secure Zone.</strong> All admin actions are logged. Unauthorised access attempts are recorded.
+    </div>
+<div class="card-footer">
+      Not an admin? <a href="login.html">← Participant Login</a>  ·  <a href="index.html">Back to site</a>
+</div>
+</div>
+</div>
 <script>
 /* ── AUTH STATE ── */
 let attempts = 0;
@@ -457,7 +439,6 @@ function applyTheme(t) {
 })();
 </script>
 <!-- ===== /Unified Theme Control ===== -->
-
-<script src="erj-nav.js" defer></script>
+<script defer="" src="erj-nav.js"></script>
 </body>
 </html>

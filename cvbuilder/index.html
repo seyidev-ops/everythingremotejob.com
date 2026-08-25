@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-<meta charset="UTF-8">
+
+<html data-theme="dark" lang="en">
+<head><style id="erjCanvasGuard">html{background:#000000}html[data-theme="day"]{background:#FAFAF8}</style>
+<meta charset="utf-8"/>
 <!-- Meta Pixel + Google Tag Manager -->
-<script src="../erj-track.js" async></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script async="" src="../erj-track.js"></script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ERJ CV Engine · Everything Remote Job</title>
-<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
-<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<meta name="theme-color" content="#000000">
-<link rel="stylesheet" href="../product.css?v=126">
+<meta content="noindex,nofollow,noarchive,nosnippet,noimageindex" name="robots"/>
+<meta content="no-store, no-cache, must-revalidate, max-age=0" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+<meta content="#000000" name="theme-color"/>
+<link href="../product.css?v=126" rel="stylesheet"/>
 <style>
   :root{ --ok:#4ADE80; --warn:#FBBF24; --bad:#F87171; }
   *{box-sizing:border-box;}
@@ -189,217 +190,198 @@
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NMFHS59B"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NMFHS59B" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-
 <!-- ══════════════════ GATE ══════════════════ -->
 <div id="gate">
-  <div class="gate-card">
-    <div class="gate-k">Access code required</div>
-    <h1 class="gate-h">The ERJ CV Engine</h1>
-    <p class="gate-p">This tool is not public. Enter your access code — either the one issued with your enrolment, or a 30-day CV Engine pass.</p>
-    <!-- Placeholder stays generic. Never put a specimen code here, in a comment,
+<div class="gate-card">
+<div class="gate-k">Access code required</div>
+<h1 class="gate-h">The ERJ CV Engine</h1>
+<p class="gate-p">This tool is not public. Enter your access code — either the one issued with your enrolment, or a 30-day CV Engine pass.</p>
+<!-- Placeholder stays generic. Never put a specimen code here, in a comment,
          or in any inline script: comments ship to the browser and are readable in
          view-source, so a "removed" code written into a comment is still published. -->
-    <input id="gateIn" class="gate-in" type="text" placeholder="Enter your access code" autocomplete="off" spellcheck="false" aria-label="Access code">
-    <button class="gate-btn" id="gateGo">Unlock the engine</button>
-    <div class="gate-msg" id="gateMsg"></div>
-    <div class="gate-note">
-      <b>No code?</b> One is issued with any stage enrolment — or buy a
-      <a href="https://paystack.shop/pay/erj-cvpass" target="_blank" rel="noopener">30-day CV Engine pass for ₦5,000</a>.
+<input aria-label="Access code" autocomplete="off" class="gate-in" id="gateIn" placeholder="Enter your access code" spellcheck="false" type="text"/>
+<button class="gate-btn" id="gateGo">Unlock the engine</button>
+<div class="gate-msg" id="gateMsg"></div>
+<div class="gate-note">
+<b>No code?</b> One is issued with any stage enrolment — or buy a
+      <a href="https://paystack.shop/pay/erj-cvpass" rel="noopener" target="_blank">30-day CV Engine pass for ₦5,000</a>.
       The thirty days start the first time you use the code, not the day you pay.
-      <br><br>
-      <a href="../register.html">See the enrolment options</a> · WhatsApp +234 803 292 5957
-      <br><br>
+      <br/><br/>
+<a href="../register.html">See the enrolment options</a> · WhatsApp +234 803 292 5957
+      <br/><br/>
       This gate runs in your browser, so treat it as a door rather than a vault.
     </div>
-  </div>
 </div>
-
+</div>
 <!-- ══════════════════ APP ══════════════════ -->
 <div class="cvwrap" id="app" style="display:none">
-
-  <!-- Shown only for a 30-day CV Engine pass; a cohort code hides it. -->
-  <div class="passbar" id="passBar" style="display:none"></div>
-
-  <div class="cvhead">
-    <div class="cvbrand">ERJ <span>CV Engine</span>
-      <small>ATS-safe · built against the 10-point scan</small></div>
-    <div class="cvtools">
-      <button class="tbtn" id="btnSample">Load example</button>
-      <button class="tbtn" id="btnClear">Clear all</button>
-      <button class="tbtn" id="btnTxt">Copy plain text</button>
-      <button class="tbtn" id="btnDocx">Download .docx</button>
-      <button class="tbtn pri" id="btnPdf">Print / Save PDF</button>
-    </div>
-  </div>
-
-  <div class="tabs">
-    <button class="tab on" data-step="s1">1 · Start</button>
-    <button class="tab" data-step="s2">2 · Your details</button>
-    <button class="tab" data-step="s3">3 · Target role</button>
-    <button class="tab" data-step="s4">4 · Humanise</button>
-    <button class="tab" data-step="s5">5 · Preview &amp; export</button>
-  </div>
-
-  <div class="cvgrid">
-    <div>
-      <!-- STEP 1 -->
-      <div class="step on" id="s1">
-        <div class="panel">
-          <h2>Start from what you already have</h2>
-          <p class="hint">Upload your current CV — or paste it as text — and the engine will pull it apart into fields you can edit. Nothing leaves your device — this page has no server and sends nothing anywhere; Word and PDF files are read entirely inside your browser. <b>Or skip this and fill the form by hand in step 2.</b></p>
-
-          <label>Upload your CV file</label>
-          <div id="impDrop" class="impdrop" role="button" tabindex="0" aria-label="Upload your CV as a Word or PDF file">
-            <div class="impdrop-big">Drop your <b>.docx</b> or <b>.pdf</b> here</div>
-            <div class="impdrop-small">or tap to choose a file · read on this device only, never uploaded</div>
-          </div>
-          <input type="file" id="impFile" accept=".docx,.pdf,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" style="display:none;">
-          <div class="note" id="impStatus" style="display:none;margin-top:0.6rem;"></div>
-          <p class="hint" style="margin-top:0.6rem;"><b>One honest limit:</b> a scanned PDF — a photograph of a printed CV — has no text layer, so nothing can be read from it. If that is what you have, use the paste box instead.</p>
-
-          <label for="pasteCv" style="margin-top:1rem;">Or paste your existing CV</label>
-          <textarea id="pasteCv" rows="12" placeholder="Copy everything out of your Word or PDF file and paste it here…"></textarea>
-          <button class="addbtn" id="btnParse" style="border-style:solid;color:#fff;background:var(--accent);border-color:var(--accent);">Pull it apart into fields →</button>
-          <div class="note" id="parseOut"><b>What the parser can and cannot do.</b> It reliably finds your contact details, section headings and bullet points. It cannot reliably split job titles from dates in every layout, so check step 2 before you trust it. Anything it gets wrong, you fix by hand — that is faster than starting from nothing.</div>
-        </div>
-        <div class="panel">
-          <h2>Or start clean</h2>
-          <p class="hint">If your current CV is the problem, do not import it. Go to step 2 and build from the structure that scores.</p>
-          <button class="addbtn" onclick="go('s2')">Start from a blank form →</button>
-        </div>
-      </div>
-
-      <!-- STEP 2 -->
-      <div class="step" id="s2">
-        <div class="panel">
-          <h2>Contact &amp; headline</h2>
-          <p class="hint">Contact details go in the body of the document, never in a header or footer — many parsers ignore those entirely, which is how people apply anonymously without knowing.</p>
-          <div class="row2">
-            <div><label for="fName">Full name</label><input type="text" id="fName" placeholder="Chidi Okafor"></div>
-            <div><label for="fTitle">Target job title</label><input type="text" id="fTitle" placeholder="Customer Support Specialist"></div>
-          </div>
-          <div class="row2">
-            <div><label for="fEmail">Email</label><input type="email" id="fEmail" placeholder="firstname.lastname@gmail.com"></div>
-            <div><label for="fPhone">Phone (with country code)</label><input type="text" id="fPhone" placeholder="+234 803 000 0000"></div>
-          </div>
-          <div class="row2">
-            <div><label for="fCity">City &amp; country</label><input type="text" id="fCity" placeholder="Abuja, Nigeria"></div>
-            <div><label for="fTz">Timezone</label><input type="text" id="fTz" placeholder="UTC+1"></div>
-          </div>
-          <div class="row2">
-            <div><label for="fLinkedin">LinkedIn URL</label><input type="url" id="fLinkedin" placeholder="linkedin.com/in/yourname"></div>
-            <div><label for="fPortfolio">Portfolio / GitHub URL</label><input type="url" id="fPortfolio" placeholder="yourname.notion.site/portfolio"></div>
-          </div>
-        </div>
-
-        <div class="panel">
-          <h2>Professional summary</h2>
-          <p class="hint">Three or four lines. Say what you do, name one measurable result, and make your remote capability explicit — autonomy, distributed teams, or cross-border delivery. <b>Do not write "seeking an opportunity".</b> That describes your need, not your value.</p>
-          <textarea id="fSummary" rows="5" placeholder="Customer support specialist with four years handling high-volume queues for a Nigerian fintech…"></textarea>
-        </div>
-
-        <div class="panel">
-          <h2>Experience</h2>
-          <p class="hint">Every bullet should answer <b>how many, and what changed</b>. If you do not know the exact figure, estimate honestly and write "about" — an honest estimate beats no number, and no interviewer has ever challenged "about 60 tickets a day".</p>
-          <div id="jobs"></div>
-          <button class="addbtn" id="btnAddJob">+ Add a role</button>
-        </div>
-
-        <div class="panel">
-          <h2>Skills, tools &amp; education</h2>
-          <p class="hint">Keep remote collaboration tools in their own line — Slack, Zoom, Notion, Asana, Jira, Google Workspace. It is one of the ten scan points and it takes ten seconds.</p>
-          <label for="fSkills">Core skills (comma separated)</label>
-          <input type="text" id="fSkills" placeholder="Customer support, escalation management, technical troubleshooting">
-          <label for="fTools">Remote tools (comma separated)</label>
-          <input type="text" id="fTools" placeholder="Zendesk, Slack, Notion, Zoom, Google Workspace">
-          <label for="fEdu">Education &amp; certifications (one per line)</label>
-          <textarea id="fEdu" rows="4" placeholder="BSc Economics · University of Lagos · 2019&#10;Google Data Analytics Certificate · 2025"></textarea>
-        </div>
-      </div>
-
-      <!-- STEP 3 -->
-      <div class="step" id="s3">
-        <div class="panel">
-          <h2>Tailor to the vacancy</h2>
-          <p class="hint">Paste the job description. The engine pulls out the tools, skills and phrases the employer actually used, then shows you which ones are missing from your CV. <b>Tick only what you genuinely have.</b> Adding a tool you have never used surfaces in the interview and ends the process.</p>
-          <label for="fJd">Job description</label>
-          <textarea id="fJd" rows="10" placeholder="Paste the full vacancy text — responsibilities, requirements, everything…"></textarea>
-          <div class="row2">
-            <div><label for="fJdCo">Company (optional)</label><input type="text" id="fJdCo" placeholder="Acme Ltd"></div>
-            <div><label for="fJdRole">Role title as advertised</label><input type="text" id="fJdRole" placeholder="Customer Support Specialist"></div>
-          </div>
-          <button class="addbtn" id="btnJd" style="border-style:solid;color:#fff;background:var(--accent);border-color:var(--accent);">Extract what they asked for →</button>
-        </div>
-        <!-- TAILOR PANEL. The chips above tell you what is MISSING; this
+<!-- Shown only for a 30-day CV Engine pass; a cohort code hides it. -->
+<div class="passbar" id="passBar" style="display:none"></div>
+<div class="cvhead">
+<div class="cvbrand">ERJ <span>CV Engine</span>
+<small>ATS-safe · built against the 10-point scan</small></div>
+<div class="cvtools">
+<button class="tbtn" id="btnSample">Load example</button>
+<button class="tbtn" id="btnClear">Clear all</button>
+<button class="tbtn" id="btnTxt">Copy plain text</button>
+<button class="tbtn" id="btnDocx">Download .docx</button>
+<button class="tbtn pri" id="btnPdf">Print / Save PDF</button>
+</div>
+</div>
+<div class="tabs">
+<button class="tab on" data-step="s1">1 · Start</button>
+<button class="tab" data-step="s2">2 · Your details</button>
+<button class="tab" data-step="s3">3 · Target role</button>
+<button class="tab" data-step="s4">4 · Humanise</button>
+<button class="tab" data-step="s5">5 · Preview &amp; export</button>
+</div>
+<div class="cvgrid">
+<div>
+<!-- STEP 1 -->
+<div class="step on" id="s1">
+<div class="panel">
+<h2>Start from what you already have</h2>
+<p class="hint">Upload your current CV — or paste it as text — and the engine will pull it apart into fields you can edit. Nothing leaves your device — this page has no server and sends nothing anywhere; Word and PDF files are read entirely inside your browser. <b>Or skip this and fill the form by hand in step 2.</b></p>
+<label>Upload your CV file</label>
+<div aria-label="Upload your CV as a Word or PDF file" class="impdrop" id="impDrop" role="button" tabindex="0">
+<div class="impdrop-big">Drop your <b>.docx</b> or <b>.pdf</b> here</div>
+<div class="impdrop-small">or tap to choose a file · read on this device only, never uploaded</div>
+</div>
+<input accept=".docx,.pdf,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" id="impFile" style="display:none;" type="file"/>
+<div class="note" id="impStatus" style="display:none;margin-top:0.6rem;"></div>
+<p class="hint" style="margin-top:0.6rem;"><b>One honest limit:</b> a scanned PDF — a photograph of a printed CV — has no text layer, so nothing can be read from it. If that is what you have, use the paste box instead.</p>
+<label for="pasteCv" style="margin-top:1rem;">Or paste your existing CV</label>
+<textarea id="pasteCv" placeholder="Copy everything out of your Word or PDF file and paste it here…" rows="12"></textarea>
+<button class="addbtn" id="btnParse" style="border-style:solid;color:#fff;background:var(--accent);border-color:var(--accent);">Pull it apart into fields →</button>
+<div class="note" id="parseOut"><b>What the parser can and cannot do.</b> It reliably finds your contact details, section headings and bullet points. It cannot reliably split job titles from dates in every layout, so check step 2 before you trust it. Anything it gets wrong, you fix by hand — that is faster than starting from nothing.</div>
+</div>
+<div class="panel">
+<h2>Or start clean</h2>
+<p class="hint">If your current CV is the problem, do not import it. Go to step 2 and build from the structure that scores.</p>
+<button class="addbtn" onclick="go('s2')">Start from a blank form →</button>
+</div>
+</div>
+<!-- STEP 2 -->
+<div class="step" id="s2">
+<div class="panel">
+<h2>Contact &amp; headline</h2>
+<p class="hint">Contact details go in the body of the document, never in a header or footer — many parsers ignore those entirely, which is how people apply anonymously without knowing.</p>
+<div class="row2">
+<div><label for="fName">Full name</label><input id="fName" placeholder="Chidi Okafor" type="text"/></div>
+<div><label for="fTitle">Professional headline</label><input id="fTitle" placeholder="Customer Support Specialist" type="text"/><p class="hint" id="headlineHelp">This is the role you are positioning the CV toward. It is not a historical job title and does not change any title inside your employment history.</p></div>
+</div>
+<div class="row2">
+<div><label for="fEmail">Email</label><input id="fEmail" placeholder="firstname.lastname@gmail.com" type="email"/></div>
+<div><label for="fPhone">Phone (with country code)</label><input id="fPhone" placeholder="+234 803 000 0000" type="text"/></div>
+</div>
+<div class="row2">
+<div><label for="fCity">City &amp; country</label><input id="fCity" placeholder="Abuja, Nigeria" type="text"/></div>
+<div><label for="fTz">Timezone</label><input id="fTz" placeholder="UTC+1" type="text"/></div>
+</div>
+<div class="row2">
+<div><label for="fLinkedin">LinkedIn URL</label><input id="fLinkedin" placeholder="linkedin.com/in/yourname" type="url"/></div>
+<div><label for="fPortfolio">Portfolio / GitHub URL</label><input id="fPortfolio" placeholder="yourname.notion.site/portfolio" type="url"/></div>
+</div>
+</div>
+<div class="panel">
+<h2>Professional summary</h2>
+<p class="hint">Three or four lines. Say what you do, name one measurable result, and make your remote capability explicit — autonomy, distributed teams, or cross-border delivery. <b>Do not write "seeking an opportunity".</b> That describes your need, not your value.</p>
+<textarea id="fSummary" placeholder="Customer support specialist with four years handling high-volume queues for a Nigerian fintech…" rows="5"></textarea>
+</div>
+<div class="panel">
+<h2>Experience</h2>
+<p class="hint">Every bullet should answer <b>how many, and what changed</b>. If you do not know the exact figure, estimate honestly and write "about" — an honest estimate beats no number, and no interviewer has ever challenged "about 60 tickets a day".</p>
+<div id="jobs"></div>
+<button class="addbtn" id="btnAddJob">+ Add a role</button>
+</div>
+<div class="panel">
+<h2>Skills, tools &amp; education</h2>
+<p class="hint">Keep remote collaboration tools in their own line — Slack, Zoom, Notion, Asana, Jira, Google Workspace. It is one of the ten scan points and it takes ten seconds.</p>
+<label for="fSkills">Core skills (comma separated)</label>
+<input id="fSkills" placeholder="Customer support, escalation management, technical troubleshooting" type="text"/>
+<label for="fTools">Remote tools (comma separated)</label>
+<input id="fTools" placeholder="Zendesk, Slack, Notion, Zoom, Google Workspace" type="text"/>
+<label for="fEdu">Education &amp; certifications (one per line)</label>
+<textarea id="fEdu" placeholder="BSc Economics · University of Lagos · 2019
+Google Data Analytics Certificate · 2025" rows="4"></textarea>
+</div>
+</div>
+<!-- STEP 3 -->
+<div class="step" id="s3">
+<div class="panel">
+<h2>Target the vacancy safely</h2>
+<p class="hint">Paste the job description. The engine identifies what the employer is asking for, shows which requirements your existing CV already supports, and flags what is still not evidenced. <b>It will not rewrite achievements, move job history, change dates or invent experience.</b></p>
+<label for="fJd">Job description</label>
+<textarea id="fJd" placeholder="Paste the full vacancy text — responsibilities, requirements, everything…" rows="10"></textarea>
+<div class="row2">
+<div><label for="fJdCo">Company (optional)</label><input id="fJdCo" placeholder="Acme Ltd" type="text"/></div>
+<div><label for="fJdRole">Role title as advertised</label><input id="fJdRole" placeholder="Customer Support Specialist" type="text"/></div>
+</div>
+<button class="addbtn" id="btnJd" style="border-style:solid;color:#fff;background:var(--accent);border-color:var(--accent);">Analyse this target role →</button>
+</div>
+<!-- TAILOR PANEL. The chips above tell you what is MISSING; this
              reorders what you already have so the matching parts are read
              first. Order is the only honest lever: nothing is invented. -->
-        <div class="panel" id="tailorPanel" style="display:none">
-          <h3>Arrange this CV for this role</h3>
-          <p class="hint">A recruiter reads the top third. This puts the parts of your CV that answer <b>this specific vacancy</b> at the top of each section — your competencies, and the bullets inside each role. <b>Your roles stay in date order, nothing is invented, nothing is deleted and nothing is reworded.</b> Only the order changes.</p>
-          <div class="note" id="tailorNote"></div>
-          <div style="display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:1rem;">
-            <button class="btn-yes" id="tailorBtn" type="button">Reorder my CV for this role</button>
-            <button class="btn-more" id="untailorBtn" type="button" style="display:none">Undo — restore my order</button>
-          </div>
-        </div>
-
-        <div class="panel" id="jdPanel" style="display:none">
-          <h2>What they asked for</h2>
-          <p class="hint">Green means it already appears in your CV. Tap a grey chip to confirm you genuinely have it — confirmed items are added to your skills line in the employer's own words.</p>
-          <div id="jdChips" class="chips"></div>
-          <div class="note" id="jdNote"></div>
-        </div>
-      </div>
-
-      <!-- STEP 4 -->
-      <div class="step" id="s4">
-        <div class="panel">
-          <h2>Make it sound like a person wrote it</h2>
-          <p class="hint">Recruiters have become fast at spotting generated CVs. This pass flags corporate filler, passive constructions and phrases that appear on tens of thousands of other documents — then offers a plainer version. <b>It never invents an achievement.</b> Every suggestion only changes how your own facts are worded.</p>
-          <div id="humanOut"></div>
-        </div>
-      </div>
-
-      <!-- STEP 5 -->
-      <div class="step" id="s5">
-        <div class="panel">
-          <h2>Choose your ATS template</h2>
-          <p class="hint">All three are ATS-safe in exactly the same way — single column, standard headings, no tables, no graphics, no text boxes, no columns, nothing in a header or footer. What differs is the <b>section naming each market expects</b>. Pick the one that matches where the employer is.</p>
-          <div id="tplPick" class="chips" style="gap:0.5rem"></div>
-          <div class="note" id="tplNote"></div>
-        </div>
-        <div class="panel">
-          <h2>Your CV</h2>
-          <p class="hint">Single column, standard headings, plain-text contact details, no tables, no graphics, no text boxes. This is what a parser can read cleanly.<br><br><b>Download .docx</b> for anything that asks for Word — it is a genuine Office file, not HTML with a Word extension. <b>Print / Save PDF</b> for everything else. <b>Copy plain text</b> when a portal gives you a paste box instead of an upload.</p>
-          <div class="pv-wrap"><div id="preview"></div></div>
-          <div class="note"><b>Filename matters.</b> Save it as <em>Firstname_Lastname_Role_CV.pdf</em> — never CV_final_v7.pdf. It sits in a folder with two hundred others and a human has to find yours again.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ── SCORE RAIL ── -->
-    <div class="rail">
-      <div class="scorebox">
-        <div class="scoren" id="scoreN">0<small>/10</small></div>
-        <div class="scorel">ERJ scan score</div>
-        <div class="bar"><i id="scoreBar"></i></div>
-        <div class="verdict" id="verdict">Fill in step 2 and this updates as you type.</div>
-      </div>
-      <div class="checks" id="checks"></div>
-      <div class="note">
-        <b>What this score is.</b> It is the same ten-point rubric as the free CV Self-Scan, run live as you type. Hitting 10/10 means your CV clears every structural trap that silently bins applications.
-        <br><br>
-        <b>What it is not.</b> No tool can promise a number inside a specific employer's system — Workday, Greenhouse and Taleo all score differently and none of them publish their rules. What this does guarantee is that nothing in your document is unreadable to a parser, which is the failure that actually costs people interviews.
-      </div>
-    </div>
-  </div>
+<div class="panel" id="tailorPanel" style="display:none">
+<h3>Safe target alignment</h3>
+<p class="hint">This uses the vacancy to improve <b>positioning without altering evidence</b>. It can set your professional headline to the advertised role and bring relevant skills/tools forward. Your employers, historical job titles, dates and experience bullets stay exactly where you wrote them.</p>
+<div class="note" id="tailorNote"></div>
+<div style="display:flex;flex-wrap:wrap;gap:0.7rem;margin-top:1rem;">
+<button class="btn-yes" id="tailorBtn" type="button">Apply safe target alignment</button>
+<button class="btn-more" id="untailorBtn" style="display:none" type="button">Undo target alignment</button>
 </div>
-
+</div>
+<div class="panel" id="jdPanel" style="display:none">
+<h2>What they asked for</h2>
+<p class="hint">Green means it already appears in your CV. Tap a grey chip to confirm you genuinely have it — confirmed items are added to your skills line in the employer's own words.</p>
+<div class="chips" id="jdChips"></div>
+<div class="note" id="jdNote"></div>
+</div>
+</div>
+<!-- STEP 4 -->
+<div class="step" id="s4">
+<div class="panel">
+<h2>Make it sound like a person wrote it</h2>
+<p class="hint">Recruiters have become fast at spotting generated CVs. This pass flags corporate filler, passive constructions and phrases that appear on tens of thousands of other documents — then offers a plainer version. <b>It never invents an achievement.</b> Every suggestion only changes how your own facts are worded.</p>
+<div id="humanOut"></div>
+</div>
+</div>
+<!-- STEP 5 -->
+<div class="step" id="s5">
+<div class="panel">
+<h2>Choose your ATS template</h2>
+<p class="hint">All three are ATS-safe in exactly the same way — single column, standard headings, no tables, no graphics, no text boxes, no columns, nothing in a header or footer. What differs is the <b>section naming each market expects</b>. Pick the one that matches where the employer is.</p>
+<div class="chips" id="tplPick" style="gap:0.5rem"></div>
+<div class="note" id="tplNote"></div>
+</div>
+<div class="panel">
+<h2>Your CV</h2>
+<p class="hint">Single column, standard headings, plain-text contact details, no tables, no graphics, no text boxes. This is what a parser can read cleanly.<br/><br/><b>Download .docx</b> for anything that asks for Word — it is a genuine Office file, not HTML with a Word extension. <b>Print / Save PDF</b> for everything else. <b>Copy plain text</b> when a portal gives you a paste box instead of an upload.</p>
+<div class="pv-wrap"><div id="preview"></div></div>
+<div class="note"><b>Filename matters.</b> Save it as <em>Firstname_Lastname_Role_CV.pdf</em> — never CV_final_v7.pdf. It sits in a folder with two hundred others and a human has to find yours again.</div>
+</div>
+</div>
+</div>
+<!-- ── SCORE RAIL ── -->
+<div class="rail">
+<div class="scorebox">
+<div class="scoren" id="scoreN">0<small>/10</small></div>
+<div class="scorel">ERJ scan score</div>
+<div class="bar"><i id="scoreBar"></i></div>
+<div class="verdict" id="verdict">Fill in step 2 and this updates as you type.</div>
+</div>
+<div class="checks" id="checks"></div>
+<div class="note">
+<b>What this score is.</b> It is the same ten-point rubric as the free CV Self-Scan, run live as you type. Hitting 10/10 means your CV clears every structural trap that silently bins applications.
+        <br/><br/>
+<b>What it is not.</b> No tool can promise a number inside a specific employer's system — Workday, Greenhouse and Taleo all score differently and none of them publish their rules. What this does guarantee is that nothing in your document is unreadable to a parser, which is the failure that actually costs people interviews.
+      </div>
+</div>
+</div>
+</div>
 <div id="printroot"><div id="preview2"></div></div>
-
 <script src="../erj-passcode.js"></script>
 <script src="docx.js"></script>
 <script src="engine.js"></script>

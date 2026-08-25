@@ -1,21 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night">
-<head>
-<link rel="manifest" href="manifest.json">
-<meta charset="UTF-8">
 
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32-dark.png" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32.png">
-
-
-<link rel="apple-touch-icon" href="appletouchicon.png">
-<meta name="theme-color" content="#000000" id="metaThemeColor">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html data-theme="night" lang="en">
+<head><style id="erjCanvasGuard">html{background:#000000}html[data-theme="day"]{background:#FAFAF8}</style>
+<link href="manifest.json" rel="manifest"/>
+<meta charset="utf-8"/>
+<link href="favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
+<link href="favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
+<link href="favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
+<link href="appletouchicon.png" rel="apple-touch-icon"/>
+<meta content="#000000" id="metaThemeColor" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Participant Login | Everything Remote Job</title>
-<meta name="description" content="Log in to your Everything Remote Job participant portal.">
-
-
+<meta content="Log in to your Everything Remote Job participant portal." name="description"/>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -414,178 +410,153 @@ h1 strong,h1 em{ -webkit-text-fill-color:currentColor!important;background:none!
 .wa-float svg{fill:var(--bg)!important;}
 .wa-float:hover{box-shadow:none!important;}
 </style>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
-<meta property="og:image" content="https://everythingremotejob.com/preview-login.jpg" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Everything Remote Job" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://everythingremotejob.com/preview-login.jpg" />
+<link as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/></noscript>
+<meta content="https://everythingremotejob.com/preview-login.jpg" property="og:image">
+<meta content="website" property="og:type">
+<meta content="Everything Remote Job" property="og:site_name">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="https://everythingremotejob.com/preview-login.jpg" name="twitter:image"/>
 <style id="erjHideLegacy">#themeDropdown,.theme-drop,.theme-drop-menu,#themeMenu,#erjTheme{display:none !important;}</style>
-  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
-<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-</head>
+<meta content="noindex,nofollow,noarchive,nosnippet,noimageindex" name="robots"/>
+<meta content="no-store, no-cache, must-revalidate, max-age=0" http-equiv="Cache-Control"/>
+<meta content="no-cache" http-equiv="Pragma"/>
+<meta content="0" http-equiv="Expires"/>
+</meta></meta></meta></meta></head>
 <body>
-
 <canvas id="particles"></canvas>
 <div class="radial-glow"></div>
 <div class="grid-overlay"></div>
-
 <!-- Nav -->
 <div id="erjNavMount"></div>
 <script>window.ERJ_NAV={active:'login'};</script>
-
 <div class="page-wrap">
-
-  <!-- Brand header -->
-  <div class="brand-header">
-    <p class="brand-tagline">Your gateway to global remote employment</p>
-  </div>
-
-  <!-- Auth card -->
-  <div class="auth-card" id="authCard">
-
-    <!-- Tabs -->
-    <div class="auth-tabs">
-      <button class="tab-btn active" id="tabLogin" onclick="switchTab('login')">Sign In</button>
-      <button class="tab-btn" id="tabRegister" onclick="switchTab('register')">Register</button>
-    </div>
-
-    <!-- Alert -->
-    <div class="alert alert-error" id="alertBox">
-      <span>⚠</span> <span id="alertMsg"></span>
-    </div>
-    <div class="alert alert-success" id="successBox">
-      <span>✓</span> <span id="successMsg"></span>
-    </div>
-
-    <!-- ── LOGIN FORM ── -->
-    <div id="loginForm">
-      <h2 class="form-title" style="text-align:center">Welcome Back</h2>
-      <p class="form-sub" style="text-align:center">Continue your remote job mastery journey.</p>
-
-      <div class="field">
-        <label for="loginEmail">Username or Email</label>
-        <input type="text" id="loginEmail" placeholder="Username or email address" autocomplete="username">
-      </div>
-      <div class="field">
-        <label for="loginPw">Password</label>
-        <div class="pw-wrap">
-          <input type="password" id="loginPw" placeholder="••••••••" autocomplete="current-password">
-          <button class="pw-toggle" type="button" onclick="togglePw('loginPw',this)" title="Show/hide password">👁</button>
-        </div>
-      </div>
-      <div class="forgot-row">
-        <a href="#" class="forgot-link" onclick="showForgot(event)">Forgot password?</a>
-      </div>
-      <button class="btn-primary" id="loginBtn" onclick="handleLogin()">
-        <span class="btn-text">🔐 Sign In to Dashboard</span>
-        <span class="spinner"></span>
-      </button>
-
-      <div class="or-divider">or continue with</div>
-
-      <button class="btn-google" onclick="handleGoogleLogin()">
-        <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
+<!-- Brand header -->
+<div class="brand-header">
+<p class="brand-tagline">Your gateway to global remote employment</p>
+</div>
+<!-- Auth card -->
+<div class="auth-card" id="authCard">
+<!-- Tabs -->
+<div class="auth-tabs">
+<button class="tab-btn active" id="tabLogin" onclick="switchTab('login')">Sign In</button>
+<button class="tab-btn" id="tabRegister" onclick="switchTab('register')">Register</button>
+</div>
+<!-- Alert -->
+<div class="alert alert-error" id="alertBox">
+<span>⚠</span> <span id="alertMsg"></span>
+</div>
+<div class="alert alert-success" id="successBox">
+<span>✓</span> <span id="successMsg"></span>
+</div>
+<!-- ── LOGIN FORM ── -->
+<div id="loginForm">
+<h2 class="form-title" style="text-align:center">Welcome Back</h2>
+<p class="form-sub" style="text-align:center">Continue your remote job mastery journey.</p>
+<div class="field">
+<label for="loginEmail">Username or Email</label>
+<input autocomplete="username" id="loginEmail" placeholder="Username or email address" type="text"/>
+</div>
+<div class="field">
+<label for="loginPw">Password</label>
+<div class="pw-wrap">
+<input autocomplete="current-password" id="loginPw" placeholder="••••••••" type="password"/>
+<button class="pw-toggle" onclick="togglePw('loginPw',this)" title="Show/hide password" type="button">👁</button>
+</div>
+</div>
+<div class="forgot-row">
+<a class="forgot-link" href="#" onclick="showForgot(event)">Forgot password?</a>
+</div>
+<button class="btn-primary" id="loginBtn" onclick="handleLogin()">
+<span class="btn-text">🔐 Sign In to Dashboard</span>
+<span class="spinner"></span>
+</button>
+<div class="or-divider">or continue with</div>
+<button class="btn-google" onclick="handleGoogleLogin()">
+<svg class="google-logo" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
         Continue with Google
       </button>
-
-      <div class="auth-footer">
+<div class="auth-footer">
         Don't have an account? <a href="#" onclick="switchTab('register');return false">Register now</a> ·
         <a href="index.html">Back to site</a>
-      </div>
-      <div style="text-align:center;margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--border2);">
-        <a href="admin-login.html" style="font-size:.76rem;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:color .2s;" onmouseover="this.style.color='var(--electric)'" onmouseout="this.style.color='var(--muted)'">🛡️ Admin Portal Login</a>
-      </div>
-    </div>
-
-    <!-- ── REGISTER FORM ── -->
-    <div id="registerForm" style="display:none">
-      <h2 class="form-title">Create Account</h2>
-      <p class="form-sub">Join 446+ professionals trained through ERJ. Create your free account.</p>
-
-      <div class="field-row">
-        <div class="field">
-          <label for="regFirst">First Name</label>
-          <input type="text" id="regFirst" placeholder="John" autocomplete="given-name">
-        </div>
-        <div class="field">
-          <label for="regLast">Last Name</label>
-          <input type="text" id="regLast" placeholder="Doe" autocomplete="family-name">
-        </div>
-      </div>
-      <div class="field">
-        <label for="regEmail">Email Address</label>
-        <input type="email" id="regEmail" placeholder="your@email.com" autocomplete="email">
-      </div>
-      <div class="field">
-        <label for="regPhone">WhatsApp Number</label>
-        <input type="tel" id="regPhone" placeholder="Your WhatsApp number" autocomplete="tel">
-      </div>
-      <div class="field">
-        <label for="regPw">Password</label>
-        <div class="pw-wrap">
-          <input type="password" id="regPw" placeholder="Min 8 characters" autocomplete="new-password">
-          <button class="pw-toggle" type="button" onclick="togglePw('regPw',this)" title="Show/hide">👁</button>
-        </div>
-      </div>
-
-      <!-- Role: Student only — Instructor/Admin are staff-assigned -->
-      <div style="background:rgba(255,87,34,0.06);border:1px solid rgba(255,87,34,0.15);border-radius:10px;padding:.8rem 1.1rem;margin-bottom:1.5rem;font-size:.8rem;color:var(--muted)">
+</div>
+<div style="text-align:center;margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--border2);">
+<a href="admin-login.html" onmouseout="this.style.color='var(--muted)'" onmouseover="this.style.color='var(--electric)'" style="font-size:.76rem;color:var(--muted);text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:color .2s;">🛡️ Admin Portal Login</a>
+</div>
+</div>
+<!-- ── REGISTER FORM ── -->
+<div id="registerForm" style="display:none">
+<h2 class="form-title">Create Account</h2>
+<p class="form-sub">Join 446+ professionals trained through ERJ. Create your free account.</p>
+<div class="field-row">
+<div class="field">
+<label for="regFirst">First Name</label>
+<input autocomplete="given-name" id="regFirst" placeholder="John" type="text"/>
+</div>
+<div class="field">
+<label for="regLast">Last Name</label>
+<input autocomplete="family-name" id="regLast" placeholder="Doe" type="text"/>
+</div>
+</div>
+<div class="field">
+<label for="regEmail">Email Address</label>
+<input autocomplete="email" id="regEmail" placeholder="your@email.com" type="email"/>
+</div>
+<div class="field">
+<label for="regPhone">WhatsApp Number</label>
+<input autocomplete="tel" id="regPhone" placeholder="Your WhatsApp number" type="tel"/>
+</div>
+<div class="field">
+<label for="regPw">Password</label>
+<div class="pw-wrap">
+<input autocomplete="new-password" id="regPw" placeholder="Min 8 characters" type="password"/>
+<button class="pw-toggle" onclick="togglePw('regPw',this)" title="Show/hide" type="button">👁</button>
+</div>
+</div>
+<!-- Role: Student only — Instructor/Admin are staff-assigned -->
+<div style="background:rgba(255,87,34,0.06);border:1px solid rgba(255,87,34,0.15);border-radius:10px;padding:.8rem 1.1rem;margin-bottom:1.5rem;font-size:.8rem;color:var(--muted)">
         🎓 All public registrations are enrolled as <strong style="color:var(--electric)">Participants</strong>. Instructor and Admin roles are assigned internally by the team.
       </div>
-
-      <div class="field-check">
-        <input type="checkbox" id="regTerms">
-        <label for="regTerms">I agree to the <a href="terms.html" target="_blank" rel="noopener">Terms of Use</a> and <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a></label>
-      </div>
-
-      <button class="btn-primary" id="registerBtn" onclick="handleRegister()">
-        <span class="btn-text">🚀 Create My Account</span>
-        <span class="spinner"></span>
-      </button>
-
-      <div class="or-divider">or continue with</div>
-
-      <button class="btn-google" onclick="handleGoogleLogin()">
-        <svg class="google-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-        </svg>
+<div class="field-check">
+<input id="regTerms" type="checkbox"/>
+<label for="regTerms">I agree to the <a href="terms.html" rel="noopener" target="_blank">Terms of Use</a> and <a href="privacy.html" rel="noopener" target="_blank">Privacy Policy</a></label>
+</div>
+<button class="btn-primary" id="registerBtn" onclick="handleRegister()">
+<span class="btn-text">🚀 Create My Account</span>
+<span class="spinner"></span>
+</button>
+<div class="or-divider">or continue with</div>
+<button class="btn-google" onclick="handleGoogleLogin()">
+<svg class="google-logo" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path>
+<path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path>
+<path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path>
+<path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path>
+</svg>
         Sign up with Google
       </button>
-
-      <div class="auth-footer">
+<div class="auth-footer">
         Already have an account? <a href="#" onclick="switchTab('login');return false">Sign in</a>
-      </div>
-    </div>
-
-  </div><!-- /auth-card -->
-
-  <!-- Footer -->
-  <p style="margin-top:2rem; text-align:center; font-size:0.75rem; color:var(--muted)">
-    © 2026 Everything Remote Job. Built for <span style="color:var(--accent)">global career scale.</span>
-  </p>
-
 </div>
-
+</div>
+</div><!-- /auth-card -->
+<!-- Footer -->
+<p style="margin-top:2rem; text-align:center; font-size:0.75rem; color:var(--muted)">
+    © 2026 Everything Remote Job. Built for <span style="color:var(--accent)">global career scale.</span>
+</p>
+</div>
 <!-- WhatsApp Float -->
-<a href="https://wa.me/2348032925957" class="wa-float" title="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
+<a class="wa-float" href="https://wa.me/2348032925957" title="Chat on WhatsApp">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
 </a>
-
 <script>
 
 function getUsers() {
@@ -886,25 +857,21 @@ function showForgot(e) {
   }
 })();
 </script>
-
 <!-- GOOGLE PICKER MODAL -->
 <div id="googlePickerOverlay" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:1rem;">
-  <div style="background:#fff;border-radius:6px;padding:2rem;max-width:380px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:scaleIn .25s ease;position:relative;">
-    <div style="text-align:center;margin-bottom:1.5rem">
-      <svg width="40" height="40" viewBox="0 0 24 24" style="margin:0 auto .8rem;display:block"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-      <div style="font-size:1.1rem;font-weight:700;color:#202124;margin-bottom:.25rem">Sign in with Google</div>
-      <div style="font-size:.82rem;color:#5F6368">Enter your Google email address</div>
-    </div>
-    <input id="googleEmailInput" type="email" placeholder="you@gmail.com"
-      style="width:100%;padding:.8rem 1rem;border:1.5px solid #DADCE0;border-radius:8px;font-size:.95rem;outline:none;box-sizing:border-box;margin-bottom:1rem;font-family:sans-serif;transition:border-color .2s"
-      onfocus="this.style.borderColor='#4285F4'" onblur="this.style.borderColor='#DADCE0'"
-      onkeydown="if(event.key==='Enter') submitGoogleAccount()">
-    <div style="display:flex;gap:.6rem">
-      <button onclick="closeGooglePicker()" style="flex:1;padding:.7rem;border:1px solid #DADCE0;border-radius:8px;background:#fff;color:#5F6368;font-size:.88rem;font-weight:600;cursor:pointer">Cancel</button>
-      <button onclick="submitGoogleAccount()" style="flex:1;padding:.7rem;border:none;border-radius:8px;background:#4285F4;color:#fff;font-size:.88rem;font-weight:600;cursor:pointer">Continue</button>
-    </div>
-    <p style="font-size:.72rem;color:#9AA0A6;text-align:center;margin-top:.9rem;line-height:1.5">By continuing, you agree to our <a href="terms.html" target="_blank" rel="noopener" style="color:#FF5722">Terms of Use</a> and <a href="privacy.html" target="_blank" rel="noopener" style="color:#FF5722">Privacy Policy</a>.</p>
-  </div>
+<div style="background:#fff;border-radius:6px;padding:2rem;max-width:380px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.4);animation:scaleIn .25s ease;position:relative;">
+<div style="text-align:center;margin-bottom:1.5rem">
+<svg height="40" style="margin:0 auto .8rem;display:block" viewbox="0 0 24 24" width="40"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"></path><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"></path><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"></path><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"></path></svg>
+<div style="font-size:1.1rem;font-weight:700;color:#202124;margin-bottom:.25rem">Sign in with Google</div>
+<div style="font-size:.82rem;color:#5F6368">Enter your Google email address</div>
+</div>
+<input id="googleEmailInput" onblur="this.style.borderColor='#DADCE0'" onfocus="this.style.borderColor='#4285F4'" onkeydown="if(event.key==='Enter') submitGoogleAccount()" placeholder="you@gmail.com" style="width:100%;padding:.8rem 1rem;border:1.5px solid #DADCE0;border-radius:8px;font-size:.95rem;outline:none;box-sizing:border-box;margin-bottom:1rem;font-family:sans-serif;transition:border-color .2s" type="email"/>
+<div style="display:flex;gap:.6rem">
+<button onclick="closeGooglePicker()" style="flex:1;padding:.7rem;border:1px solid #DADCE0;border-radius:8px;background:#fff;color:#5F6368;font-size:.88rem;font-weight:600;cursor:pointer">Cancel</button>
+<button onclick="submitGoogleAccount()" style="flex:1;padding:.7rem;border:none;border-radius:8px;background:#4285F4;color:#fff;font-size:.88rem;font-weight:600;cursor:pointer">Continue</button>
+</div>
+<p style="font-size:.72rem;color:#9AA0A6;text-align:center;margin-top:.9rem;line-height:1.5">By continuing, you agree to our <a href="terms.html" rel="noopener" style="color:#FF5722" target="_blank">Terms of Use</a> and <a href="privacy.html" rel="noopener" style="color:#FF5722" target="_blank">Privacy Policy</a>.</p>
+</div>
 </div>
 <style>
 @keyframes scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
@@ -1014,7 +981,6 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
 })();
 </script>
 <!-- ===== /Unified Theme Control ===== -->
-
-<script src="erj-nav.js" defer></script>
+<script defer="" src="erj-nav.js"></script>
 </body>
 </html>

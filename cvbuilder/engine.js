@@ -683,161 +683,123 @@ function runJd() {
 }
 
 
-/* ─────────────────────── TAILOR TO THE ROLE ───────────────────────
-   Paste the vacancy, press one button, and the SAME facts are reordered so
-   the ones the employer asked for are read first. Nothing is invented, no
-   wording is changed and nothing is deleted — this only changes ORDER, plus
-   the target title if you accept it. That distinction is the whole ethic of
-   the tool: a recruiter reads the top third of a CV, so ordering is the one
-   honest lever there is.
-   tailorBackup holds the pre-tailor state so it is always reversible. */
+/* ─────────────────── SAFE TARGET ALIGNMENT ───────────────────
+   The target job description is used as a comparison surface, not as a
+   licence to rewrite history. Automatic alignment may change only:
+   - the professional headline (a target position, not a historical title)
+   - the order of skills and tools already supplied by the user
+   It never changes employers, employment dates, historical role titles,
+   achievement wording, or the order of experience bullets. */
 var tailorBackup = null;
 
 function jdTerms() {
   var jd = val('fJd');
   if (!jd) return [];
   var t = extractJd(jd).slice(0, 40);
-  /* picked chips count too — the participant confirmed those by hand */
   jdPicked.forEach(function (k) { if (t.indexOf(k) === -1) t.push(k); });
   return t;
 }
 
-/* Word stems from the vacancy. Exact-phrase matching alone is far too strict:
-   a vacancy says "documentation" and the CV says "documented", it says
-   "ticket triage" and the CV says "tickets". Matching on a 5-character stem
-   catches those without the false positives a 3-character stem would give. */
 var jdStemCache = { src: null, stems: null };
-
 function stemsOf(text) {
   var out = {};
   (text || '').toLowerCase().replace(/[^a-z0-9\s+#.]/g, ' ').split(/\s+/).forEach(function (w) {
-    if (w.length < 4) return;
-    if (JD_STOP.indexOf(w) > -1) return;
+    if (w.length < 4 || JD_STOP.indexOf(w) > -1) return;
     out[w.slice(0, 5)] = 1;
   });
   return out;
 }
-
 function jdStems() {
   var jd = val('fJd') || '';
   if (jdStemCache.src === jd) return jdStemCache.stems;
   jdStemCache = { src: jd, stems: stemsOf(jd) };
   return jdStemCache.stems;
 }
-
-/* how strongly one line answers this vacancy */
 function relevance(line, terms) {
   if (!line) return 0;
-  var low = ' ' + line.toLowerCase() + ' ';
-  var score = 0;
-
-  /* 1 · exact phrases and named tools carry the most weight */
+  var low = ' ' + line.toLowerCase() + ' ', score = 0;
   terms.forEach(function (k) {
     if (!k) return;
     if (low.indexOf(k.toLowerCase()) > -1) score += (k.indexOf(' ') > -1 ? 4 : 3);
   });
-
-  /* 2 · stem overlap — the part that makes this work on real CVs */
   var stems = jdStems(), seen = {};
   Object.keys(stemsOf(line)).forEach(function (st) {
     if (stems[st] && !seen[st]) { seen[st] = 1; score += 1; }
   });
-
-  /* 3 · a line carrying a number is evidence, and evidence outranks a keyword */
   if (/\d/.test(line)) score += 2;
   return score;
 }
-
-/* stable sort by score, descending — equal scores keep their original order,
-   which matters because chronology inside a role is meaningful */
-function byRelevance(arr, terms, get) {
-  return arr
-    .map(function (v, i) { return { v: v, i: i, s: relevance(get ? get(v) : v, terms) }; })
-    .sort(function (a, b) { return b.s - a.s || a.i - b.i; })
+function byRelevance(arr, terms) {
+  return arr.map(function (v, i) { return { v:v, i:i, s:relevance(v, terms) }; })
+    .sort(function (a,b) { return b.s - a.s || a.i - b.i; })
     .map(function (o) { return o.v; });
 }
-
-function tailorPreview() {
-  var terms = jdTerms();
-  var box = $('tailorNote');
+function splitComma(v) {
+  return (v || '').split(',').map(function (x) { return x.trim(); }).filter(Boolean);
+}
+function strongestEvidence(d, terms) {
+  var out = [];
+  (d.jobs || []).forEach(function (j) {
+    (j.bul || '').split('\n').map(function (x) { return x.trim(); }).filter(Boolean).forEach(function (b, i) {
+      var s = relevance(b, terms);
+      if (s > 0) out.push({ score:s, order:i, bullet:b, role:j.title || 'Role', co:j.co || '' });
+    });
+  });
+  return out.sort(function (a,b) { return b.score-a.score || a.order-b.order; }).slice(0,5);
+}
+function targetCoverage(d, terms) {
+  var txt = allText(d).toLowerCase();
+  return {
+    have: terms.filter(function (k) { return txt.indexOf(k.toLowerCase()) > -1; }),
+    missing: terms.filter(function (k) { return txt.indexOf(k.toLowerCase()) === -1; })
+  };
+}
+function safeTargetPreview() {
+  var terms = jdTerms(), box = $('tailorNote');
   if (!box) return;
   if (!terms.length) {
-    box.innerHTML = '<b>Paste the vacancy above first.</b> The engine needs the employer\u2019s own words before it can put yours in their order.';
+    box.innerHTML = '<b>Paste the vacancy above first.</b> The engine needs the employer\'s own requirements before it can compare them with your CV.';
     $('tailorBtn').disabled = true;
     return;
   }
   $('tailorBtn').disabled = false;
-  var d = snapshot();
-  var hitJobs = 0, hitBul = 0, totalBul = 0;
-  (d.jobs || []).forEach(function (j) {
-    var bl = (j.bul || '').split('\n').filter(function (x) { return x.trim(); });
-    totalBul += bl.length;
-    var h = bl.filter(function (b) { return relevance(b, terms) >= 3; }).length;
-    hitBul += h; if (h) hitJobs++;
-  });
-  box.innerHTML = '<b>' + terms.length + '</b> terms read from the vacancy. '
-    + '<b>' + hitBul + '</b> of your ' + totalBul + ' experience lines already answer at least one of them, across '
-    + hitJobs + ' role' + (hitJobs === 1 ? '' : 's') + '.<br><br>'
-    + 'Tailoring reorders your competencies and the bullets inside each role so those lines are read first. '
-    + '<b>It invents nothing, deletes nothing and rewords nothing</b> \u2014 your roles stay in date order and every line you wrote is still there.';
+  var d = snapshot(), cov = targetCoverage(d, terms), evidence = strongestEvidence(d, terms), adv = val('fJdRole');
+  var ev = evidence.length ? '<br><br><b>Strongest evidence already in your CV:</b><ul style="margin:.55rem 0 0 1.1rem">' + evidence.map(function (e) {
+    return '<li>' + escHtml(e.role + (e.co ? ' · ' + e.co : '')) + ': ' + escHtml(e.bullet) + '</li>';
+  }).join('') + '</ul>' : '<br><br><b>Strongest evidence:</b> none of your current experience bullets clearly overlaps the vacancy yet.';
+  var miss = cov.missing.length ? '<br><br><b>Target terms not yet evidenced:</b> ' + cov.missing.slice(0,8).map(escHtml).join(', ') + '.' : '<br><br><b>Coverage:</b> the main extracted target terms already appear somewhere in your CV.';
+  box.innerHTML = '<b>' + cov.have.length + ' of ' + terms.length + '</b> extracted target terms already appear in your CV.'
+    + (adv ? ' The advertised role is <b>' + escHtml(adv) + '</b>.' : ' Add the advertised role title above if you want the professional headline aligned too.')
+    + ev + miss
+    + '<br><br><b>Safe alignment changes only the professional headline and the order of skills/tools you already supplied.</b> It does not touch your employment history or achievement bullets.';
 }
+function tailorPreview() { safeTargetPreview(); }
 
 function applyTailor() {
   var terms = jdTerms();
   if (!terms.length) return;
-
-  /* snapshot for undo, before anything moves */
-  tailorBackup = {
-    skills: val('fSkills'),
-    title: val('fTitle'),
-    jobs: readJobs().map(function (j) { return { title: j.title, co: j.co, dates: j.dates, loc: j.loc, bul: j.bul }; })
-  };
-
-  /* 1 · competencies, most-asked-for first */
-  var sk = (val('fSkills') || '').split(',').map(function (x) { return x.trim(); }).filter(Boolean);
-  if (sk.length) $('fSkills').value = byRelevance(sk, terms).join(', ');
-
-  /* 2 · bullets inside each role. Roles themselves are NOT reordered —
-         a CV out of date order reads as concealment. */
-  var wraps = jobsEl.querySelectorAll('.roleblk');
-  wraps.forEach(function (w) {
-    var ta = w.querySelector('.j-bul');
-    if (!ta) return;
-    var lines = (ta.value || '').split('\n').map(function (x) { return x.trim(); }).filter(Boolean);
-    if (lines.length > 1) ta.value = byRelevance(lines, terms).join('\n');
-  });
-
-  /* 3 · the advertised title, if given and different. fJdRole was previously
-         collected and never used anywhere \u2014 this is what it is for. */
-  var adv = val('fJdRole');
-  var changedTitle = false;
-  if (adv && adv.toLowerCase() !== (val('fTitle') || '').toLowerCase()) {
-    $('fTitle').value = adv; changedTitle = true;
-  }
-
-  render(); save(); tailorPreview();
-  var box = $('tailorNote');
-  box.innerHTML = '<b>Reordered.</b> Competencies and the bullets inside each role now lead with what this employer asked for'
-    + (changedTitle ? ', and your target title now matches the advertised role' : '')
-    + '. Nothing was invented, deleted or reworded. <b>Check every line still reads as yours before you export.</b>';
+  tailorBackup = { title: val('fTitle'), skills: val('fSkills'), tools: val('fTools') };
+  var adv = val('fJdRole').trim();
+  if (adv) $('fTitle').value = adv;
+  var sk = splitComma(val('fSkills'));
+  if (sk.length > 1) $('fSkills').value = byRelevance(sk, terms).join(', ');
+  var tl = splitComma(val('fTools'));
+  if (tl.length > 1) $('fTools').value = byRelevance(tl, terms).join(', ');
+  render(); save(); safeTargetPreview();
   $('untailorBtn').style.display = '';
-  $('tailorBtn').textContent = 'Re-run the reorder';
+  $('tailorBtn').textContent = 'Re-apply safe target alignment';
+  $('tailorNote').insertAdjacentHTML('afterbegin','<b>Aligned safely.</b> Your target headline, skills and tools now lead with the employer-relevant items. Your job history and achievement bullets were not edited.<br><br>');
 }
-
 function undoTailor() {
   if (!tailorBackup) return;
-  $('fSkills').value = tailorBackup.skills;
   $('fTitle').value = tailorBackup.title;
-  var wraps = jobsEl.querySelectorAll('.roleblk');
-  wraps.forEach(function (w, i) {
-    var j = tailorBackup.jobs[i]; if (!j) return;
-    var ta = w.querySelector('.j-bul'); if (ta) ta.value = j.bul;
-  });
+  $('fSkills').value = tailorBackup.skills;
+  $('fTools').value = tailorBackup.tools;
   tailorBackup = null;
-  render(); save(); tailorPreview();
+  render(); save(); safeTargetPreview();
   $('untailorBtn').style.display = 'none';
-  $('tailorBtn').textContent = 'Reorder my CV for this role';
-  $('tailorNote').innerHTML = '<b>Restored.</b> Your original order is back.';
+  $('tailorBtn').textContent = 'Apply safe target alignment';
+  $('tailorNote').insertAdjacentHTML('afterbegin','<b>Restored.</b> Your headline, skills and tools are back to their pre-alignment values.<br><br>');
 }
 
 /* ─────────────────────── EXPORT ─────────────────────── */
@@ -912,6 +874,7 @@ FIELDS.forEach(function (f) {
 $('btnAddJob').addEventListener('click', function () { addJob(); });
 $('btnParse').addEventListener('click', parseCv);
 $('btnJd').addEventListener('click', function () { runJd(); render(); save(); });
+$('fJdRole').addEventListener('input', function () { safeTargetPreview(); });
 $('tailorBtn').addEventListener('click', applyTailor);
 $('untailorBtn').addEventListener('click', undoTailor);
 $('btnPdf').addEventListener('click', function () { window.print(); });

@@ -41,7 +41,7 @@
         },
         {
             key: 'g-start', label: 'Your Starting Line', href: 'starthere.html', keys: ['startline'], children: [
-                { label: 'Find Your Leak · Start here first', href: 'diagnose/', keys: ['diagnose'] },
+                { label: 'CV Engine Pass · ₦5,000 for 30 days', href: 'cvbuilder.html', keys: ['cvpass'] },
                 { label: 'Self-Learn Pack · Stages 1–4', href: 'selflearn/', keys: ['selflearn'] },
                 { label: 'Foundation Training · Stages 1–4', href: 'foundationtraining/', keys: ['mastery'] },
                 { label: 'Job Application DFY · Done-For-You', href: 'jobapplication/', keys: ['remote'] },

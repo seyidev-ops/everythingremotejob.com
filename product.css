@@ -37,6 +37,9 @@ html[data-theme="day"]{
   --card-line:rgba(10,10,10,0.10); --wa:#E8470F; --wa-ink:#ffffff;
   --grid-dot:rgba(10,10,10,0.05);
 }
+/* canvas guard */
+html{background:#000000;}
+html[data-theme="day"]{background:#FAFAF8;}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
 
 /* Shared accessibility primitive — was previously only defined in

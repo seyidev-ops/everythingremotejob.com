@@ -17,6 +17,19 @@ It is a deployment repository, not a changelog. This README describes only the w
 
 The public website combines free diagnostic resources, live training, self-paced learning, done-for-you job application services and private 1:1 support.
 
+## Current first-contact journey
+
+Cold or uncertain visitors should not be asked to choose among ERJ products first. The current acquisition path is:
+
+1. **Your Starting Line** — `starting-line.html` is the default cold-traffic destination for social posts, ads, QR codes, generic learn-more links and first-contact campaigns.
+2. **Find Your Leak** — the free Four-Point diagnostic identifies the earliest failing point: Supply, Representation, Aim or Conversion.
+3. **Free first action** — the visitor receives a useful next move before any paid recommendation.
+4. **AUDIT on WhatsApp** — optional human review when the visitor wants ERJ to inspect the evidence.
+5. **Correct ERJ door** — only after diagnosis should the smallest suitable paid route be introduced.
+6. **Register/payment** — the register page supports a decision already made; it is not the default first-contact page.
+
+The homepage remains the institutional ERJ ecosystem. Its first screen nevertheless prioritises **Find my leak — free**, with the wider site available as the secondary path.
+
 ## Current Cohort 10 campaign
 
 - **Enrolment closes:** Sunday, 30 August 2026 · 8:00 PM WAT
@@ -72,6 +85,10 @@ The website should route a prospect through **COHORT FIT** before the reservatio
 - Application-first
 - Admission is confirmed before payment
 - Operates one-on-one rather than on the Cohort 10 countdown
+
+## CV Engine targeting rule
+
+The CV Builder treats a job description as a **comparison and positioning surface**, not as permission to rewrite employment history. Automatic target alignment may set the professional headline to the advertised role and reorder skills/tools already supplied by the participant. It must not automatically change employers, employment dates, historical job titles, achievement wording or the order of experience bullets. Missing target terms are shown as missing unless the participant explicitly confirms that they genuinely possess the skill/tool.
 
 ## Current payment routes
 

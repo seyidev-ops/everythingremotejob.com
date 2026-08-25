@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="night">
-<head>
-<meta charset="UTF-8">
 
-
-<link rel="manifest" href="manifest.json">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32-dark.png" media="(prefers-color-scheme: dark)">
-<link rel="icon" type="image/png" sizes="64x64" href="favicon32.png">
-
-
-<link rel="apple-touch-icon" href="appletouchicon.png">
-<meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#000000" id="metaThemeColor">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html data-theme="night" lang="en">
+<head><style id="erjCanvasGuard">html{background:#000000}html[data-theme="day"]{background:#FAFAF8}</style>
+<meta charset="utf-8"/>
+<link href="manifest.json" rel="manifest"/>
+<link href="favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
+<link href="favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
+<link href="favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
+<link href="appletouchicon.png" rel="apple-touch-icon"/>
+<meta content="#FAFAF8" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#000000" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="#000000" id="metaThemeColor" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Offline | ERJ Training</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/></noscript>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{--paper:#000000;--ink:#FFFFFF;--ink-soft:#A1A1A1;--ink-faint:#858585;--accent:#FF5722;--line:rgba(255,255,255,0.10);}
@@ -34,23 +31,23 @@ p{color:var(--ink-soft);font-size:0.95rem;line-height:1.7;margin-bottom:2rem;}
 .btn:hover{filter:brightness(1.08);transform:translateY(-2px);}
 .hint{margin-top:1.5rem;font-size:0.78rem;color:var(--ink-faint);}
 </style>
-<meta property="og:image" content="https://everythingremotejob.com/preview-portal.jpg" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Everything Remote Job" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:image" content="https://everythingremotejob.com/preview-portal.jpg" />
+<meta content="https://everythingremotejob.com/preview-portal.jpg" property="og:image">
+<meta content="website" property="og:type">
+<meta content="Everything Remote Job" property="og:site_name">
+<meta content="summary_large_image" name="twitter:card">
+<meta content="https://everythingremotejob.com/preview-portal.jpg" name="twitter:image">
 <style id="erjHideLegacy">#themeDropdown,.theme-drop,.theme-drop-menu,#themeMenu,#erjTheme{display:none !important;}</style>
-  <meta name="robots" content="noindex,nofollow">
-</head>
+<meta content="noindex,nofollow" name="robots"/>
+</meta></meta></meta></meta></meta></head>
 <body>
 <div id="erjNavMount"></div>
 <script>window.ERJ_NAV={active:'home'};</script>
 <div class="wrap">
-  <div class="badge"><span class="mark"></span> No Connection</div>
-  <h1>You're offline</h1>
-  <p>It looks like you've lost your internet connection. Your progress and downloaded materials are still available.</p>
-  <a href="/dashboard.html" class="btn">&larr; Back to Dashboard</a>
-  <p class="hint">Once you're back online, the app will sync automatically.</p>
+<div class="badge"><span class="mark"></span> No Connection</div>
+<h1>You're offline</h1>
+<p>It looks like you've lost your internet connection. Your progress and downloaded materials are still available.</p>
+<a class="btn" href="/dashboard.html">← Back to Dashboard</a>
+<p class="hint">Once you're back online, the app will sync automatically.</p>
 </div>
 <script>
 (function(){var s=localStorage.getItem('rjt-theme');if(s&&s!=='system')document.documentElement.setAttribute('data-theme',s==='night'?'night':'day');else if(s==='system')document.documentElement.setAttribute('data-theme',window.matchMedia('(prefers-color-scheme: light)').matches?'day':'night');else document.documentElement.setAttribute('data-theme','night');})();
@@ -140,7 +137,6 @@ p{color:var(--ink-soft);font-size:0.95rem;line-height:1.7;margin-bottom:2rem;}
 })();
 </script>
 <!-- ===== /Unified Theme Control ===== -->
-
-<script src="erj-nav.js" defer></script>
+<script defer="" src="erj-nav.js"></script>
 </body>
 </html>

@@ -158,6 +158,10 @@ Small interface derivatives such as the 128px marks, favicons and app icons exis
 - Display: Space Grotesk
 - Body: Inter
 
+## GitHub social preview
+
+The current repository social-preview artwork is `github-social-preview.png` (1280 × 640). In GitHub, upload this file under **Settings → General → Social preview**. Keeping the file in the repository does not set the GitHub preview automatically; the Settings upload is a one-time repository configuration step.
+
 ## Deployment
 
 This ZIP is intended to be deployed directly to the GitHub Pages repository root.

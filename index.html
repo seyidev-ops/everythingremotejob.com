@@ -1013,7 +1013,8 @@ h1,h2,h3,h4,.ask,.cost-h,.rung-title,.shelf-title,.fb-title,.pledge-h,.joint-t,.
     gap:clamp(2rem,5vw,4rem);
     align-items:start;
   }
-  .first-contact h1{max-width:12ch;margin-bottom:1rem;}
+  .first-contact h1{max-width:16ch;margin-bottom:1rem;font-size:clamp(2.35rem,6vw,4.3rem);}
+  @media(max-width:620px){.first-contact h1{max-width:14ch;font-size:clamp(2.1rem,9vw,2.8rem);}}
   .first-contact .fc-lede{max-width:58ch;font-size:clamp(1.03rem,1.9vw,1.3rem);line-height:1.65;color:var(--ink-soft);margin:0 0 1.6rem;}
   .fc-actions{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center;}
   .fc-note{margin-top:1.15rem;font-size:.79rem;line-height:1.6;color:var(--ink-faint);max-width:62ch;}
@@ -1120,23 +1121,24 @@ h1,h2,h3,h4,.ask,.cost-h,.rung-title,.shelf-title,.fb-title,.pledge-h,.joint-t,.
     .fc-proof-row span,
     .sl-sidecard-row span{font-size:.84rem;}
   }
-</style></head>
+</style>
+<link rel="stylesheet" href="erj-buttons.css"/></head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NMFHS59B" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <div id="erjNavMount"></div>
-<script>window.ERJ_NAV={active:'home',tourTitle:'A quick tour — or jump anywhere',tourSkip:{label:'Explore the ERJ ecosystem',href:'#facilitator'},onPage:[{label:'Start with clarity',href:'#start',sub:'Four questions to show what needs attention first'},{label:'Meet Your Facilitator',href:'#facilitator',sub:'Why this system exists, in his own words'},{label:'What We Can Do For You',href:'#promise',sub:'Become hireable, represented and aimed at global employers — from right where you are'},{label:'Four Problem · Fix It',href:'#joints',sub:'The pipeline model — find where yours is leaking'},{label:'Your Starting Line',href:'starthere.html',sub:'A simple place to begin, whether you are new or already applying'},{label:'Free For You',href:'#free',sub:'The CV scan, the clinic, the blog and the job board — all free'},{label:'Proof It Works',href:'#story',sub:'Documented outcomes and case studies'},{label:'The Promise',href:'#pledge',sub:'Persistence, never a promised date'},{label:'Before You Decide',href:'#faq',sub:'The questions everyone asks first'},{label:'Cohort 10',href:'#timers',sub:'Enrolment closes Sunday 30 August · 8:00 PM WAT'}]};</script>
+<script>window.ERJ_NAV={active:'home',tourTitle:'A quick tour — or jump anywhere',tourSkip:{label:'Explore the ERJ ecosystem',href:'#facilitator'},onPage:[{label:'Start Your Search With Clarity',href:'#start',sub:'Four questions to show what needs attention first'},{label:'Meet Your Facilitator',href:'#facilitator',sub:'Why this system exists, in his own words'},{label:'What We Can Do For You',href:'#promise',sub:'Become hireable, represented and aimed at global employers — from right where you are'},{label:'Four Problem · Fix It',href:'#joints',sub:'The pipeline model — find where yours is leaking'},{label:'Your Starting Line',href:'starthere.html',sub:'A simple place to begin, whether you are new or already applying'},{label:'Free For You',href:'#free',sub:'The CV scan, the clinic, the blog and the job board — all free'},{label:'Proof It Works',href:'#story',sub:'Documented outcomes and case studies'},{label:'The Promise',href:'#pledge',sub:'Persistence, never a promised date'},{label:'Before You Decide',href:'#faq',sub:'The questions everyone asks first'},{label:'Cohort 10',href:'#timers',sub:'Enrolment closes Sunday 30 August · 8:00 PM WAT'}]};</script>
 <main>
 <a aria-label="We will not let you go until you're hired." class="pledge-marq" href="#pledge"><span>We will not let you go <em>until you're hired.</em></span></a><section class="wrap first-contact" id="start">
 <div class="first-contact-grid">
 <div>
 <p class="section-label"><span class="mark"></span> Your Starting Line</p>
-<h1>Start With <em>Clarity.</em></h1>
+<h1>Start your remote job search <em>with clarity.</em></h1>
 <p class="fc-lede">Whether you are just beginning, applying without replies, or getting interviews without offers, start by seeing what needs attention first. Four questions. About 90 seconds. One clear starting point.</p>
 <div class="fc-actions">
 <a class="btn-yes btn-primary-ui" href="diagnose/"><span>Find My Starting Point — Free</span><span class="arrow-wrap"><span class="arrow">→</span></span></a>
-<a class="btn-more btn-secondary-ui" href="#facilitator"><span>Explore Everything Remote Job</span><span class="arrow-wrap"><span class="arrow">↓</span></span></a>
+<a class="btn-more btn-secondary-ui" href="#facilitator"><span>Explore Everything Remote Job</span><span class="arrow-wrap"><span class="arrow is-down">↓</span></span></a>
 </div>
 <p class="fc-note"><strong>You May Not Need To Buy Anything.</strong> If your best next step is something you can fix yourself, we will show you that first.</p>
 </div>
@@ -1184,8 +1186,8 @@ h1,h2,h3,h4,.ask,.cost-h,.rung-title,.shelf-title,.fb-title,.pledge-h,.joint-t,.
 <h1 class="ask">Become <em>hireable and represented</em> for global remote work — from right where you are.</h1>
 <p class="ask-sub">You do not need to relocate. You need career assets a global employer can read, an aimed search and the judgement to convert the opportunity when it comes. ERJ is accountable for readiness and representation; we do not control the market's timing. <strong>Cohort 10 closes 30 August.</strong></p>
 <div class="answers">
-<a class="btn-yes pulse" href="#enrol">Show me how <span class="arrow">→</span></a>
-<a class="btn-more" href="#cost">Continue the tour ↓</a>
+<a class="btn-yes btn-primary-ui pulse" href="#enrol"><span>Show Me How</span><span class="arrow-wrap"><span class="arrow">→</span></span></a>
+<a class="btn-more btn-secondary-ui" href="#cost"><span>Continue The Tour</span><span class="arrow-wrap"><span class="arrow is-down">↓</span></span></a>
 </div>
 <div class="scroll-hint">Refined after every cohort — here's the proof</div>
 </section>
@@ -1467,8 +1469,8 @@ h1,h2,h3,h4,.ask,.cost-h,.rung-title,.shelf-title,.fb-title,.pledge-h,.joint-t,.
 <h2 class="final-h">Enrolment closes <em>30 August.</em> Cohort 10 begins 31 August. Will you be in it?</h2>
 <p class="final-p">If you need the full live build and can give the programme the work it requires, Cohort 10 is the current door. If you are not sure, do not guess — run the free diagnosis and message <strong>AUDIT</strong> before you pay.</p>
 <div class="answers">
-<a class="btn-yes pulse" href="register.html">Register now <span class="arrow">→</span></a>
-<a class="btn-more" href="diagnose/">Run the free diagnosis first</a>
+<a class="btn-primary-ui btn-yes pulse" href="register.html"><span>Register Now</span><span class="arrow-wrap"><span class="arrow">→</span></span></a>
+<a class="btn-more btn-secondary-ui" href="diagnose/"><span>Run the Free Diagnosis First</span><span class="arrow-wrap"><span class="arrow">→</span></span></a>
 </div>
 <div class="final-note">Enrolment open now · Secured by Paystack · Our promise applies</div>
 </div>
@@ -1476,7 +1478,7 @@ h1,h2,h3,h4,.ask,.cost-h,.rung-title,.shelf-title,.fb-title,.pledge-h,.joint-t,.
 </main>
 <div aria-hidden="true" class="sticky-cta" id="stickyCta" inert="">
 <div class="s-txt"><strong>Enrolment closes 30 Aug</strong><span>Cohort 10 starts Mon 31 Aug</span></div>
-<a class="btn-yes" href="register.html">Register now →</a>
+<a class="btn-primary-ui btn-yes" href="register.html"><span>Register Now</span><span class="arrow-wrap"><span class="arrow">→</span></span></a>
 </div>
 <footer class="foot wrap">
 <nav class="foot-links"><a href="index.html">Home</a><a href="starthere.html">Your Starting Line</a><a href="free.html">Free For You</a><a href="blog.html">Blog</a><a href="blog/">Blog Archive</a><a href="register.html">Register</a><a href="login.html">Participant Login</a></nav>

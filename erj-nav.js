@@ -4,7 +4,7 @@
    Compile: tsc erj-nav.ts --target es2017 --outFile erj-nav.js
 
    FIVE top-level items, everywhere:
-     Home · Free For You ▾ · Your Starting Line ▾ ·
+     Home · Your Starting Line ▾ · Free For You ▾ ·
      Success Stories · Register
    Categories expand as accordions. The page you are ON is
    never listed as a plain standalone link — it renders as a
@@ -29,7 +29,7 @@
     const WA_CHANNEL = 'https://whatsapp.com/channel/0029Vaym4DE3mFY2wCrC713S';
     /* ── The five items. Each group's title is itself the link to its
           page; the chevron opens the sub-menu. Titles only — detail lives
-          on the Free For You and Your Starting Line pages. ── */
+          on the Your Starting Line and Free For You pages. ── */
     const MENU = [
         {
             key: 'home', label: 'Home', href: 'index.html', keys: ['home'], children: [
@@ -41,20 +41,21 @@
             ]
         },
         {
+            key: 'g-start', label: 'Your Starting Line', href: 'starthere.html', keys: ['startline'], children: [
+                { label: 'Find Your Leak · Start here first', href: 'diagnose/', keys: ['diagnose'] },
+                { label: 'Self-Learn Pack · Stages 1–4', href: 'selflearn/', keys: ['selflearn'] },
+                { label: 'Foundation Training · Stages 1–4', href: 'foundationtraining/', keys: ['mastery'] },
+                { label: 'Job Application DFY · Done-For-You', href: 'jobapplication/', keys: ['remote'] },
+                { label: 'Inner Circle · Private 1:1', href: 'innercircle/', keys: ['inner'] }
+            ]
+        },
+        {
             key: 'g-free', label: 'Free For You', href: 'free.html', keys: ['free'], children: [
                 { label: 'Find Your Leak · 4-point diagnostic', href: 'diagnose/', keys: ['diagnose'] },
                 { label: '10-Point CV Self-Scan', href: 'cvscan/', keys: ['cvscan'] },
                 { label: 'Free Live Masterclass', href: 'masterclass/', keys: ['masterclass'] },
                 { label: 'Remote Career Blog', href: 'blog.html', keys: ['blog'] },
                 { label: 'Global Job Board · WhatsApp', href: WA_CHANNEL, external: true }
-            ]
-        },
-        {
-            key: 'g-start', label: 'Your Starting Line', href: 'starting-line.html', keys: ['startline'], children: [
-                { label: 'Self-Learn Pack · Stages 1\u20134', href: 'selflearn/', keys: ['selflearn'] },
-                { label: 'Foundation Training · Stages 1–4', href: 'foundationtraining/', keys: ['mastery'] },
-                { label: 'Job Application DFY · Done-For-You', href: 'jobapplication/', keys: ['remote'] },
-                { label: 'Inner Circle · Residency', href: 'innercircle/', keys: ['inner'] }
             ]
         },
         { key: 'stories', label: 'Success Stories', href: 'testimonials.html', keys: ['stories', 'jobs'] },

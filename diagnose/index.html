@@ -64,13 +64,111 @@
    clear the large-text bar so it is compliant while it is on screen. */
 .skip-link,.skip{font-size:1.18rem!important;font-weight:700!important;}
 </style>
+<style id="erjDiagnosePanel">
+  /* ══ THE QUESTION PANEL ════════════════════════════════════════════
+     The single complaint about this page was that you could not tell
+     where the questions were. Everything below exists to answer that:
+     a framed instrument with an orange edge, a step counter that is
+     visible before the first question loads, and answer rows that look
+     tappable when nothing is hovering them. ── */
+  .dx-hero-cta{margin-top:2rem;}
+  .dx-handoff{margin-top:1.6rem;}
+
+  .dx-frame{
+    margin-top:1.8rem;
+    border:1px solid var(--card-line);
+    border-top:3px solid var(--accent);
+    border-radius:16px;
+    background:var(--card);
+    overflow:hidden;
+    box-shadow:0 18px 44px rgba(0,0,0,.10);
+    scroll-margin-top:96px;
+  }
+  .dx-frame-top{
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;
+    padding:.85rem clamp(1.1rem,3vw,1.7rem);
+    border-bottom:1px solid var(--line-soft);
+    background:var(--paper-2);
+  }
+  .dx-frame-k{
+    font-family:var(--font-display);font-size:.66rem;font-weight:700;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--accent);
+  }
+  .dx-dots{display:inline-flex;gap:.4rem;}
+  .dx-dots i{
+    width:7px;height:7px;border-radius:50%;
+    background:var(--line);display:block;transition:background .3s ease;
+  }
+  .dx-frame .dx{
+    margin-top:0;border:0;border-radius:0;background:transparent;box-shadow:none;
+  }
+  .dx-frame .dx-progress{height:5px;background:var(--line-soft);}
+  .dx-frame .dx-step{padding:clamp(1.5rem,4vw,2.4rem);}
+
+  /* the question itself, larger and unmissable */
+  .dx-count{
+    display:inline-flex;align-items:center;
+    font-size:.66rem!important;font-weight:700;letter-spacing:.18em;
+    border:1px solid var(--accent);border-radius:999px;
+    padding:.32rem .75rem;margin-bottom:1rem!important;
+  }
+  .dx-q{font-size:clamp(1.35rem,3.4vw,2.05rem)!important;line-height:1.2!important;}
+  .dx-why{font-size:.88rem!important;margin-bottom:1.7rem!important;}
+
+  /* Answer rows read as controls at rest, not only on hover. */
+  .dx-answers{gap:.7rem!important;}
+  .dx-a{
+    padding:1.05rem 1.15rem!important;
+    border:1px solid var(--line)!important;
+    border-radius:12px!important;
+    background:var(--paper-2)!important;
+    min-height:64px;
+    transition:border-color .2s ease,background-color .2s ease,transform .2s ease;
+  }
+  .dx-a-t{font-size:1rem!important;font-weight:500;}
+  .dx-a-x{
+    opacity:1!important;
+    width:2rem;height:2rem;flex:0 0 2rem;border-radius:999px;
+    display:inline-flex;align-items:center;justify-content:center;
+    background:rgba(255,87,34,.12);color:var(--accent);
+    transition:background-color .2s ease,transform .2s ease;
+  }
+  .dx-a:hover,.dx-a:focus-visible{
+    border-color:var(--accent)!important;
+    background:rgba(255,87,34,.07)!important;
+    transform:translateX(2px);
+  }
+  .dx-a:hover .dx-a-x,.dx-a:focus-visible .dx-a-x{
+    background:var(--accent);color:#fff;transform:translateX(3px);
+  }
+  .dx-a:active{transform:scale(.995);}
+  @media (hover:none){
+    .dx-a:hover{border-color:var(--line)!important;background:var(--paper-2)!important;transform:none;}
+    .dx-a:hover .dx-a-x{background:rgba(255,87,34,.12);color:var(--accent);transform:none;}
+    .dx-a:active{border-color:var(--accent)!important;background:rgba(255,87,34,.09)!important;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .dx-a,.dx-a-x,.dx-dots i{transition:none;}
+    .dx-a:hover,.dx-a:focus-visible{transform:none;}
+  }
+
+  .dx-back{margin-top:1.5rem!important;font-size:.86rem;}
+
+  /* the result keeps its own frame once the questions are done */
+  .dx-result{scroll-margin-top:96px;}
+
+  @media(max-width:620px){
+    .dx-frame{border-radius:14px;}
+    .dx-a{padding:.95rem 1rem!important;}
+  }
+</style>
 <link rel="stylesheet" href="../erj-buttons.css"/></head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-NMFHS59B" style="display:none;visibility:hidden" width="0"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<a class="skip-link" href="#dx">Skip to the diagnostic</a>
-<div aria-label="Our promise" class="pledge-marq"><span>We will not let you go until you’re hired.</span></div>
+<a class="skip-link" href="#dx">Skip to the four questions</a>
+<div aria-label="Why this page exists" class="pledge-marq"><span>Until you know where to begin, <em>you might be moving in circles.</em></span></div>
 <main>
 <!-- ── HERO ───────────────────────────────────────────────── -->
 <section class="hero wrap">
@@ -82,21 +180,14 @@
 <div><div class="stat-num">1</div><div class="stat-lbl">Answer that matters</div></div>
 <div><div class="stat-num">0</div><div class="stat-lbl">Payment required</div></div>
 </div>
-</section>
-<!-- ── DIAGNOSTIC ─────────────────────────────────────────── -->
-<section class="section-line wrap" id="dx">
-<div class="section-label"><span class="mark"></span>The diagnostic</div>
-<h2>Answer honestly. <span>Nobody is watching.</span></h2>
-<p class="section-sub">There are no wrong answers and no scoring against other people. The questions only sort your situation into one of the four points below.</p>
-<div class="dx" id="dxBox">
-<div class="dx-progress"><span id="dxBar" style="width:0%"></span></div>
-<div class="dx-step" id="dxStep"></div>
+<div class="erj-actions dx-hero-cta">
+<a class="btn-yes btn-primary-ui" href="#dx"><span>Start The 4 Questions</span><span class="arrow-wrap"><span class="arrow is-down">↓</span></span></a>
+<a class="btn-more btn-secondary-ui" href="#four"><span>Show Me How It Works First</span><span class="arrow-wrap"><span class="arrow is-down">↓</span></span></a>
 </div>
-<div class="dx-result" hidden="" id="dxResult"></div>
 </section>
-<!-- ── THE FOUR, EXPLAINED ────────────────────────────────── -->
+<!-- ── FIRST: THE MODEL ───────────────── -->
 <section class="section-line wrap reveal" id="four">
-<div class="section-label"><span class="mark"></span>The model</div>
+<div class="section-label"><span class="mark"></span>First · how this works</div>
 <h2>Four points. <span>One leak.</span></h2>
 <p class="section-sub">A pipe does not usually burst along its length. It fails at a joint. Every remote job search runs on these same four, in this order — and when it is not producing offers, the fault is almost always at one of them.</p>
 <div aria-hidden="true" class="pipe">
@@ -156,7 +247,27 @@
 </div>
 </div>
 </div>
-<p class="joints-close reveal"><b>Fix one at a time.</b> The most common mistake is trying to repair all four at once and finishing none of them. Your diagnostic above names the one to start with.</p>
+<p class="joints-close reveal"><b>Fix one at a time.</b> The most common mistake is trying to repair all four at once and finishing none of them. The four questions below name the one to start with.</p>
+<div class="erj-actions dx-handoff">
+<a class="btn-yes btn-primary-ui" href="#dx"><span>I Understand — Start The Questions</span><span class="arrow-wrap"><span class="arrow is-down">↓</span></span></a>
+</div>
+</section>
+<!-- ── SECOND: THE QUESTIONS ───────────── -->
+<section class="section-line wrap" id="dx">
+<div class="section-label"><span class="mark"></span>Second · the four questions</div>
+<h2>Answer honestly. <span>Nobody is watching.</span></h2>
+<p class="section-sub">There are no wrong answers and no scoring against anyone else. These four questions only sort your situation into one of the four points above. About ninety seconds, and nothing is uploaded or stored.</p>
+<div class="dx-frame">
+<div class="dx-frame-top">
+<span class="dx-frame-k">The diagnostic</span>
+<span class="dx-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+</div>
+<div class="dx" id="dxBox">
+<div class="dx-progress"><span id="dxBar" style="width:0%"></span></div>
+<div class="dx-step" id="dxStep"></div>
+</div>
+</div>
+<div class="dx-result" hidden="" id="dxResult"></div>
 </section>
 </main>
 <footer class="foot wrap">
@@ -167,11 +278,11 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
 </a>
 <script>window.ERJ_NAV={active:'diagnose',base:'../',onPage:[
-  {label:'Run the diagnostic',href:'#dx'},
-  {label:'The four points explained',href:'#four'}
+  {label:'How This Works',href:'#four',sub:'The four points, and why only one of them is yours'},
+  {label:'The 4 Questions',href:'#dx',sub:'About 90 seconds · instant result · nothing stored'}
 ]};</script>
 <script src="../erj-theme.js"></script>
-<script src="../erj-nav.js?site=20260825"></script>
+<script src="../erj-nav.js?site=20260825b"></script>
 <script src="../erj-config.js"></script>
 <script src="../erj-capture.js?v=126"></script>
 <script src="report-pdf.js?v=126"></script>

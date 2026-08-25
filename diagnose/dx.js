@@ -136,6 +136,12 @@
     const barEl = document.getElementById('dxBar');
     const resultEl = document.getElementById('dxResult');
     const boxEl = document.getElementById('dxBox');
+    const dots = Array.from(document.querySelectorAll('.dx-dots i'));
+    function paintDots(n) {
+        dots.forEach(function (d, i) {
+            d.style.background = i <= n ? 'var(--accent)' : 'var(--line)';
+        });
+    }
     if (!stepEl || !barEl || !resultEl || !boxEl)
         return;
     function esc(s) {
@@ -144,6 +150,7 @@
     function renderStep() {
         const q = QUESTIONS[step];
         barEl.style.width = Math.round((step / QUESTIONS.length) * 100) + '%';
+        paintDots(step);
         stepEl.innerHTML =
             '<div class="dx-count">Question ' + (step + 1) + ' of ' + QUESTIONS.length + '</div>' +
                 '<h3 class="dx-q">' + esc(q.q) + '</h3>' +
@@ -249,9 +256,9 @@
                 '<div class="dxr-tonight"><div class="dxr-k">One useful step before we reply</div><ol><li>' + esc(j.tonight[0]) + '</li></ol></div>' +
                 '<div class="dxr-doors">' +
                 '<div class="dxr-door"><div class="dxr-door-k">Free door</div><p>' + esc(j.free.text) + '</p>' +
-                '<a class="btn-more dx-rec" data-rec="free-' + key + '" href="' + j.free.href + '"' + (j.free.href.indexOf('http') === 0 ? ' target="_blank" rel="noopener"' : '') + '>' + esc(j.free.label) + ' →</a></div>' +
+                '<a class="btn-more btn-secondary-ui dx-rec" data-rec="free-' + key + '" href="' + j.free.href + '"' + (j.free.href.indexOf('http') === 0 ? ' target="_blank" rel="noopener"' : '') + '><span>' + esc(j.free.label) + '</span><span class="arrow-wrap"><span class="arrow">\u2192</span></span></a></div>' +
                 '<div class="dxr-door"><div class="dxr-door-k">Paid door, only if it fits</div><p>' + esc(j.paid.text) + '</p>' +
-                '<a class="btn-more dx-rec" data-rec="paid-' + key + '" href="' + j.paid.href + '">' + esc(j.paid.label) + ' →</a></div>' +
+                '<a class="btn-yes btn-primary-ui dx-rec" data-rec="paid-' + key + '" href="' + j.paid.href + '"><span>' + esc(j.paid.label) + '</span><span class="arrow-wrap"><span class="arrow">\u2192</span></span></a></div>' +
                 '</div>' +
                 '<div class="cr-actions dxr-reset"><button type="button" class="cap-btn ghost" id="dxRedo">Start again</button></div>';
         resultEl.scrollIntoView({ behavior: 'smooth', block: 'start' });

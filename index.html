@@ -1004,22 +1004,121 @@ h1,h2,h3,h4,.ask,.cost-h,.rung-title,.shelf-title,.fb-title,.pledge-h,.joint-t,.
 </style>
 </meta></meta></meta></meta>
 <style id="erjFirstContact">
+  /* ===== HERO BALANCE ===== */
   .first-contact{padding-top:clamp(3rem,8vw,6rem);padding-bottom:clamp(3.2rem,8vw,5.8rem);}
-  .first-contact-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(260px,.55fr);gap:clamp(2rem,7vw,5.5rem);align-items:end;}
+  .first-contact-grid,
+  .sl-hero-wrap{
+    display:grid;
+    grid-template-columns:minmax(0,1.05fr) minmax(320px,.95fr);
+    gap:clamp(2rem,5vw,4rem);
+    align-items:start;
+  }
   .first-contact h1{max-width:12ch;margin-bottom:1rem;}
   .first-contact .fc-lede{max-width:58ch;font-size:clamp(1.03rem,1.9vw,1.3rem);line-height:1.65;color:var(--ink-soft);margin:0 0 1.6rem;}
-  .fc-actions{display:flex;gap:.85rem;flex-wrap:wrap;align-items:center;}
-  .fc-note{margin-top:1rem;font-size:.79rem;line-height:1.6;color:var(--ink-faint);max-width:62ch;}
-  .fc-proof{border-left:1px solid var(--line);padding-left:clamp(1.2rem,3vw,2rem);display:grid;gap:1.05rem;}
-  .fc-proof-row{padding-bottom:1rem;border-bottom:1px solid var(--line-soft);}
-  .fc-proof-row:last-child{border-bottom:0;padding-bottom:0;}
-  .fc-proof b{font-family:var(--font-display);font-size:1rem;color:var(--ink);display:block;margin-bottom:.16rem;}
-  .fc-proof span{font-size:.78rem;color:var(--ink-soft);line-height:1.45;display:block;}
-  @media(max-width:760px){
-    .first-contact-grid{grid-template-columns:1fr;gap:2rem;}
-    .fc-proof{border-left:0;border-top:1px solid var(--line);padding:1.25rem 0 0;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;}
-    .fc-actions{flex-direction:column;align-items:stretch;}
-    .fc-actions .btn-yes,.fc-actions .btn-more{width:100%;justify-content:center;}
+  .fc-actions{display:flex;gap:.9rem;flex-wrap:wrap;align-items:center;}
+  .fc-note{margin-top:1.15rem;font-size:.79rem;line-height:1.6;color:var(--ink-faint);max-width:62ch;}
+  .fc-note strong{color:var(--ink-soft);font-weight:600;}
+
+  .fc-proof-card,
+  .sl-sidecard{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:clamp(1.25rem,3vw,2rem);
+    display:grid;
+    gap:1rem;
+    box-shadow:0 14px 34px rgba(0,0,0,.06);
+  }
+  .fc-proof-row,
+  .sl-sidecard-row{
+    padding-bottom:1rem;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .fc-proof-row:last-child,
+  .sl-sidecard-row:last-child{
+    padding-bottom:0;
+    border-bottom:0;
+  }
+  .fc-proof-row b,
+  .sl-sidecard-row b{
+    display:block;
+    font-family:var(--font-display);
+    font-size:1.02rem;
+    color:var(--ink);
+    margin-bottom:.2rem;
+  }
+  .fc-proof-row span,
+  .sl-sidecard-row span{
+    display:block;
+    font-size:.88rem;
+    line-height:1.55;
+    color:var(--ink-soft);
+  }
+
+  /* ===== BUTTON UPGRADE ===== */
+  .btn-primary-ui,
+  .btn-secondary-ui{
+    min-height:64px;
+    padding:1rem 1.45rem;
+    border-radius:999px;
+    font-size:1.04rem;
+    font-weight:700;
+    letter-spacing:-0.01em;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:.75rem;
+    transition:transform .22s ease,box-shadow .22s ease,background-color .22s ease,border-color .22s ease,color .22s ease;
+  }
+  .btn-primary-ui{box-shadow:0 10px 24px rgba(255,87,34,.18);}
+  .btn-primary-ui:hover{transform:translateY(-2px);box-shadow:0 16px 34px rgba(255,87,34,.24);}
+  .btn-secondary-ui{background:var(--card);box-shadow:0 7px 18px rgba(0,0,0,.04);}
+  .btn-secondary-ui:hover{transform:translateY(-2px);background:rgba(255,87,34,.06);border-color:rgba(255,87,34,.35);box-shadow:0 12px 24px rgba(0,0,0,.07);}
+  .btn-primary-ui:active,
+  .btn-secondary-ui:active{transform:translateY(0) scale(.985);box-shadow:none;}
+  .btn-primary-ui:focus-visible,
+  .btn-secondary-ui:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  .arrow-wrap{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:2rem;
+    height:2rem;
+    flex:0 0 2rem;
+    border-radius:999px;
+    background:rgba(255,255,255,.14);
+  }
+  .btn-secondary-ui .arrow-wrap{background:rgba(10,10,10,.06);}
+  html[data-theme="night"] .btn-secondary-ui .arrow-wrap{background:rgba(255,255,255,.08);}
+  .btn-primary-ui .arrow,
+  .btn-secondary-ui .arrow{transition:transform .22s ease;}
+  .btn-primary-ui:hover .arrow,
+  .btn-secondary-ui:hover .arrow{transform:translateX(4px);}
+
+  /* ===== MOBILE ===== */
+  @media(max-width:900px){
+    .first-contact-grid,
+    .sl-hero-wrap{grid-template-columns:1fr;gap:1.5rem;}
+    .fc-proof-card,
+    .sl-sidecard{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;}
+    .fc-proof-row,
+    .sl-sidecard-row{padding:.1rem 0 .9rem;}
+  }
+  @media(max-width:620px){
+    .fc-actions,
+    .sl-actions{flex-direction:column;align-items:stretch;}
+    .fc-actions .btn-yes,
+    .fc-actions .btn-more,
+    .sl-actions .btn-yes,
+    .sl-actions .btn-more{width:100%;justify-content:center;}
+    .btn-primary-ui,
+    .btn-secondary-ui{min-height:60px;font-size:1rem;padding:.85rem 1.1rem;}
+    .fc-proof-card,
+    .sl-sidecard{grid-template-columns:1fr;padding:1.1rem 1.2rem;gap:.75rem;}
+    .fc-proof-row,
+    .sl-sidecard-row{padding-bottom:.75rem;}
+    .fc-proof-row span,
+    .sl-sidecard-row span{font-size:.84rem;}
   }
 </style></head>
 <body>
@@ -1032,20 +1131,20 @@ h1,h2,h3,h4,.ask,.cost-h,.rung-title,.shelf-title,.fb-title,.pledge-h,.joint-t,.
 <a aria-label="We will not let you go until you're hired." class="pledge-marq" href="#pledge"><span>We will not let you go <em>until you're hired.</em></span></a><section class="wrap first-contact" id="start">
 <div class="first-contact-grid">
 <div>
-<p class="section-label"><span class="mark"></span> Your starting line</p>
-<h1>Start your remote job search with <em>clarity.</em></h1>
-<p class="fc-lede">Whether you are just beginning, applying without replies, or getting interviews without offers, start by seeing what needs attention first. Four questions. About ninety seconds. No purchase required.</p>
+<p class="section-label"><span class="mark"></span> Your Starting Line</p>
+<h1>Start With <em>Clarity.</em></h1>
+<p class="fc-lede">Whether you are just beginning, applying without replies, or getting interviews without offers, start by seeing what needs attention first. Four questions. About 90 seconds. One clear starting point.</p>
 <div class="fc-actions">
-<a class="btn-yes" href="diagnose/">Find my starting point — free <span class="arrow">→</span></a>
-<a class="btn-more" href="#facilitator">Explore Everything Remote Job ↓</a>
+<a class="btn-yes btn-primary-ui" href="diagnose/"><span>Find My Starting Point — Free</span><span class="arrow-wrap"><span class="arrow">→</span></span></a>
+<a class="btn-more btn-secondary-ui" href="#facilitator"><span>Explore Everything Remote Job</span><span class="arrow-wrap"><span class="arrow">↓</span></span></a>
 </div>
-<p class="fc-note"><strong>You may not need to buy anything.</strong> If your best next step is something you can fix yourself, we will show you that first.</p>
+<p class="fc-note"><strong>You May Not Need To Buy Anything.</strong> If your best next step is something you can fix yourself, we will show you that first.</p>
 </div>
-<div aria-label="What to expect" class="fc-proof">
-<div class="fc-proof-row"><b>4 questions</b><span>See which part of your search needs attention first.</span></div>
-<div class="fc-proof-row"><b>Instant result</b><span>Know what to work on before your next move.</span></div>
-<div class="fc-proof-row"><b>Practical next step</b><span>Leave with one action you can take immediately.</span></div>
-<div class="fc-proof-row"><b>Want another set of eyes?</b><span>Send your result to ERJ if you want a human review.</span></div>
+<div class="fc-proof-card" aria-label="What to expect">
+<div class="fc-proof-row"><b>4 Questions</b><span>See which part of your search needs attention first.</span></div>
+<div class="fc-proof-row"><b>Instant Result</b><span>Know what to work on before your next move.</span></div>
+<div class="fc-proof-row"><b>Practical Next Step</b><span>Leave with one action you can take immediately.</span></div>
+<div class="fc-proof-row"><b>Optional Human Review</b><span>Send your result to ERJ if you want another set of eyes.</span></div>
 </div>
 </div>
 </section>

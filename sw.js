@@ -26,7 +26,7 @@ const SHELL = [
   '/free.html',
   '/starthere.html',
   '/testimonials.html',
-  '/erj-nav.js?site=20260825b',
+  '/erj-nav.js?site=20260825c',
   '/erj-track.js',
   '/founder-oluwaseyi.webp',
   '/erj-buttons.css',

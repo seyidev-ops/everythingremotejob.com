@@ -46,8 +46,31 @@
   window.addEventListener('hashchange',revealThroughHash);
   /* countdown */
   var pad=function(n){return String(n).padStart(2,'0');};
+  /* ── ROLLING GATES ────────────────────────────────────────────────
+     A countdown that hits zero and sits there says the business has
+     nothing open. When one cohort's gate closes the next one is already
+     selling, so a panel may carry a second deadline and roll onto it the
+     moment the first expires — label, subject line and date line with it.
+
+       data-deadline        the gate now
+       data-next-deadline   the gate after it
+       data-next-label      what the heading becomes    (optional)
+       data-next-for        what the subject line becomes (optional)
+       data-next-date       what the date line becomes  (optional)
+
+     Only when there is no next gate does it show the closed state. ── */
+  var findUp=function(el,sel){
+    var lbl=el.querySelector(sel);
+    var scope=el.parentNode;
+    while(scope&&scope!==document.body&&!lbl){lbl=scope.querySelector(sel);scope=scope.parentNode;}
+    return lbl;
+  };
   var panels=[].slice.call(document.querySelectorAll('[data-deadline]')).map(function(p){
     return {el:p,closedLabel:p.dataset.closedLabel||'',done:false,
+      nextDeadline:p.dataset.nextDeadline||'',
+      nextLabel:p.dataset.nextLabel||'',
+      nextFor:p.dataset.nextFor||'',
+      nextDate:p.dataset.nextDate||'',
       deadline:new Date(p.dataset.deadline),nodes:{
       d:p.querySelector('[data-k="d"]'),h:p.querySelector('[data-k="h"]'),
       m:p.querySelector('[data-k="m"]'),s:p.querySelector('[data-k="s"]')}};
@@ -55,17 +78,23 @@
   if(panels.length){
     var tick=function(){panels.forEach(function(p){
       var diff=p.deadline-new Date();
+      if(diff<=0&&p.nextDeadline){
+        /* Roll onto the next gate instead of dying at zero. */
+        p.deadline=new Date(p.nextDeadline);
+        p.nextDeadline='';
+        p.el.classList.remove('is-closed');
+        if(p.nextLabel){var l1=findUp(p.el,'[data-lbl]'); if(l1)l1.textContent=p.nextLabel;}
+        if(p.nextFor){var l2=findUp(p.el,'.timer-for'); if(l2)l2.textContent=p.nextFor;}
+        if(p.nextDate){var l3=findUp(p.el,'.timer-date,.urg-date'); if(l3)l3.innerHTML=p.nextDate;}
+        diff=p.deadline-new Date();
+      }
       if(diff<=0){
         diff=0;
         if(!p.done){
           p.done=true;
           p.el.classList.add('is-closed');
           if(p.closedLabel){
-            var lbl=p.el.querySelector('[data-lbl]');
-            if(!lbl){
-              var scope=p.el.parentNode;
-              while(scope&&scope!==document.body&&!lbl){lbl=scope.querySelector('[data-lbl]');scope=scope.parentNode;}
-            }
+            var lbl=findUp(p.el,'[data-lbl]');
             if(lbl)lbl.textContent=p.closedLabel;
           }
         }

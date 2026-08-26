@@ -76,7 +76,25 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"5 Remote Onboarding Mistakes That Get You Fired Before Day 90","description":"The first 90 days are the highest-risk period of any remote role. These five mistakes cause most early remote failures — and every one is avoidable.","datePublished":"2026-06-08","dateModified":"2026-06-08","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/5-remote-onboarding-mistakes-that-get-you-fired-before-day-90/"},"url":"https://everythingremotejob.com/blog/5-remote-onboarding-mistakes-that-get-you-fired-before-day-90/","articleSection":"Productivity","keywords":"onboarding, 90-days, remote, mistakes"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"5 Remote Onboarding Mistakes That Get You Fired Before Day 90","item":"https://everythingremotejob.com/blog/5-remote-onboarding-mistakes-that-get-you-fired-before-day-90/"}]}</script>
 </head>
@@ -99,10 +117,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><h2>Why Remote Roles Fail in the First 90 Days</h2><p>Remote probation failures are almost never about competence. They are almost always about communication and visibility. Companies do not fire you because you cannot do the job. They fire you because they cannot see that you are doing the job.</p><h2>Mistake 1: Waiting to Be Assigned Work</h2><p>In an office, your manager can see you are available and give you something to do. Remotely, silence looks like absence. By Week 2, request a written 30/60/90 day plan. If one does not exist, draft one yourself and ask your manager to approve it. This one action makes you immediately visible as a self-directed professional.</p><h2>Mistake 2: Only Communicating When You Have a Problem</h2><p>The remote workers who build trust fastest send unsolicited progress updates. Every Friday: what you completed, what you are carrying to next week, what you need from others. Nobody asked. That is exactly why it builds trust.</p><h2>Mistake 3: Confusing Being Online With Working</h2><p>A Slack status set to active from 8am to 6pm while producing nothing is the fastest path to a performance improvement plan. Deliver outputs. Communicate them. Repeat.</p><h2>Mistake 4: Not Asking for Feedback Proactively</h2><p>In a remote role, silence is not approval. Ask your manager at 30 days: "Is there anything I am doing that I should do differently?" Most will not volunteer this. All will appreciate being asked.</p><h2>Mistake 5: Waiting for Culture to Find You</h2><p>Remote culture is not automatic. Observe how your team communicates. Match the format, tone, and response time norms. Culture is the water you swim in — and remotely, you have to actively swim toward the team rather than waiting for the current to carry you.</p></div>
 <div class="tags"><span>onboarding</span><span>90-days</span><span>remote</span><span>mistakes</span></div>
+<aside class="door">
+<span class="door-k">The whole system, worked alone</span>
+<h2>Twenty sessions on the tools, the writing and the search</h2>
+<p>If the working habits are the gap, this is the pack that closes it: the remote operating system, the tool stack and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download — the same four stages the ₦250,000 live cohort runs.</p>
+<a href="../../selflearn/">See The Self-Learn Pack &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +142,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

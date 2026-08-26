@@ -76,7 +76,25 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"From 0 Callbacks to 3 Offers in 6 Weeks: How Sarah Did It","description":"Sarah was applying to 60 remote jobs a month, for 5 months. One interview to show for it. Here's the exact 6-week process that turned it into 3 offers — an","datePublished":"2026-04-24","dateModified":"2026-04-24","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/from-0-callbacks-to-3-offers-in-6-weeks-how-sarah-did-it/"},"url":"https://everythingremotejob.com/blog/from-0-callbacks-to-3-offers-in-6-weeks-how-sarah-did-it/","articleSection":"Success Stories","keywords":"case-study, success, cv, portfolio"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"From 0 Callbacks to 3 Offers in 6 Weeks: How Sarah Did It","item":"https://everythingremotejob.com/blog/from-0-callbacks-to-3-offers-in-6-weeks-how-sarah-did-it/"}]}</script>
 </head>
@@ -99,10 +117,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><h2>The Starting Point</h2><p>Sarah was applying to 60 remote jobs a month. For five months. And had received exactly one interview.</p><p>She came frustrated, convinced the market was the problem. It wasn't.</p><h2>The Before Picture</h2><ul><li>CV last updated in 2019, formatted for job duties not achievements</li><li>Cover letters were generic ("I am writing to express my interest in…")</li><li>Applying only through job boards — never direct to companies</li><li>LinkedIn profile set to private</li><li>No portfolio — just a CV</li></ul><h2>The Six-Week Process</h2><h3>Week 1: CV Transformation</h3><p>Rewrote her CV from job-duties format to achievement format. Every single bullet had a number. Before: "Managed social media accounts." After: "Grew LinkedIn following by 340% in 4 months, generating 12 qualified leads in Q3 alone."</p><h3>Week 2: Portfolio Build</h3><p>Built a three-page portfolio on Notion. Free. Done in a day. Three case studies showing her best work with before/after metrics.</p><h3>Week 3: Target Company Research</h3><p>Identified 12 target companies that were remote-first and actively hiring. Found the right hiring manager or team lead at each. Wrote 12 personalised outreach messages — each referencing something specific about the company.</p><h3>Week 4: Follow-Up and Calls</h3><p>Followed up on the 7 that opened her messages. Booked 4 discovery calls. Each call opened with a one-page brief of how she'd approach their biggest current challenge.</p><h3>Weeks 5–6: Interview Preparation</h3><p>Prepared for interviews using the STAR method with remote-specific scenarios. Practised answering "how do you manage your productivity without oversight?" and "walk me through your async communication approach."</p><h2>The Results</h2><p>Three job offers. One at $72,000 — up from her previous $48,000 in-office role. She accepted the role offering full flexibility and a <strong>$24,000 annual raise</strong>.</p><blockquote>"I didn't know if it would work. Now I can't believe I spent 5 months doing it the other way." — Sarah</blockquote><h2>What This Actually Means</h2><p>The market isn't broken. The old playbook is. Sarah is not a special case — she is the rule when the approach changes. If her story sounds like your last 3–6 months, the inputs need to change, not the effort.</p></div>
 <div class="tags"><span>case-study</span><span>success</span><span>cv</span><span>portfolio</span></div>
+<aside class="door">
+<span class="door-k">How this one actually happened</span>
+<h2>The programme behind the story you just read</h2>
+<p>Nobody in these stories got lucky. They built four things a global employer could read, then aimed at roles that could legally pay them. Foundation Training is the twenty-day live build that produces those four things, with your work marked by a person.</p>
+<a href="../../foundationtraining/">See Foundation Training &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +142,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

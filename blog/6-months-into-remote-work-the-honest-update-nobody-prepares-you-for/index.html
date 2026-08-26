@@ -76,7 +76,25 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"6 Months Into Remote Work: The Honest Update Nobody Prepares You For","description":"The remote work honeymoon ends around Month 3. By Month 6, the picture is clearer. Here is what most remote workers say at the 6-month mark — the good, the","datePublished":"2026-06-08","dateModified":"2026-06-08","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/6-months-into-remote-work-the-honest-update-nobody-prepares-you-for/"},"url":"https://everythingremotejob.com/blog/6-months-into-remote-work-the-honest-update-nobody-prepares-you-for/","articleSection":"Productivity","keywords":"6-months, remote, honest, wellbeing"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"6 Months Into Remote Work: The Honest Update Nobody Prepares You For","item":"https://everythingremotejob.com/blog/6-months-into-remote-work-the-honest-update-nobody-prepares-you-for/"}]}</script>
 </head>
@@ -99,10 +117,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><h2>Month 1–2: The Honeymoon</h2><p>No commute. Flexible hours. Quiet. Most people describe the first two months as the best working period of their life. Output is high, energy is high, and novelty is a motivator.</p><h2>Month 3: The Drift</h2><p>The routine that felt freeing starts to feel monotonous. Without the structural interruptions of an office — lunch with colleagues, impromptu conversations, physical separation between work and home — some people find their days blurring together. This is where habits become essential.</p><h2>Month 4–5: The Recalibration</h2><p>The people who make it here have usually made one or two deliberate changes: a co-working space one day a week, a strict work finish time, a morning routine that signals the workday beginning. The ones who have not report feeling disconnected from their team and their own goals.</p><h2>Month 6: The Clarity</h2><p>At 6 months, most remote workers know clearly whether remote work is working for them. The ones thriving share a pattern: they have a structure they designed themselves, they are proactively visible to their team, and they have maintained at least one in-person social context outside of work.</p><h2>The One Question to Ask at 6 Months</h2><p>"If I were designing my ideal working day from scratch, would it look like this?" If not: what would I change, and can I change it from here? Most remote workers have more control than they realise. Most have simply not audited it.</p></div>
 <div class="tags"><span>6-months</span><span>remote</span><span>honest</span><span>wellbeing</span></div>
+<aside class="door">
+<span class="door-k">The whole system, worked alone</span>
+<h2>Twenty sessions on the tools, the writing and the search</h2>
+<p>If the working habits are the gap, this is the pack that closes it: the remote operating system, the tool stack and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download — the same four stages the ₦250,000 live cohort runs.</p>
+<a href="../../selflearn/">See The Self-Learn Pack &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +142,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

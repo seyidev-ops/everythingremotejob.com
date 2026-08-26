@@ -76,7 +76,25 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Surviving a Remote Probation When Nobody Can See You Working","description":"Three to six months where the company decides whether to keep you. What is actually being assessed, and the four habits that decide it.","datePublished":"2026-06-21","dateModified":"2026-06-21","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/surviving-a-remote-probation-when-nobody-can-see-you-working/"},"url":"https://everythingremotejob.com/blog/surviving-a-remote-probation-when-nobody-can-see-you-working/","articleSection":"Productivity","keywords":"probation, new-job, first-90-days, retention"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"Surviving a Remote Probation When Nobody Can See You Working","item":"https://everythingremotejob.com/blog/surviving-a-remote-probation-when-nobody-can-see-you-working/"}]}</script>
 </head>
@@ -99,10 +117,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><p>Probation exists everywhere, but remotely it works differently, because the usual signals are missing. Nobody sees you arrive early, stay late, or look busy. So the assessment runs on a narrower set of evidence — and knowing which evidence changes what you do.</p> <h2>What is actually being assessed</h2> <p>Not effort. Not hours. Four things:</p> <ol> <li><strong>Do things finish?</strong> Started is invisible. Finished is not.</li> <li><strong>Do I always know where you are?</strong> A manager who has to ask is already annoyed.</li> <li><strong>Do problems arrive early or late?</strong> Early is normal. Late is a trust event.</li> <li><strong>Does managing you cost more than it saves?</strong> This is the real question underneath the other three.</li> </ol> <h2>The four habits</h2> <h3>The end-of-day note</h3> <p>Four lines before you close the laptop: what finished, what is moving and when it lands, what is blocked and who can unblock it, what you need and by when.</p> <p>This single habit answers questions two and three permanently. Your manager wakes up already knowing where things stand and never has to ask, which is the fastest route to being trusted with larger work.</p> <h3>Finish something small in week two</h3> <p>Do not wait for something impressive. Update a stale help article, tidy a messy board, document a process nobody wrote down. One completed small thing early builds more trust than a large thing half-done in week eight.</p> <h3>Renegotiate dates before they pass</h3> <p>Slipping is normal. Slipping silently is not. <em>"This will land Thursday rather than Tuesday — the data came in late. Nothing else is affected."</em> Sent on Monday, that is professionalism. Discovered on Thursday, it is a problem.</p> <h3>Surface problems while they are small</h3> <p>The instinct is to hide a difficulty until you have solved it. Remotely that reads as three days of nothing happening. Say it the same day, with what you have tried.</p> <h2>The thirty-day question</h2> <p>Message your manager at the one-month mark:</p> <p><em>"I am at thirty days. What is going well, and what should I be doing differently? I would rather know now than at the review."</em></p> <p>Almost nobody asks. It is a short, uncomfortable message that gives you two months to fix anything before it counts — and it signals seriousness in a way that no amount of working late can.</p> <h2>What actually ends probations</h2> <p>In order: going quiet when stuck; missing dates without warning; needing to be assigned every task; being unreachable during agreed hours. Notice that none of them are about ability. People are almost never let go remotely for not being able to do the work.</p> <h2>If it is genuinely going badly</h2> <p>Say so before they do. <em>"I do not think I am where I should be at this point. Here is what I think the gap is, and here is what I plan to do about it. Am I reading it right?"</em></p> <p>That conversation sometimes saves the job. It always preserves the reference.</p> <blockquote>Every ERJ participant keeps community access after training precisely because this stage is where support matters most. <a href="../../index.html#pledge">Read our promise.</a></blockquote></div>
 <div class="tags"><span>probation</span><span>new-job</span><span>first-90-days</span><span>retention</span></div>
+<aside class="door">
+<span class="door-k">The whole system, worked alone</span>
+<h2>Twenty sessions on the tools, the writing and the search</h2>
+<p>If the working habits are the gap, this is the pack that closes it: the remote operating system, the tool stack and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download — the same four stages the ₦250,000 live cohort runs.</p>
+<a href="../../selflearn/">See The Self-Learn Pack &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +142,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

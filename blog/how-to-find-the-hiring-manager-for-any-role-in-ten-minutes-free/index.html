@@ -76,7 +76,25 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Find the Hiring Manager for Any Role in Ten Minutes (Free)","description":"Applying through the portal puts you in a pile. Reaching the person who owns the role puts you in a conversation. Here is exactly how to find them.","datePublished":"2026-07-12","dateModified":"2026-07-12","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/how-to-find-the-hiring-manager-for-any-role-in-ten-minutes-free/"},"url":"https://everythingremotejob.com/blog/how-to-find-the-hiring-manager-for-any-role-in-ten-minutes-free/","articleSection":"Job Search","keywords":"research, hiring-manager, outreach, linkedin"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"How to Find the Hiring Manager for Any Role in Ten Minutes (Free)","item":"https://everythingremotejob.com/blog/how-to-find-the-hiring-manager-for-any-role-in-ten-minutes-free/"}]}</script>
 </head>
@@ -99,10 +117,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><p>An application through a careers portal goes into a queue with two hundred others. A short, polite message to the person who will actually manage the role goes to an inbox with maybe six things in it. Same effort, very different odds.</p> <p>The only hard part is finding the person. It is not hard.</p> <h2>Step 1: work out the job title of the person above the role</h2> <p>If the opening is Customer Support Specialist, you want the Head of Support, Support Manager, or Customer Experience Lead. If it is Junior Developer, you want the Engineering Manager or CTO in a small company. If it is Content Writer, Head of Content or Marketing Manager.</p> <p>For companies under about fifty people, aim one level higher than you think. In small teams the founder often still hires directly.</p> <h2>Step 2: search LinkedIn properly</h2> <p>In the LinkedIn search bar type the company name, press enter, then open the company page and click <strong>People</strong>. You can filter that list by job title. Type "support" or "engineering" and you will see everyone in that function.</p> <p>If the company page is thin, search instead for: <em>company name + the title you want</em>. For example: <em>Paystack Head of Support</em>.</p> <h2>Step 3: confirm they are the right person</h2> <p>Open their profile. Do they manage the function the role sits in? Have they posted about hiring recently? Have they been at the company long enough to own the decision? If yes to the first, that is enough.</p> <h2>Step 4: if you need their email</h2> <p>Most companies use one pattern: firstname@company.com, or firstname.lastname@company.com, or first initial plus lastname. Find one confirmed company email — often on the website contact page, a press release, or a team member’s public profile — and copy the pattern.</p> <p>Honestly though, a LinkedIn message is usually better for a first contact. It is less intrusive and they are already logged in.</p> <h2>Step 5: apply through the portal anyway</h2> <p>This matters. Apply properly first, so you exist in their system, then send the message. The message is not instead of the application, it is a signal that the application exists and is worth opening.</p> <h2>What to do when there is no one findable</h2> <p>Some companies genuinely hide their team. In that case, apply through the portal, then follow the company page so their next post appears in your feed, and comment something useful on it. Being a familiar name is worth more than nothing.</p> <h2>The time budget</h2> <p>Ten minutes per role. Which means you cannot do this for sixty applications a week, and you should not try. Do it for the ten roles you genuinely want.</p> <blockquote>Tomorrow: the message itself, line by line, and why each line is there.</blockquote></div>
 <div class="tags"><span>research</span><span>hiring-manager</span><span>outreach</span><span>linkedin</span></div>
+<aside class="door">
+<span class="door-k">Your supply, fixed for free</span>
+<h2>Real roles, checked, and open to Africans</h2>
+<p>Reading about the search is one thing; having roles reach you is another. Our free WhatsApp channel carries verified global remote roles open to applicants from Africa — posted continuously, no fee, no gatekeeping, and you can leave whenever you like.</p>
+<a href="https://whatsapp.com/channel/0029Vaym4DE3mFY2wCrC713S" rel="noopener" target="_blank">Join The Free Job Channel &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +142,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

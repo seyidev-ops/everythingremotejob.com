@@ -76,7 +76,25 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"The 8 Skills Most In Demand for Remote Work in 2026 and How to Signal Each One","description":"The remote job market is shifting in 2026. Here are the 8 skills hiring managers at remote-first companies are actively searching for — and how to demonstr","datePublished":"2026-06-10","dateModified":"2026-06-10","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/the-8-skills-most-in-demand-for-remote-work-in-2026-and-how-to-signal/"},"url":"https://everythingremotejob.com/blog/the-8-skills-most-in-demand-for-remote-work-in-2026-and-how-to-signal/","articleSection":"Industry News","keywords":"skills, demand, 2026, remote"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"The 8 Skills Most In Demand for Remote Work in 2026 and How to Signal Each One","item":"https://everythingremotejob.com/blog/the-8-skills-most-in-demand-for-remote-work-in-2026-and-how-to-signal/"}]}</script>
 </head>
@@ -99,10 +117,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><h2>1. Async Communication Mastery</h2><p>Signal: mention specific tools (Loom, Notion, structured EOD reports) and show a result. "Reduced meeting load by 40% by implementing async video updates and a shared Notion log."</p><h2>2. Self-Directed Project Management</h2><p>Signal: name your system and show the outcome. "Managed 3 simultaneous client projects independently with zero missed deadlines over 12 months."</p><h2>3. Data Literacy</h2><p>Signal: tie it to a real output. "Reported weekly KPIs to executive team using Google Looker Studio dashboards, reducing report preparation time from 4 hours to 45 minutes."</p><h2>4. AI Tool Proficiency</h2><p>Signal: be specific. "Used Claude and Grammarly to reduce first-draft time by 60%, from 3 hours to 1.2 hours per piece." Generic "familiar with AI tools" tells them nothing.</p><h2>5. Cross-Cultural Communication</h2><p>Signal: name the contexts. "Collaborated with teams across the UK, Nigeria, and India — adapted communication style and timing for each context." A genuine differentiator for Africa-based candidates.</p><h2>6. Written Clarity</h2><p>Signal: this is the skill you demonstrate in the CV itself. Every metric-backed, specific, clear bullet is proof. The CV is the writing sample.</p><h2>7. Digital Security Awareness</h2><p>Signal: "Implemented 2FA across company accounts and led data privacy onboarding for 12 new remote hires." Basic, but rare enough to stand out.</p><h2>8. Remote Culture Contribution</h2><p>Signal: "Organised monthly virtual social events for 22-person distributed team across 5 time zones, increasing team survey satisfaction scores by 18%." Shows you understand remote culture is built, not assumed.</p></div>
 <div class="tags"><span>skills</span><span>demand</span><span>2026</span><span>remote</span></div>
+<aside class="door">
+<span class="door-k">Turn the market into a move</span>
+<h2>Six situations, one door each</h2>
+<p>Knowing what the market is doing only helps if it changes what you do on Monday. Find the sentence that matches your own last three months and you get one recommended next step — with the limit of that step stated before any price.</p>
+<a href="../../starthere.html">Find Your Starting Line &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +142,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

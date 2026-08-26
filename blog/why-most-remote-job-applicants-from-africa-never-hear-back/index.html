@@ -76,7 +76,25 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Why Most Remote Job Applicants from Africa Never Hear Back","description":"The painful truth about why 94% of applications from Africa are ignored — and what the top 6% do differently.","datePublished":"2026-05-20","dateModified":"2026-05-20","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/why-most-remote-job-applicants-from-africa-never-hear-back/"},"url":"https://everythingremotejob.com/blog/why-most-remote-job-applicants-from-africa-never-hear-back/","articleSection":"Job Search","keywords":"cv, remote, africa"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"Why Most Remote Job Applicants from Africa Never Hear Back","item":"https://everythingremotejob.com/blog/why-most-remote-job-applicants-from-africa-never-hear-back/"}]}</script>
 </head>
@@ -99,10 +117,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><h2>The Invisible Filter Most Applicants Don't Know Exists</h2><p>Every year, thousands of talented professionals from Nigeria, Ghana, Kenya, and across Africa apply for remote roles at global companies. Most never hear back. Not because they're underqualified — but because their applications are filtered out <strong>before a human ever reads them</strong>.</p><blockquote>The ATS rejects 75% of CVs before they reach a hiring manager's desk. For Africa-based applicants, that number is often higher.</blockquote><h2>The Three Invisible Barriers</h2><h3>1. The ATS Score Barrier</h3><p>Global companies score every incoming CV against the job description. Below 65–70%, you're automatically rejected. "Managed social media accounts" scores low. "Grew Instagram engagement by 47% in 90 days, generating 2,300 new followers" scores high.</p><h3>2. The Timezone Assumption Barrier</h3><p>Many hiring managers assume Africa-based applicants can't work UTC-5 to UTC+1 efficiently. The fix: explicitly state your overlap hours and prove async communication skills in your cover letter.</p><h3>3. The Tools Proficiency Signal</h3><p>Listing "Microsoft Office" as a skill in 2026 signals an office-centric environment. Remote-ready professionals list Notion, Slack, Asana, Zoom, Loom, and Google Workspace.</p><h2>What the Top 6% Do Differently</h2><ul><li>They tailor every CV to each specific job description</li><li>They use achievement-driven bullet points with metrics</li><li>They address the time zone question proactively</li><li>They have a LinkedIn SSI score above 60</li><li>They apply through direct channels, not just job boards</li></ul></div>
 <div class="tags"><span>cv</span><span>remote</span><span>africa</span></div>
+<aside class="door">
+<span class="door-k">Your supply, fixed for free</span>
+<h2>Real roles, checked, and open to Africans</h2>
+<p>Reading about the search is one thing; having roles reach you is another. Our free WhatsApp channel carries verified global remote roles open to applicants from Africa — posted continuously, no fee, no gatekeeping, and you can leave whenever you like.</p>
+<a href="https://whatsapp.com/channel/0029Vaym4DE3mFY2wCrC713S" rel="noopener" target="_blank">Join The Free Job Channel &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +142,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

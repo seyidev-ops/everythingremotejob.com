@@ -63,6 +63,24 @@ footer a{color:var(--muted);text-decoration:none}
 @media(max-width:520px){body{font-size:16px}}
 html[data-theme="day"]{--bg:#FAFAF8;--card:#fff;--text:#14110E;--muted:#52514C;--muted2:#6E6C65;--accent:#AD350A;--accent-btn:#FF5722;--line:rgba(20,17,14,.12)}
 html[data-theme="day"] .body p,html[data-theme="day"] .body ul,html[data-theme="day"] .body ol,html[data-theme="day"] .body blockquote{color:#2C2925}html[data-theme="day"] .body h2,html[data-theme="day"] .body h3,html[data-theme="day"] .body strong,html[data-theme="day"] .cta h2,html[data-theme="day"] .more a{color:#14110E}
+
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "The One Sentence That Should Decide What ERJ Recommends to You", "description": "Before a payment link is sent, the recommendation should survive one sentence: “I think your first leak is ___ because ___.” If it cannot, the diagnosis is not finished.", "datePublished": "2026-09-05", "dateModified": "2026-09-05", "inLanguage": "en", "copyrightYear": 2026, "copyrightHolder": {"@type": "Organization", "name": "Business Play Limited", "alternateName": "Everything Remote Job"}, "author": {"@type": "Person", "name": "Oluwaseyi Ashiru"}, "publisher": {"@type": "Organization", "name": "Everything Remote Job", "url": "https://everythingremotejob.com/", "@id": "https://everythingremotejob.com/#organization"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://everythingremotejob.com/blog/the-one-sentence-that-should-decide-what-erj-recommends-to-you/"}, "url": "https://everythingremotejob.com/blog/the-one-sentence-that-should-decide-what-erj-recommends-to-you/", "articleSection": "Job Search", "keywords": "audit, diagnosis, recommendation, four points"}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://everythingremotejob.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://everythingremotejob.com/blog.html"}, {"@type": "ListItem", "position": 3, "name": "The One Sentence That Should Decide What ERJ Recommends to You", "item": "https://everythingremotejob.com/blog/the-one-sentence-that-should-decide-what-erj-recommends-to-you/"}]}</script>
@@ -94,9 +112,22 @@ html[data-theme="day"] .body p,html[data-theme="day"] .body ul,html[data-theme="
 <h2>What if the sentence cannot be completed?</h2>
 <p>Ask for more evidence. A CV, LinkedIn profile, one real job advert, application counts or interview pattern. It is better to delay a recommendation than to sound decisive without enough information.</p>
 <blockquote>A diagnosis does not need to be complicated. It does need to be defensible.</blockquote></div><div class="tags"><span>audit</span><span>diagnosis</span><span>recommendation</span><span>four points</span></div>
-<aside class="cta"><h2>See the Four Points before you choose a door</h2><p>Your Starting Line is the shortest path into the free diagnosis and the optional human AUDIT.</p><a href="../../starthere.html">Start here →</a></aside>
+<aside class="door">
+<span class="door-k">Your supply, fixed for free</span>
+<h2>Real roles, checked, and open to Africans</h2>
+<p>Reading about the search is one thing; having roles reach you is another. Our free WhatsApp channel carries verified global remote roles open to applicants from Africa — posted continuously, no fee, no gatekeeping, and you can leave whenever you like.</p>
+<a href="https://whatsapp.com/channel/0029Vaym4DE3mFY2wCrC713S" rel="noopener" target="_blank">Join The Free Job Channel &rarr;</a>
+</aside>
+<aside class="cta">
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
+</aside>
 <nav class="more"><h2>Read next</h2><ul><li><a href="../getting-interviews-but-no-offers-stop-rewriting-your-cv/">Getting Interviews but No Offers? Stop Rewriting Your CV<span class="d">4 September 2026 · 6 min</span></a></li><li><a href="../a-cv-builder-should-never-invent-your-career-what-safe-tailoring-looks-like/">A CV Builder Should Never Invent Your Career: What Safe Tailoring Looks Like<span class="d">3 September 2026 · 6 min</span></a></li><li><a href="../when-you-should-stop-applying-yourself-and-hand-the-search-over/">When You Should Stop Applying Yourself and Hand the Search Over<span class="d">2 September 2026 · 6 min</span></a></li></ul></nav>
 </article></main>
 <footer class="wrap"><nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav><div style="margin-top:1rem;padding-top:.85rem;border-top:1px solid rgba(127,127,127,.18);font-size:.68rem;opacity:.72;line-height:1.55">© 2026 Business Play Limited · Everything Remote Job. Built for <span style="color:var(--accent,#FF5722)">global career scale.</span> All rights reserved. ERJ frameworks, curriculum and paid resources are not licensed for redistribution. <a href="../../terms.html">Terms</a> · <a href="../../privacy.html">Privacy</a></div></footer>
-<script defer="" src="../../erj-theme.js"></script><script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-theme.js"></script><script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

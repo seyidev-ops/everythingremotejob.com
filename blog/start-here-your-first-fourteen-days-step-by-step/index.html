@@ -76,7 +76,25 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Start Here: Your First Fourteen Days, Step by Step","description":"If you are at the very beginning and do not know what to do first, this is the whole plan. Fourteen days, one task each, nothing to buy.","datePublished":"2026-07-30","dateModified":"2026-07-30","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/start-here-your-first-fourteen-days-step-by-step/"},"url":"https://everythingremotejob.com/blog/start-here-your-first-fourteen-days-step-by-step/","articleSection":"Job Search","keywords":"start-here, beginner, roadmap, 14-days"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"Start Here: Your First Fourteen Days, Step by Step","item":"https://everythingremotejob.com/blog/start-here-your-first-fourteen-days-step-by-step/"}]}</script>
 </head>
@@ -99,10 +117,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><p>This is the post to send to someone who says "I want a remote job but I do not know where to start". One task a day, an hour or less each, nothing to buy. At the end you are not hired — you are properly ready to apply, which is where most people never get.</p> <h2>Days 1 to 3 — decide what you are selling</h2> <p><strong>Day 1. Pick two roles.</strong> Write down the two job titles closest to what you already do. Not what you wish you did. Customer support, virtual assistant, bookkeeper, content writer, designer, developer, data analyst, QA. Two, not six.</p> <p><strong>Day 2. Read twenty listings.</strong> Ten for each title. Do not apply. Note every tool named, every skill repeated, and what the pay ranges look like. You are learning the vocabulary of the market you are entering.</p> <p><strong>Day 3. Write your gap list.</strong> Two columns: what they ask for that you have, and what they ask for that you do not. The second column is your learning list, and it is usually shorter than you feared.</p> <h2>Days 4 to 7 — build the evidence</h2> <p><strong>Day 4. Rewrite your CV bullets.</strong> Every bullet becomes an achievement with a number. "Handled customer complaints" becomes "handled about 60 tickets a day, cut response time from 8 hours to under 2". Estimate honestly where you must.</p> <p><strong>Day 5. Reformat the CV.</strong> One column, standard headings, no tables, no graphics, no text boxes, contact details as plain text at the top, saved as PDF with a sensible filename.</p> <p><strong>Day 6. Fix LinkedIn.</strong> New headline using the formula: what you do, who for, the result, open to remote. Clear photo. Profile set to public. Open-to-work switched on with Remote selected.</p> <p><strong>Day 7. Write the About section.</strong> Four paragraphs: what you do, the proof, how you work with people you cannot see, what you are open to. First person. No apologies.</p> <h2>Days 8 to 10 — build the proof</h2> <p><strong>Day 8. Choose three pieces of work.</strong> Real work with anything confidential removed, or three small things you build yourself. Whichever you have.</p> <p><strong>Day 9. Write the context.</strong> For each piece: the problem, what you did, what changed. Three sentences each. The context is what turns a file into evidence.</p> <p><strong>Day 10. Publish it.</strong> One Notion page or Drive folder, link sharing on. Test the link in a private browser window. Put it on your CV and in LinkedIn Featured.</p> <h2>Days 11 to 14 — get operational</h2> <p><strong>Day 11. Open a payment account.</strong> Payoneer, Wise or Grey. Start verification now, because it takes days and you do not want it in the way later.</p> <p><strong>Day 12. Fix the setup.</strong> Backup internet on a second network, power buffer, wired headphones, light in front of you, plain wall behind. Then test a call with a friend.</p> <p><strong>Day 13. Learn the tools.</strong> Free accounts on Slack, Notion, Trello and Loom. Build one small thing in each. Record a three-minute Loom about your portfolio and watch it back.</p> <p><strong>Day 14. Build your tracker and your first list.</strong> A sheet with company, role, date applied, hiring manager, date messaged, status. Then find your first eight roles and save them.</p> <h2>Day 15 onwards</h2> <p>You now run the weekly system: source on Sunday, apply Tuesday and Wednesday, outreach Thursday, follow up and build on Saturday. Eight to sixteen weeks is the realistic window from here.</p> <h2>The honest part</h2> <p>Every item above is free and every item above is doable alone. Most people who try it alone stop somewhere around day 5, because rewriting your own CV is the hardest writing there is — you cannot see yourself the way a stranger does.</p> <p>If you get through all fourteen days alone, you genuinely do not need us. If you stall, that is not a character flaw, it is the normal result of trying to describe yourself without an outside eye.</p> <blockquote>The fourteen days above are what Stages 1 to 4 do with you, in a room, with your work reviewed. Cohort 10 enrolment closes Sunday 30 August, 8:00 PM WAT; the cohort begins Monday 31 August. <a href="../../register.html">See the options.</a></blockquote></div>
 <div class="tags"><span>start-here</span><span>beginner</span><span>roadmap</span><span>14-days</span></div>
+<aside class="door">
+<span class="door-k">Your supply, fixed for free</span>
+<h2>Real roles, checked, and open to Africans</h2>
+<p>Reading about the search is one thing; having roles reach you is another. Our free WhatsApp channel carries verified global remote roles open to applicants from Africa — posted continuously, no fee, no gatekeeping, and you can leave whenever you like.</p>
+<a href="https://whatsapp.com/channel/0029Vaym4DE3mFY2wCrC713S" rel="noopener" target="_blank">Join The Free Job Channel &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +142,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

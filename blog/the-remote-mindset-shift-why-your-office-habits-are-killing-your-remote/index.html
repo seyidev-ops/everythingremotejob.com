@@ -76,7 +76,25 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Remote Mindset Shift: Why Your Office Habits Are Killing Your Remote Career","description":"The biggest reason remote workers from traditional office backgrounds fail in their first 90 days — and the mindset reboot that changes everything.","datePublished":"2026-05-21","dateModified":"2026-05-21","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/the-remote-mindset-shift-why-your-office-habits-are-killing-your-remote/"},"url":"https://everythingremotejob.com/blog/the-remote-mindset-shift-why-your-office-habits-are-killing-your-remote/","articleSection":"Productivity","keywords":"mindset, remote, habits"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"The Remote Mindset Shift: Why Your Office Habits Are Killing Your Remote Career","item":"https://everythingremotejob.com/blog/the-remote-mindset-shift-why-your-office-habits-are-killing-your-remote/"}]}</script>
 </head>
@@ -99,10 +117,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><h2>The Office Brain vs The Remote Brain</h2><p>In a traditional office, your manager sees your presence. Your productivity is implied by your being there. You get credit for visibility — arriving early, staying late, looking busy in meetings.</p><p>Remote work destroys all of that. In a distributed team, <strong>no one sees you. Only your output speaks.</strong></p><blockquote>The single biggest predictor of remote work failure is not skill — it's the inability to shift from presence-based thinking to output-based thinking.</blockquote><h2>The 5 Office Habits That Destroy Remote Careers</h2><h3>1. Waiting to be assigned work</h3><p>In an office, your manager can see you're free and give you something to do. Remotely, if you're not producing without being told, you disappear from the team's consciousness.</p><h3>2. Confusing "being available" with "being productive"</h3><p>Responding instantly to every Slack message feels like work. It isn't. It's reactive mode — the enemy of deep work.</p><h3>3. Measuring time instead of output</h3><p>"I worked 8 hours today" is meaningless remotely. "I completed the Q3 report, reviewed two proposals, and drafted the onboarding guide" is what matters.</p><h3>4. Treating async tools like real-time chat</h3><p>Sending five consecutive Slack messages instead of one well-structured message is an office habit. It fragments your colleague's focus and signals low async intelligence.</p><h3>5. Neglecting documentation</h3><p>In offices, institutional knowledge lives in people's heads and gets transferred in hallway conversations. Remotely, if it's not written down, it doesn't exist.</p><h2>The Remote Mindset Reboot</h2><ul><li>Start every day writing your 3 KPIs before opening any communication app</li><li>Measure your day by deliverables completed, not hours logged</li><li>Treat every message you send as a document — make it complete, clear, and actionable</li><li>Document everything you learn, decide, or create</li><li>End every day with a written EOD report</li></ul></div>
 <div class="tags"><span>mindset</span><span>remote</span><span>habits</span></div>
+<aside class="door">
+<span class="door-k">The whole system, worked alone</span>
+<h2>Twenty sessions on the tools, the writing and the search</h2>
+<p>If the working habits are the gap, this is the pack that closes it: the remote operating system, the tool stack and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download — the same four stages the ₦250,000 live cohort runs.</p>
+<a href="../../selflearn/">See The Self-Learn Pack &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +142,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

@@ -76,7 +76,25 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Remote Work Saved My Life — and Quietly Ruined My Career","description":"Going remote was the best and worst professional decision I made in the same year. The part that remote work content creators won't say — and what it costs","datePublished":"2026-04-27","dateModified":"2026-04-27","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/remote-work-saved-my-life-and-quietly-ruined-my-career/"},"url":"https://everythingremotejob.com/blog/remote-work-saved-my-life-and-quietly-ruined-my-career/","articleSection":"Productivity","keywords":"remote, career, visibility, honest"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"Remote Work Saved My Life — and Quietly Ruined My Career","item":"https://everythingremotejob.com/blog/remote-work-saved-my-life-and-quietly-ruined-my-career/"}]}</script>
 </head>
@@ -99,10 +117,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><h2>The Part Nobody Posts About</h2><p>I need to say something that remote work content creators won't say.</p><p>Going remote was the best and worst professional decision I made in the same year. And the worst part wasn't about remote work itself — it was about not knowing the unwritten rules before I stepped in.</p><h2>The Best Part Was Real</h2><ul><li>Moved cities for the first time in six years</li><li>Cut my commute from three hours to zero</li><li>Gained 40 extra hours per month on things I actually chose</li><li>Mental health improved measurably within the first quarter</li></ul><h2>The Part Nobody Posts</h2><ul><li>I became invisible at my company</li><li>Two promotions went to people who were in the office</li><li>My manager stopped thinking of me for stretch projects</li><li>I lost three years of "being seen" that in-person employees were quietly accumulating</li></ul><p>This is not an argument against remote work. It is an argument for going in with your eyes fully open.</p><h2>The Rule That Remote Work Doesn't Change</h2><blockquote>Remote work does not automatically reward performance. It rewards <strong>visible performance</strong>. And visible performance in a remote environment looks completely different.</blockquote><p>In an office, visibility is passive. People see you working. They see you arrive early, stay late, contribute in meetings, and form relationships in corridors.</p><p>In a remote environment, visibility is active. Nobody sees you unless you <strong>show</strong> them.</p><h2>What Remote Visibility Actually Looks Like</h2><ul><li><strong>Proactive communication:</strong> Sending weekly updates nobody asked for — not to show you're busy, but to show you're thinking</li><li><strong>Being the one who writes things down:</strong> Synthesising meeting notes, documenting decisions, making the informal formal</li><li><strong>Volunteering for the cross-team project:</strong> The ones that touch multiple departments are how distributed workers build internal reputation</li><li><strong>EOD reports:</strong> Three lines at the end of every day. What you completed. What you're carrying to tomorrow. What you need. Most people never do this. The ones who do are consistently the first promoted.</li></ul><h2>What I Wish Someone Had Told Me in Year 1</h2><p>I lost years to the mistake of assuming good work would speak for itself. It doesn't. Not in an office. Not on Slack. Nowhere. The system doesn't reward quiet excellence — it rewards communicated excellence.</p><p>Learn the visibility game before you need it. The professionals winning at remote careers are not luckier. They learned these rules faster — usually because someone told them before they made the expensive mistakes.</p></div>
 <div class="tags"><span>remote</span><span>career</span><span>visibility</span><span>honest</span></div>
+<aside class="door">
+<span class="door-k">The whole system, worked alone</span>
+<h2>Twenty sessions on the tools, the writing and the search</h2>
+<p>If the working habits are the gap, this is the pack that closes it: the remote operating system, the tool stack and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download — the same four stages the ₦250,000 live cohort runs.</p>
+<a href="../../selflearn/">See The Self-Learn Pack &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +142,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

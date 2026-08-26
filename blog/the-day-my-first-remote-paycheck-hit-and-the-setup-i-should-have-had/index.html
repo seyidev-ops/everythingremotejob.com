@@ -76,7 +76,25 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Day My First Remote Paycheck Hit — and the Setup I Should Have Had Ready","description":"My first international payment was $3,200. It took 10 days to arrive. Here is the payment infrastructure every African remote worker needs to set up before","datePublished":"2026-06-05","dateModified":"2026-06-05","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/the-day-my-first-remote-paycheck-hit-and-the-setup-i-should-have-had/"},"url":"https://everythingremotejob.com/blog/the-day-my-first-remote-paycheck-hit-and-the-setup-i-should-have-had/","articleSection":"Success Stories","keywords":"paycheck, wise, payment, africa"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"The Day My First Remote Paycheck Hit — and the Setup I Should Have Had Ready","item":"https://everythingremotejob.com/blog/the-day-my-first-remote-paycheck-hit-and-the-setup-i-should-have-had/"}]}</script>
 </head>
@@ -99,10 +117,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><h2>The Day It Almost Went Wrong</h2><p>My first remote paycheck was $3,200. I had worked six weeks. It was due Friday. By Monday it had not arrived. I spent three days on hold with two banks and refreshing my account every hour. The problem: my employer used an international wire transfer with a 5–7 business day processing window through my Nigerian bank. Nobody had told me this and I had not asked.</p><h2>The Payment Setup Checklist</h2><p>This is what every Cohort 6 participant now receives before they accept any offer:</p><h3>For USD-Paying Employers</h3><ul><li><strong>Wise:</strong> Get a USD account number. Employers pay as if paying a US bank. Converts to NGN automatically or holds in USD. Most reliable option for Nigerian remote workers in 2026.</li><li><strong>Grey Finance:</strong> Built specifically for Nigerian remote workers receiving foreign income. Naira and foreign currency wallets. Local support team.</li><li><strong>Payoneer:</strong> Widely accepted by international employers and freelance platforms. Slower conversion but globally trusted.</li></ul><h3>For GBP or EUR-Paying Employers</h3><ul><li><strong>Wise GBP/EUR account:</strong> Get a local account number in the employer's currency. Employers pay locally and you receive internationally.</li></ul><h2>The One Question to Ask Before Signing</h2><p>"What payment method do you use for international contractors?" Set up the matching receiving account before your first invoice is due. Never be surprised by the system on payday.</p></div>
 <div class="tags"><span>paycheck</span><span>wise</span><span>payment</span><span>africa</span></div>
+<aside class="door">
+<span class="door-k">How this one actually happened</span>
+<h2>The programme behind the story you just read</h2>
+<p>Nobody in these stories got lucky. They built four things a global employer could read, then aimed at roles that could legally pay them. Foundation Training is the twenty-day live build that produces those four things, with your work marked by a person.</p>
+<a href="../../foundationtraining/">See Foundation Training &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +142,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

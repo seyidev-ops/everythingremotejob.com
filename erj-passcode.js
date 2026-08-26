@@ -55,12 +55,23 @@
   ─────────────────────────────────────────────────────────────────── */
   var COHORTS = [
     { n: 9,  starts: '2026-08-03', ends: '2026-08-30', year: 2026, hm: 'AV', confirmed: true  },
-    { n: 10, starts: '2026-08-31', ends: '2026-09-26', year: 2026, hm: 'EL', confirmed: true  },
-    { n: 11, starts: '2026-09-27', ends: '2026-10-24', year: 2026, hm: 'TI', confirmed: false },
-    { n: 12, starts: '2026-10-25', ends: '2026-11-21', year: 2026, hm: 'CH', confirmed: false },
-    { n: 13, starts: '2026-11-22', ends: '2026-12-19', year: 2026, hm: 'KI', confirmed: false },
-    { n: 14, starts: '2026-12-20', ends: '2027-01-16', year: 2026, hm: 'TE', confirmed: false }
+    { n: 10, starts: '2026-08-31', ends: '2026-09-27', year: 2026, hm: 'EL', confirmed: true  },
+    /* Cohort 11: enrolment closes Sun 27 Sep 20:00 WAT, the cohort BEGINS
+       Mon 28 Sep 20:00 WAT. The row previously said 27 Sep, which would have
+       started it a day before enrolment closed.
+       ⚠ VERIFY THE HEBREW MONTH BEFORE ISSUING CODES. 28 Sep 2026 falls in
+       Tishrei, so the suffix is 2026TI and codes read ERJM-CORE-2026TI. If
+       that is wrong, every passcode minted for this cohort is wrong. */
+    { n: 11, starts: '2026-09-28', ends: '2026-10-25', year: 2026, hm: 'TI', confirmed: true  },
+    { n: 12, starts: '2026-10-26', ends: '2026-11-22', year: 2026, hm: 'CH', confirmed: false },
+    { n: 13, starts: '2026-11-23', ends: '2026-12-20', year: 2026, hm: 'KI', confirmed: false },
+    { n: 14, starts: '2026-12-21', ends: '2027-01-17', year: 2026, hm: 'TE', confirmed: false }
   ];
+
+  /* Every cohort begins at 20:00 WAT on its start date — never at midnight.
+     The participant portal must keep showing the cohort a student is actually
+     in until the next one genuinely begins. */
+  var COHORT_START_TIME = 'T20:00:00+01:00';
 
   var TIERS = {
     CORE: { label: 'Stages 1–4 · Complete Remote Career Programme',
@@ -112,15 +123,32 @@
 
   /* The cohort whose window contains `date` (default: today).
      If today falls between cohorts, returns the next one starting. */
+  function startsAt(c) { return new Date(c.starts + COHORT_START_TIME); }
+
+  /* The cohort a participant is CURRENTLY IN.
+
+     This used to compare calendar dates only, which meant that at 00:00 on a
+     start date the portal jumped to the new cohort — twenty hours before that
+     cohort actually begins at 20:00 WAT. A student in Cohort 9 opening the
+     dashboard on the morning of a changeover saw themselves moved into a
+     cohort that had not started. It now returns the last cohort whose 20:00
+     start has genuinely passed, so the interface only moves when the room
+     does. Before the first cohort ever started, it returns that first one. */
   function currentCohort(date) {
-    var d = (date ? new Date(date) : new Date());
-    var iso = d.toISOString().slice(0, 10);
-    var i;
+    var now = (date ? new Date(date) : new Date());
+    var found = null, i;
     for (i = 0; i < COHORTS.length; i++) {
-      if (iso >= COHORTS[i].starts && iso <= COHORTS[i].ends) return COHORTS[i];
+      if (startsAt(COHORTS[i]) <= now) found = COHORTS[i];
     }
-    for (i = 0; i < COHORTS.length; i++) {
-      if (iso < COHORTS[i].starts) return COHORTS[i];
+    return found || COHORTS[0];
+  }
+
+  /* The cohort currently SELLING — the next one that has not begun yet.
+     What the site should count down to and name in enrolment copy. */
+  function nextCohort(date) {
+    var now = (date ? new Date(date) : new Date());
+    for (var i = 0; i < COHORTS.length; i++) {
+      if (startsAt(COHORTS[i]) > now) return COHORTS[i];
     }
     return COHORTS[COHORTS.length - 1];
   }
@@ -409,6 +437,8 @@
     suffix: suffix,
     codeFor: codeFor,
     currentCohort: currentCohort,
+    nextCohort: nextCohort,
+    cohorts: COHORTS.slice(),
     cohortByNumber: cohortByNumber,
     validate: validate,
     /* CV Engine pass (₦5,000 · 30 days from first use) */

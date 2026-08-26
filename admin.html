@@ -4,10 +4,6 @@
 <head><style id="erjCanvasGuard">html{background:#000000}html[data-theme="day"]{background:#FAFAF8}</style>
 <meta charset="utf-8"/>
 <link href="manifest.json" rel="manifest"/>
-<link href="favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
-<link href="appletouchicon.png" rel="apple-touch-icon"/>
 <meta content="#000000" id="metaThemeColor" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Admin Panel | Everything Remote Job</title>
@@ -429,7 +425,10 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
 <meta content="no-store, no-cache, must-revalidate, max-age=0" http-equiv="Cache-Control"/>
 <meta content="no-cache" http-equiv="Pragma"/>
 <meta content="0" http-equiv="Expires"/>
-</meta></meta></meta></head>
+</meta></meta></meta><link href="/favicon.ico" rel="icon" sizes="48x48 32x32 16x16"/>
+<link href="/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/appletouchicon.png" rel="apple-touch-icon"/>
+</head>
 <body>
 <div id="erjNavMount"></div>
 <script>window.ERJ_NAV={active:'admin',portal:true};</script>
@@ -623,7 +622,7 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
 <!-- ── PRIVATE JOB BOARD VIEW ── -->
 <div class="view" id="viewJobs" style="display:none">
 <div class="page-header">
-<div class="page-title">Legacy Job Board · Retired</div>
+<div class="page-title">Archive · Private Job Board (discontinued)</div>
 <div class="page-sub">Manage job listings, grant participant access, and whitelist phone numbers. Participants access via their training dashboard.</div>
 </div>
 <!-- Tabs -->
@@ -1465,34 +1464,18 @@ function setStageAccess(email, stageId, unlocked) {
   if (!p[stageId]) p[stageId] = { unlocked:false, completed:false, lessons:[] };
   p[stageId].unlocked = unlocked;
   saveStudentProgress(email, p);
-  // Auto-grant 60-day job board access whenever any stage is unlocked
-  if (unlocked) grantJobBoardAccess(email, 60);
 }
 
-/* ── JOB BOARD ACCESS GRANT (writes to shared email map) ── */
-function grantJobBoardAccess(email, days) {
-  days = days || 60;
-  try {
-    const map = JSON.parse(localStorage.getItem('rjm_jb_email_access') || '{}');
-    const expiry = new Date(); expiry.setDate(expiry.getDate() + days);
-    // Only extend if new expiry is further out
-    if (!map[email] || new Date(map[email]) < expiry) {
-      map[email] = expiry.toISOString();
-      localStorage.setItem('rjm_jb_email_access', JSON.stringify(map));
-    }
-    // Also set toggleJobAccess list
-    toggleJobAccess(email, true);
-  } catch {}
-}
+/* The Private Job Board is discontinued; grantJobBoardAccess() is gone.
+   The archived subscriber records below are kept deliberately — they are
+   the only history of who paid for it. Nothing grants new access. */
 
 /* ── GRANT / REVOKE ALL FOR ONE STUDENT ── */
 function grantAll(email) {
   const p = ensureProgress(email);
   STAGE_META.forEach(s => { if (p[s.id]) p[s.id].unlocked = true; });
   saveStudentProgress(email, p);
-  // Auto-grant 60-day job board access
-  grantJobBoardAccess(email, 60);
-  showToast(`✅ All 5 stages + Job Board (60 days) granted to ${email}`, 'success');
+  showToast(`✅ All 5 stages granted to ${email}`, 'success');
   renderAccessGrid();
   if (document.getElementById('accessModal').style.display === 'flex') openAccessModal(email);
 }
@@ -2030,16 +2013,12 @@ function renderJobSubsTable() {
   el.innerHTML = rows || '<p style="color:var(--muted);font-size:.84rem">No users found.</p>';
 }
 
+/* The Private Job Board is discontinued, so access can no longer be
+   extended. The archive is readable and revocable; it is not sellable.
+   Anyone asking for it should be pointed at the 7-day Done-For-You
+   search at /jobapplication/, which replaced it. */
 function extendJobAccess(email, days) {
-  const map = JSON.parse(localStorage.getItem('rjm_jb_email_access') || '{}');
-  const existing = map[email] ? new Date(map[email]) : new Date();
-  const base  = existing > new Date() ? existing : new Date();
-  const expiry = new Date(base); expiry.setDate(expiry.getDate() + days);
-  map[email] = expiry.toISOString();
-  localStorage.setItem('rjm_jb_email_access', JSON.stringify(map));
-  grantJobBoardAccess(email, days);
-  renderJobSubsTable();
-  showToast(`✅ Job board extended +${days} days for ${email}`,'success');
+  showToast('The Private Job Board is discontinued — access cannot be extended. Point them at the 7-day Done-For-You search instead.', 'error');
 }
 
 function revokeJBAccess(email) {
@@ -2371,7 +2350,7 @@ renderContent();
 })();
 </script>
 <!-- ===== /Unified Theme Control ===== -->
-<script defer="" src="erj-nav.js?site=20260825b"></script>
+<script defer="" src="erj-nav.js?site=20260825c"></script>
 <script defer="" src="erj-passcode.js"></script>
 </body>
 </html>

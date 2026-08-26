@@ -3,10 +3,6 @@
 <html data-theme="night" lang="en">
 <head><style id="erjCanvasGuard">html{background:#000000}html[data-theme="day"]{background:#FAFAF8}</style>
 <meta charset="utf-8"/>
-<link href="favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
-<link href="appletouchicon.png" rel="apple-touch-icon"/>
 <meta content="#000000" id="metaThemeColor" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
 <title>Training Dashboard | Everything Remote Job</title>
@@ -204,8 +200,6 @@ body { background: var(--bg); color: var(--text); font-family: var(--font-b); ov
   border-radius:100px;padding:.45rem 1rem;font-size:.76rem;font-weight:700;
   text-decoration:none;letter-spacing:.01em;backdrop-filter:blur(4px);transition:background .2s ease,transform .2s ease;}
 .wb-chip:hover{background:rgba(255,255,255,.3);transform:translateY(-1px);}
-#jbAccessBadge{border:1px solid rgba(255,255,255,.35);border-radius:100px;
-  padding:.3rem .8rem;font-size:.72rem;font-weight:700;color:#fff;}
 .wb-greeting { font-family: var(--font-d); font-size: clamp(1.3rem,2.5vw,1.8rem); font-weight: 800; color: #fff; margin-bottom: 0.3rem; }
 .wb-sub { color: rgba(255,255,255,0.75); font-size: 0.9rem; margin-bottom: 1.5rem; }
 .wb-stats { display: flex; gap: 2rem; flex-wrap: wrap; }
@@ -910,7 +904,10 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
 <meta content="0" http-equiv="Expires"/>
 <style>html[data-theme="day"] .erj-mark-night{display:none!important;}
 html[data-theme="day"] .erj-mark-day{display:inline-block!important;}</style>
-</meta></meta></meta></meta></meta></head>
+</meta></meta></meta></meta></meta><link href="/favicon.ico" rel="icon" sizes="48x48 32x32 16x16"/>
+<link href="/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/appletouchicon.png" rel="apple-touch-icon"/>
+</head>
 <body>
 <!-- Portal app shell: this topbar + the sidebar are the ONLY navigation here.
      The marketing hamburger nav is deliberately not loaded on logged-in views. -->
@@ -1034,7 +1031,7 @@ html[data-theme="day"] .erj-mark-day{display:inline-block!important;}</style>
 <div class="wb-label">Stages Complete</div>
 </div>
 </div>
-<span id="jbAccessBadge" onclick="showView('jobs')" style="display:none;margin-top:.7rem;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:100px;background:rgba(16,185,129,.15);border:1px solid rgba(16,185,129,.3);cursor:pointer"></span>
+
 </div>
 </div>
 <!-- PENDING ACCESS BANNER (shown when no stages are unlocked beyond stage1) -->
@@ -1400,10 +1397,6 @@ let currentStageModal = null;
   updateStats();
   applyTheme(localStorage.getItem('rjt-theme') || 'night');
 
-  // Show bell dot if job board expiry is within 10 days
-  const jbDaysLeft = getJbDaysLeft ? getJbDaysLeft() : 0;
-  const dot = document.getElementById('notifDot');
-  if (dot && jbDaysLeft > 0 && jbDaysLeft <= 10) dot.style.display = 'block';
   try { erjRememberAccount(); } catch (e) {}
 })();
 
@@ -1423,8 +1416,6 @@ function loadProgress() {
     progress.stage1.unlocked = true;
     saveProgress();
   }
-  // Auto-grant 60-day job board access whenever any stage is unlocked
-  ensureJobBoardAccess(60);
 }
 
 function saveProgress() {
@@ -1432,37 +1423,11 @@ function saveProgress() {
   try { erjRememberAccount(); } catch (e) {}
 }
 
-/* ── JOB BOARD ACCESS ── */
-function getJbExpiry() {
-  try {
-    const v = localStorage.getItem(`rjm_jb_expiry_${session.email}`);
-    if (!v) return null;
-    const d = new Date(v); return isNaN(d.getTime()) ? null : d;
-  } catch { return null; }
-}
-function ensureJobBoardAccess(days) {
-  days = days || 60;
-  const key  = `rjm_jb_expiry_${session.email}`;
-  const existing = getJbExpiry();
-  if (!existing || existing < new Date()) {
-    const expiry = new Date(); expiry.setDate(expiry.getDate() + days);
-    localStorage.setItem(key, expiry.toISOString());
-  }
-  // Also write to the shared email-access map (checked by the job board on testimonials.html)
-  try {
-    const map = JSON.parse(localStorage.getItem('rjm_jb_email_access') || '{}');
-    if (!map[session.email] || new Date(map[session.email]) < new Date()) {
-      const expiry = new Date(); expiry.setDate(expiry.getDate() + days);
-      map[session.email] = expiry.toISOString();
-      localStorage.setItem('rjm_jb_email_access', JSON.stringify(map));
-    }
-  } catch {}
-}
-function getJbDaysLeft() {
-  const exp = getJbExpiry();
-  if (!exp) return 0;
-  return Math.max(0, Math.ceil((exp - new Date()) / 86400000));
-}
+/* ── The Private Job Board was discontinued.
+   Everything that granted, counted down and re-sold access to it has been
+   removed. The 7-day Done-For-You search at /jobapplication/ replaced it.
+   The old localStorage keys (rjm_jb_expiry_*, rjm_jb_email_access) are
+   simply left alone: nothing writes them and nothing reads them. ── */
 
 /* ════════════════════════════════════════
    USER INFO
@@ -1557,19 +1522,6 @@ function updateStats() {
   document.getElementById('wbStreak').textContent  = streak;
   document.getElementById('wbStages').textContent  = `${completed}/5`;
 
-  // Job board access badge
-  const jbDays = getJbDaysLeft();
-  const jbBadge = document.getElementById('jbAccessBadge');
-  if (jbBadge) {
-    if (jbDays > 0) {
-      jbBadge.textContent = `🔒 Job Board: ${jbDays}d left`;
-      jbBadge.style.display = 'inline-flex';
-      jbBadge.style.color = '#fff';
-      jbBadge.style.background = jbDays > 14 ? 'rgba(255,255,255,.18)' : 'rgba(0,0,0,.28)';
-    } else {
-      jbBadge.style.display = 'none';
-    }
-  }
 
   // Show pending banner when only stage1 is unlocked (stages 2-5 locked)
   const banner = document.getElementById('pendingBanner');
@@ -1639,11 +1591,9 @@ function redeemCode() {
   }
 
   saveProgress();
-  ensureJobBoardAccess(60);
-  const daysLeft = getJbDaysLeft();
   const where = r.cohort ? (' \u00b7 Cohort ' + r.cohort.n) : '';
   say('#7A8B5A', '\u2705 Access granted' + where + '. ' + r.stages.length +
-      ' stage(s) unlocked. Job Board access: ' + daysLeft + ' days.');
+      ' stage(s) unlocked.');
 
   /* An out-of-window code still works — the person paid for it — but say so,
      so nobody thinks they are in the current cohort when they are not. */
@@ -2330,36 +2280,14 @@ function renderNotifPanel() {
   const body = document.getElementById('notifBody');
   const dot  = document.getElementById('notifDot');
 
-  // ── JOB BOARD EXPIRY ALERTS ──
-  const jbDays = getJbDaysLeft();
-  let jbAlert = '';
-  if (jbDays === 0) {
-    jbAlert = `<div style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:10px;padding:.9rem 1rem;margin-bottom:.8rem;font-size:.84rem;line-height:1.6">
-      🔴 <strong style="color:#f87171">Job Board Access EXPIRES TODAY!</strong><br>
-      Renew now to keep access. <a href="https://paystack.shop/pay/rfix-j0sug" target="_blank" style="color:#34d399;font-weight:700">Renew ₦50,000 →</a>
-    </div>`;
-    if (dot) dot.style.display = 'block';
-  } else if (jbDays > 0 && jbDays <= 5) {
-    jbAlert = `<div style="background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);border-radius:10px;padding:.9rem 1rem;margin-bottom:.8rem;font-size:.84rem;line-height:1.6">
-      🔴 <strong style="color:#f87171">Job Board expires in ${jbDays} day${jbDays===1?'':'s'}!</strong><br>
-      Renew soon to avoid losing access. <a href="https://paystack.shop/pay/rfix-j0sug" target="_blank" style="color:#34d399;font-weight:700">Renew now →</a>
-    </div>`;
-    if (dot) dot.style.display = 'block';
-  } else if (jbDays > 5 && jbDays <= 10) {
-    jbAlert = `<div style="background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);border-radius:10px;padding:.9rem 1rem;margin-bottom:.8rem;font-size:.84rem;line-height:1.6">
-      🟡 <strong style="color:#fbbf24">Job Board access: ${jbDays} days remaining</strong><br>
-      Plan ahead — renew before it expires. <a href="https://paystack.shop/pay/rfix-j0sug" target="_blank" style="color:#34d399;font-weight:700">Renew →</a>
-    </div>`;
-  }
-
   if (!cls) {
-    body.innerHTML = jbAlert + `
+    body.innerHTML = `
       <div class="np-empty">
         📭 No class scheduled yet.<br>
         Your instructor or admin will post the next live class here.<br><br>
         <a href="https://wa.me/2348032925957" target="_blank" rel="noopener" class="np-wa">💬 Check WhatsApp Group</a>
       </div>`;
-    if (!jbAlert && dot) dot.style.display = 'none';
+    if (dot) dot.style.display = 'none';
     return;
   }
 
@@ -2372,7 +2300,7 @@ function renderNotifPanel() {
   const timeStr = classTime.toLocaleTimeString('en-NG', { hour:'2-digit', minute:'2-digit' });
   const tz      = cls.timezone || 'WAT (UTC+1)';
 
-  body.innerHTML = jbAlert + `
+  body.innerHTML = `
     <div class="np-class-card">
       <div class="npc-badge">🔴 LIVE CLASS</div>
       <div class="npc-title">${cls.title || 'Live Training Session'}</div>

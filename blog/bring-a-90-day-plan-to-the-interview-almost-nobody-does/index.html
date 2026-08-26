@@ -13,10 +13,6 @@
 <meta content="Copyright 2026 Business Play Limited, trading as Everything Remote Job. All rights reserved." name="copyright"/>
 <meta content="Original ERJ content. Republishing or redistribution requires permission." name="rights"/>
 <meta content="Oluwaseyi Ashiru" name="author"/>
-<link href="../../favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../appletouchicon.png" rel="apple-touch-icon"/>
 <link href="../../manifest.json" rel="manifest"/>
 <meta content="#000000" id="metaThemeColor" name="theme-color"/>
 <meta content="article" property="og:type"/>
@@ -76,9 +72,30 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Bring a 90-Day Plan to the Interview. Almost Nobody Does.","description":"One page, written before you are hired, showing what you would do first. It changes the conversation from assessment to collaboration.","datePublished":"2026-06-23","dateModified":"2026-06-23","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/bring-a-90-day-plan-to-the-interview-almost-nobody-does/"},"url":"https://everythingremotejob.com/blog/bring-a-90-day-plan-to-the-interview-almost-nobody-does/","articleSection":"Job Search","keywords":"interviews, 90-day-plan, preparation, standing-out"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"Bring a 90-Day Plan to the Interview. Almost Nobody Does.","item":"https://everythingremotejob.com/blog/bring-a-90-day-plan-to-the-interview-almost-nobody-does/"}]}</script>
+<link href="/favicon.ico" rel="icon" sizes="48x48 32x32 16x16"/>
+<link href="/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/appletouchicon.png" rel="apple-touch-icon"/>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -99,10 +116,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><p>This is the highest-return hour of preparation available to a candidate, and it is unusual enough that it is remembered.</p> <h2>What it is</h2> <p>One page. What you would do in your first thirty, sixty and ninety days if they hired you. Written before the interview, sent after it, or shared on screen if the conversation allows.</p> <p>It works because it moves the discussion from "can this person do the job" to "here is how we would work together". You are behaving like a colleague before you are one.</p> <h2>The structure</h2> <p><strong>Days 1–30 · Learn.</strong> Who I would meet, what I would read, what I would ask. Name real things from the job description and from what they told you in the call.</p> <p><strong>Days 31–60 · Contribute.</strong> The first thing I would improve, and why I picked it. Small and finishable, not a reorganisation.</p> <p><strong>Days 61–90 · Own.</strong> What I would be running independently by then, and what "good" would look like.</p> <p>Keep it to one page. A three-page plan reads as someone who has already decided how their company works.</p> <h2>A worked fragment, for a support role</h2> <p><em>Days 1–30. Sit with every member of the support team for thirty minutes each. Read the last three months of tickets to find what actually breaks. Learn the product properly by working through the onboarding as a new customer would. Meet whoever owns the help centre.</em></p> <p><em>Days 31–60. You mentioned first-response time is the metric under pressure. My first move would be to categorise a month of tickets and find the five issues that generate the most volume, then write proper templates for those. In my last role that took first response from about eight hours to under two.</em></p> <p><em>Days 61–90. Owning the queue independently, with the help centre updated for the top five issues so a portion of them stop arriving as tickets at all.</em></p> <h2>The rule that makes it work</h2> <p>Everything in it must come from something they said or something publicly true about them. A generic plan is worse than no plan, because it proves you did not listen.</p> <p>So take notes during the interview and write it afterwards. That is usually better than arriving with it pre-written, because it can reference the actual conversation.</p> <h2>How to send it</h2> <p>With the thank-you note, the same day.</p> <p><em>"Thanks for the conversation — the point about first-response time stayed with me. I put together a one-page view of how I would approach the first ninety days. No obligation to read it; it was useful for me to think it through either way."</em></p> <p>That last line matters. It removes the pressure and makes the gesture read as genuine rather than as a tactic.</p> <h2>What it also does for you</h2> <p>Writing it forces you to work out whether you actually want the job. More than a few people discover, halfway through a ninety-day plan, that they have nothing they want to do there. That is worth knowing before an offer, not after.</p> <blockquote>Interview preparation, recorded and reviewed against the questions you will really face, is Stage 4. <a href="../../register.html">See Stage 4.</a></blockquote></div>
 <div class="tags"><span>interviews</span><span>90-day-plan</span><span>preparation</span><span>standing-out</span></div>
+<aside class="door">
+<span class="door-k">Your supply, fixed for free</span>
+<h2>Real roles, checked, and open to Africans</h2>
+<p>Reading about the search is one thing; having roles reach you is another. Our free WhatsApp channel carries verified global remote roles open to applicants from Africa — posted continuously, no fee, no gatekeeping, and you can leave whenever you like.</p>
+<a href="https://whatsapp.com/channel/0029Vaym4DE3mFY2wCrC713S" rel="noopener" target="_blank">Join The Free Job Channel &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +141,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

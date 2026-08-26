@@ -13,10 +13,6 @@
 <meta content="Copyright 2026 Business Play Limited, trading as Everything Remote Job. All rights reserved." name="copyright"/>
 <meta content="Original ERJ content. Republishing or redistribution requires permission." name="rights"/>
 <meta content="Oluwaseyi Ashiru" name="author"/>
-<link href="../../favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../appletouchicon.png" rel="apple-touch-icon"/>
 <link href="../../manifest.json" rel="manifest"/>
 <meta content="#000000" id="metaThemeColor" name="theme-color"/>
 <meta content="article" property="og:type"/>
@@ -76,9 +72,30 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Getting Paid From Abroad: Payoneer, Wise, Grey and Deel Explained Simply","description":"Four names that get mentioned constantly and rarely explained. What each one is actually for, what it costs you, and which to open first.","datePublished":"2026-07-18","dateModified":"2026-07-18","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/getting-paid-from-abroad-payoneer-wise-grey-and-deel-explained-simply/"},"url":"https://everythingremotejob.com/blog/getting-paid-from-abroad-payoneer-wise-grey-and-deel-explained-simply/","articleSection":"Industry News","keywords":"payments, payoneer, wise, deel, money"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"Getting Paid From Abroad: Payoneer, Wise, Grey and Deel Explained Simply","item":"https://everythingremotejob.com/blog/getting-paid-from-abroad-payoneer-wise-grey-and-deel-explained-simply/"}]}</script>
+<link href="/favicon.ico" rel="icon" sizes="48x48 32x32 16x16"/>
+<link href="/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/appletouchicon.png" rel="apple-touch-icon"/>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -99,10 +116,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><p>These are not four versions of the same thing. They do different jobs, and picking the wrong one costs you money every month.</p> <h2>Deel and Remote.com — not yours, theirs</h2> <p>These are hiring platforms. Your employer uses one to hire you legally without opening a company in Nigeria. You do not choose it and you do not pay for it.</p> <p>What it means for you: you sign a contract inside their system, submit hours or invoices if relevant, and get paid monthly. You still tell them where to send the money, which is where the next three come in.</p> <p>If a company mentions Deel, that is a good sign. It usually means they have hired internationally before and the process will be orderly.</p> <h2>Payoneer — for freelancers and marketplaces</h2> <p>Gives you receiving account details in USD, GBP and EUR, so a client can pay you as though you were local to them. Widely accepted, especially by agencies and marketplaces.</p> <p><strong>Costs:</strong> a percentage when you withdraw to your naira account, and a small annual card fee if you take the card. Compare their withdrawal rate against the market rate on the day — the gap is the real cost, not the stated fee.</p> <p><strong>Best for:</strong> multiple clients, marketplace work, anyone who needs to look like a normal international vendor.</p> <h2>Wise — for clean transfers at honest rates</h2> <p>Wise is the one that publishes the real exchange rate and charges a visible fee on top, rather than hiding the cost inside a poor rate. For sending and receiving between currencies it is usually the cheapest of the group.</p> <p><strong>Watch out:</strong> availability of certain features for Nigerian residents changes from time to time. Check what is currently supported before you rely on it.</p> <p><strong>Best for:</strong> a single employer paying you monthly, where you want the least value lost in conversion.</p> <h2>Grey — built for this exact problem</h2> <p>An African product designed for people in Nigeria, Kenya and Ghana receiving foreign income. Gives you USD, GBP and EUR account details and converts to local currency.</p> <p><strong>Best for:</strong> receiving salary and converting to naira with less friction than the older international options.</p> <h2>What to actually do</h2> <ol> <li>Open one main account before you start interviewing. Verification takes days and you do not want it sitting between you and your first payment.</li> <li>Open a second as a backup. Platforms occasionally restrict features by country with little notice.</li> <li>Have your documents ready: valid ID, proof of address, sometimes BVN.</li> <li>Once employed, ask your employer which methods they already support. Paying you through something they already use avoids delays.</li> </ol> <h2>Two habits worth forming immediately</h2> <p><strong>Do not convert everything.</strong> Holding part of your income in dollars protects you from exchange-rate moves. That protection is a large part of why the dollar income is worth having.</p> <p><strong>Keep records.</strong> Every invoice, every payment confirmation, one folder. You will need them for tax, for loan applications, and for proving income.</p> <p>Rates and country availability change. Check the current terms on each provider’s own site before deciding — this is a map, not a live price list.</p> <blockquote>Getting set up properly before the first payment is part of onboarding for every participant. <a href="../../register.html">See how enrolment works.</a></blockquote></div>
 <div class="tags"><span>payments</span><span>payoneer</span><span>wise</span><span>deel</span><span>money</span></div>
+<aside class="door">
+<span class="door-k">Turn the market into a move</span>
+<h2>Six situations, one door each</h2>
+<p>Knowing what the market is doing only helps if it changes what you do on Monday. Find the sentence that matches your own last three months and you get one recommended next step — with the limit of that step stated before any price.</p>
+<a href="../../starthere.html">Find Your Starting Line &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +141,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

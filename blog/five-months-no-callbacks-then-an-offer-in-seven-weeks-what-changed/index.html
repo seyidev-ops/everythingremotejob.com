@@ -13,10 +13,6 @@
 <meta content="Copyright 2026 Business Play Limited, trading as Everything Remote Job. All rights reserved." name="copyright"/>
 <meta content="Original ERJ content. Republishing or redistribution requires permission." name="rights"/>
 <meta content="Oluwaseyi Ashiru" name="author"/>
-<link href="../../favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../appletouchicon.png" rel="apple-touch-icon"/>
 <link href="../../manifest.json" rel="manifest"/>
 <meta content="#000000" id="metaThemeColor" name="theme-color"/>
 <meta content="article" property="og:type"/>
@@ -76,9 +72,30 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Five Months, No Callbacks, Then an Offer in Seven Weeks: What Changed","description":"A composite of designers who made the same turn. The work was never the problem — the evidence was. Here is what was fixed, in order.","datePublished":"2026-07-25","dateModified":"2026-07-25","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/five-months-no-callbacks-then-an-offer-in-seven-weeks-what-changed/"},"url":"https://everythingremotejob.com/blog/five-months-no-callbacks-then-an-offer-in-seven-weeks-what-changed/","articleSection":"Success Stories","keywords":"case-study, design, portfolio, composite"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"Five Months, No Callbacks, Then an Offer in Seven Weeks: What Changed","item":"https://everythingremotejob.com/blog/five-months-no-callbacks-then-an-offer-in-seven-weeks-what-changed/"}]}</script>
+<link href="/favicon.ico" rel="icon" sizes="48x48 32x32 16x16"/>
+<link href="/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/appletouchicon.png" rel="apple-touch-icon"/>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -99,10 +116,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><p>Composite again, drawn from several participants with the same shape of problem. The numbers are typical rather than exceptional.</p> <h2>Where he started</h2> <p>Three years designing for a Lagos agency. Genuinely good work. Applying to remote design roles for five months, roughly forty applications, zero callbacks.</p> <p>His conclusion was that international companies do not hire African designers. That was not what was happening.</p> <h2>What was actually wrong</h2> <p><strong>His portfolio was a gallery.</strong> Twelve pretty images with no explanation. A hiring manager looking at it learned that he could make things look nice, which they assumed anyway, and nothing about whether he could think.</p> <p><strong>His CV listed clients, not outcomes.</strong> "Designed marketing materials for X, Y and Z." No indication of what any of it achieved.</p> <p><strong>He was applying only to large, famous companies.</strong> The ones with two thousand applicants per role.</p> <p><strong>His portfolio was a PDF he emailed.</strong> Which meant it often did not arrive, and could not be shared internally.</p> <h2>Week one: three case studies, not twelve images</h2> <p>He cut the portfolio from twelve pieces to three. For each one he wrote four short sections: the problem, the constraint, what he did, and what happened afterwards.</p> <p>The third one was the strongest, and it was for the client with the ugliest work — because that project had a real constraint and a real result. The prettiest piece did not make the cut.</p> <h2>Week two: rebuilt as a link</h2> <p>Moved everything to a simple site with its own address. Now it could be pasted into an application field, shared in a Slack channel, and opened on a phone.</p> <p>The link went at the top of his CV under his name, and into the Featured section of LinkedIn.</p> <h2>Week three: changed the target</h2> <p>He stopped applying to companies everyone has heard of and started targeting companies of twenty to eighty people that had raised money in the last year — meaning they were hiring, and had fewer applicants per role.</p> <p>Fifteen careful applications instead of forty rushed ones, and for each he found the design lead or founder and sent a short message.</p> <h2>Weeks four to six: the actual grind</h2> <p>Two weeks of near silence. Then three replies in four days, which is how it usually goes — nothing, nothing, nothing, then several at once.</p> <p>Two interviews. He failed the first. Asked to walk through a project, he described what he made rather than why. Afterwards he wrote out the answer he should have given.</p> <h2>Week seven</h2> <p>Second interview, same question, prepared answer. Offer: product design role at a fifty-person European company, $2,100 a month, contract through an employer-of-record.</p> <h2>The lesson, stated plainly</h2> <p>He did not get better at design in seven weeks. He got better at evidencing it. The forty earlier applications failed because they gave a stranger no way to evaluate him.</p> <p>Most people in month five of a fruitless search are in exactly this position: the ability is there, the evidence is not, and no amount of additional applications will fix an evidence problem.</p> <blockquote>Turning existing work into evidence a stranger can evaluate is the whole of Stage 4. <a href="../../register.html">See Stage 4.</a></blockquote></div>
 <div class="tags"><span>case-study</span><span>design</span><span>portfolio</span><span>composite</span></div>
+<aside class="door">
+<span class="door-k">How this one actually happened</span>
+<h2>The programme behind the story you just read</h2>
+<p>Nobody in these stories got lucky. They built four things a global employer could read, then aimed at roles that could legally pay them. Foundation Training is the twenty-day live build that produces those four things, with your work marked by a person.</p>
+<a href="../../foundationtraining/">See Foundation Training &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +141,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

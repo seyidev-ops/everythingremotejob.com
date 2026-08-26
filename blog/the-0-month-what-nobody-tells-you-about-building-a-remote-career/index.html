@@ -13,10 +13,6 @@
 <meta content="Copyright 2026 Business Play Limited, trading as Everything Remote Job. All rights reserved." name="copyright"/>
 <meta content="Original ERJ content. Republishing or redistribution requires permission." name="rights"/>
 <meta content="Oluwaseyi Ashiru" name="author"/>
-<link href="../../favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../appletouchicon.png" rel="apple-touch-icon"/>
 <link href="../../manifest.json" rel="manifest"/>
 <meta content="#000000" id="metaThemeColor" name="theme-color"/>
 <meta content="article" property="og:type"/>
@@ -76,9 +72,30 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"The $0 Month: What Nobody Tells You About Building a Remote Career","description":"In one month I had two clients go silent and $0 in the pipeline with rent due in 19 days. Here's what actually turned it around — and the real timeline nob","datePublished":"2026-04-22","dateModified":"2026-04-22","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/the-0-month-what-nobody-tells-you-about-building-a-remote-career/"},"url":"https://everythingremotejob.com/blog/the-0-month-what-nobody-tells-you-about-building-a-remote-career/","articleSection":"Productivity","keywords":"freelance, remote, income, mindset"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"The $0 Month: What Nobody Tells You About Building a Remote Career","item":"https://everythingremotejob.com/blog/the-0-month-what-nobody-tells-you-about-building-a-remote-career/"}]}</script>
+<link href="/favicon.ico" rel="icon" sizes="48x48 32x32 16x16"/>
+<link href="/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/appletouchicon.png" rel="apple-touch-icon"/>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -99,10 +116,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><h2>The Month That Changed Everything</h2><p>In October 2022, I made exactly $0 from remote work.</p><p>I had two clients. One went silent on a Monday. The second sent a "we're pausing the project" email on a Thursday.</p><p>By Friday I had $0 in the pipeline and rent due in 19 days.</p><p>The panic didn't come immediately. First came denial. "They'll reply. Another client will appear." They didn't. One didn't.</p><h2>What I Was Actually Doing Wrong</h2><ul><li>I had exactly two income sources — no buffer, no pipeline</li><li>I had never asked a single happy client for a referral</li><li>I had no outreach system. When work came in, I stopped looking. When it dried up, I was starting from zero</li><li>I confused being busy with being secure</li></ul><h2>The One Thing That Turned It Around</h2><p>It wasn't a magic strategy. It was one email.</p><p>I reached out to five past clients asking one question: <em>"Do you know anyone who might need what I do?"</em></p><p>Three replied. One became a referral that paid $4,200.</p><blockquote>The thing I learned: your next client is almost always hiding in the people you've already helped. But only if you ask.</blockquote><h2>The Real Timeline</h2><p>Three months from $0 back to stable. Not three weeks. Anyone selling you three weeks is selling you something.</p><p>The $0 month broke me. And it rebuilt me with a system instead of luck. Here's what the system looks like now:</p><ul><li>Never fewer than 3 active or warm clients at any time</li><li>Monthly "thinking of you" message to 5 past clients</li><li>Always be in outreach mode — even when fully booked</li><li>30% of income in a dedicated stability fund before touching the rest</li></ul><p>If you're in a quiet patch right now — the answer is almost always hiding in people you've already helped. The relationship is the pipeline.</p></div>
 <div class="tags"><span>freelance</span><span>remote</span><span>income</span><span>mindset</span></div>
+<aside class="door">
+<span class="door-k">The whole system, worked alone</span>
+<h2>Twenty sessions on the tools, the writing and the search</h2>
+<p>If the working habits are the gap, this is the pack that closes it: the remote operating system, the tool stack and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download — the same four stages the ₦250,000 live cohort runs.</p>
+<a href="../../selflearn/">See The Self-Learn Pack &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +141,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

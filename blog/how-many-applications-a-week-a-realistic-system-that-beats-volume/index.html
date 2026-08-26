@@ -13,10 +13,6 @@
 <meta content="Copyright 2026 Business Play Limited, trading as Everything Remote Job. All rights reserved." name="copyright"/>
 <meta content="Original ERJ content. Republishing or redistribution requires permission." name="rights"/>
 <meta content="Oluwaseyi Ashiru" name="author"/>
-<link href="../../favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../appletouchicon.png" rel="apple-touch-icon"/>
 <link href="../../manifest.json" rel="manifest"/>
 <meta content="#000000" id="metaThemeColor" name="theme-color"/>
 <meta content="article" property="og:type"/>
@@ -76,9 +72,30 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How Many Applications a Week? A Realistic System That Beats Volume","description":"Sixty rushed applications lose to twelve researched ones, reliably. Here is the weekly structure, the numbers to expect, and how to track it.","datePublished":"2026-07-26","dateModified":"2026-07-26","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/how-many-applications-a-week-a-realistic-system-that-beats-volume/"},"url":"https://everythingremotejob.com/blog/how-many-applications-a-week-a-realistic-system-that-beats-volume/","articleSection":"Job Search","keywords":"applications, system, weekly-plan, strategy"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"How Many Applications a Week? A Realistic System That Beats Volume","item":"https://everythingremotejob.com/blog/how-many-applications-a-week-a-realistic-system-that-beats-volume/"}]}</script>
+<link href="/favicon.ico" rel="icon" sizes="48x48 32x32 16x16"/>
+<link href="/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/appletouchicon.png" rel="apple-touch-icon"/>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -99,10 +116,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><p>The most common job-search pattern is a burst of eighty applications in one desperate weekend, then two weeks of nothing while waiting. It produces very little and it is exhausting.</p> <p>Here is the alternative: a repeatable week that produces steady results without consuming your life.</p> <h2>The weekly target</h2> <ul> <li><strong>10 to 15 applications</strong>, each with the CV adjusted to the listing’s language</li> <li><strong>5 to 8 direct messages</strong> to the person who owns the role</li> <li><strong>3 to 5 follow-ups</strong> on things sent the previous week</li> <li><strong>1 piece of portfolio or profile work</strong> — improve one case study, or post something useful</li> </ul> <p>Roughly eight to ten hours across the week. It is sustainable for three months, which matters, because three months is often how long it takes.</p> <h2>The week, laid out</h2> <p><strong>Monday — sourcing.</strong> Two hours. Find and list the roles worth applying to. Do not apply yet. Just build the list, checking the location line and the requirements.</p> <p><strong>Tuesday and Wednesday — applying.</strong> Two hours each. Work down the list. For each: adjust the CV so the tools and skills the listing names appear in your words, apply through their portal, then find the hiring manager.</p> <p><strong>Thursday — outreach.</strong> Ninety minutes. Send the short messages to the people you found. This is the highest-return block of the week.</p> <p><strong>Friday — follow-ups and building.</strong> Ninety minutes. Follow up on last week’s messages, then spend the rest improving one thing about your portfolio or profile.</p> <p><strong>Weekend — off.</strong> Genuinely. A search you cannot sustain is a search you abandon in week six.</p> <h2>What to expect from the numbers</h2> <p>Over four weeks at this pace you will have sent roughly fifty applications and twenty-five direct messages. Typical outcomes:</p> <ul> <li>Five to ten replies of any kind</li> <li>Three to six first conversations</li> <li>One to three processes that reach a second stage</li> </ul> <p>If you are getting zero replies from fifty applications, the problem is the CV, not the volume. Stop and fix it. If you are getting first calls but nothing after, the problem is interview preparation. Diagnose from where it breaks.</p> <h2>Track it in one place</h2> <p>A simple sheet: company, role, date applied, hiring manager, date messaged, date followed up, status, notes.</p> <p>Two reasons this matters more than it sounds. You will forget who you contacted and follow up twice, which looks careless. And when nothing is happening, the sheet is the only proof that you are doing the work — which is what stops people quitting in week five.</p> <h2>The reframe that helps</h2> <p>Applications are not lottery tickets, so buying more of them does not help. Each one is a small argument that you can do a job. Twelve good arguments beat sixty bad ones, every time.</p> <blockquote>If running this system alone is the part that keeps stalling, the placement engine runs it for you and does not stop until you are hired. <a href="../../jobapplication/">See how that works.</a></blockquote></div>
 <div class="tags"><span>applications</span><span>system</span><span>weekly-plan</span><span>strategy</span></div>
+<aside class="door">
+<span class="door-k">Your supply, fixed for free</span>
+<h2>Real roles, checked, and open to Africans</h2>
+<p>Reading about the search is one thing; having roles reach you is another. Our free WhatsApp channel carries verified global remote roles open to applicants from Africa — posted continuously, no fee, no gatekeeping, and you can leave whenever you like.</p>
+<a href="https://whatsapp.com/channel/0029Vaym4DE3mFY2wCrC713S" rel="noopener" target="_blank">Join The Free Job Channel &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +141,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

@@ -13,10 +13,6 @@
 <meta content="Copyright 2026 Business Play Limited, trading as Everything Remote Job. All rights reserved." name="copyright"/>
 <meta content="Original ERJ content. Republishing or redistribution requires permission." name="rights"/>
 <meta content="Oluwaseyi Ashiru" name="author"/>
-<link href="../../favicon32.png" media="(prefers-color-scheme: light)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32-dark.png" media="(prefers-color-scheme: dark)" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../favicon32.png" rel="icon" sizes="64x64" type="image/png"/>
-<link href="../../appletouchicon.png" rel="apple-touch-icon"/>
 <link href="../../manifest.json" rel="manifest"/>
 <meta content="#000000" id="metaThemeColor" name="theme-color"/>
 <meta content="article" property="og:type"/>
@@ -76,9 +72,30 @@ h1{font-family:var(--fd);font-size:clamp(1.75rem,5.2vw,2.7rem);line-height:1.14;
 footer{border-top:1px solid var(--line);padding:2rem 0 3rem;font-size:.82rem;color:var(--muted2);text-align:center}
 footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem 1.1rem;margin-top:.6rem}
 footer a{color:var(--muted);text-decoration:none}
-@media(max-width:520px){body{font-size:16px}}</style>
+@media(max-width:520px){body{font-size:16px}}
+/* ── THE DOOR ──────────────────────────────────────────────────────
+   A contextual next step chosen by category, then the standard pair.
+   Buttons use --accent-btn (#C9400E), which carries white text at
+   4.97:1 and therefore passes AA at any size — the article template
+   has always used the darker orange rather than the brand #FF5722,
+   which would need 18.66px type to be legal. Hover inverts to white
+   with #AD350A ink (6.38:1), matching the rest of the site. ── */
+.door{margin:3rem 0 0;padding:1.6rem;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 16px 16px 0}
+.door-k{display:inline-block;font-family:var(--fd);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem}
+.door h2{font-family:var(--fd);font-size:1.15rem;font-weight:800;color:#fff;margin:0 0 .5rem;line-height:1.3}
+.door p{color:var(--muted);font-size:.92rem;line-height:1.75;margin:0 0 1.15rem}
+.door a,.cta a{display:inline-block;background:var(--accent-btn);color:#fff;text-decoration:none;font-family:var(--fd);font-weight:700;font-size:.92rem;padding:.8rem 1.4rem;border-radius:100px;border:1px solid var(--accent-btn);transition:background .2s ease,color .2s ease,border-color .2s ease}
+.door a:hover,.cta a:hover{background:#fff;color:#AD350A;border-color:#AD350A}
+.cta-pair{display:flex;flex-wrap:wrap;gap:.7rem}
+.cta a.ghost{background:transparent;color:#fff;border:1px solid var(--line)}
+.cta a.ghost:hover{background:var(--accent-btn);color:#fff;border-color:var(--accent-btn)}
+@media(max-width:520px){.cta-pair{flex-direction:column}.cta-pair a{text-align:center}}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Read Your Rejections Properly — They Tell You Where It Is Breaking","description":"Where a search fails tells you what to fix. Four failure points, four different problems, and four different answers.","datePublished":"2026-06-27","dateModified":"2026-06-27","inLanguage":"en","copyrightYear":2026,"copyrightHolder":{"@type":"Organization","name":"Business Play Limited","alternateName":"Everything Remote Job"},"author":{"@type":"Person","name":"Oluwaseyi Ashiru"},"publisher":{"@type":"Organization","name":"Everything Remote Job","url":"https://everythingremotejob.com/","@id":"https://everythingremotejob.com/#organization"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://everythingremotejob.com/blog/read-your-rejections-properly-they-tell-you-where-it-is-breaking/"},"url":"https://everythingremotejob.com/blog/read-your-rejections-properly-they-tell-you-where-it-is-breaking/","articleSection":"Job Search","keywords":"rejection, resilience, diagnosis, job-search"}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"},{"@type":"ListItem","position":3,"name":"Read Your Rejections Properly — They Tell You Where It Is Breaking","item":"https://everythingremotejob.com/blog/read-your-rejections-properly-they-tell-you-where-it-is-breaking/"}]}</script>
+<link href="/favicon.ico" rel="icon" sizes="48x48 32x32 16x16"/>
+<link href="/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
+<link href="/appletouchicon.png" rel="apple-touch-icon"/>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -99,10 +116,19 @@ footer a{color:var(--muted);text-decoration:none}
 </div>
 <div class="body"><p>"It is not working" is not a diagnosis. A job search breaks at one of four specific points, and each one means something different. Find yours before changing anything.</p> <h2>Break point 1 · No replies at all</h2> <p><strong>Symptom:</strong> fifty applications, zero responses of any kind, not even automated rejections that mention you.</p> <p><strong>What it means:</strong> you are not reaching humans. This is almost always the CV — two columns, contact details in the header, no keywords matching the listing — or applying to roles that exclude your country.</p> <p><strong>Fix:</strong> stop applying entirely. Rebuild the CV as one column with achievements and numbers, run the free scan, and check the location line on every listing before you spend forty minutes on it. Sending more of the same is the most common and most expensive mistake in job hunting.</p> <h2>Break point 2 · Replies, but no first interview</h2> <p><strong>Symptom:</strong> acknowledgements and polite rejections, no calls.</p> <p><strong>What it means:</strong> you are being read and passed over. Usually a proof problem — nothing shareable — or an experience-translation problem, where what you did is described in your employer's language rather than the market's.</p> <p><strong>Fix:</strong> build three portfolio pieces with real context. Rewrite your experience in the vocabulary of the listings you are targeting.</p> <h2>Break point 3 · First interviews, no second</h2> <p><strong>Symptom:</strong> conversations happen, then nothing.</p> <p><strong>What it means:</strong> the interview itself. Usually unstructured answers, no evidence with numbers, no questions asked at the end, or a fumbled answer to the remote-logistics question.</p> <p><strong>Fix:</strong> write six situation-task-action-result stories and practise them out loud. Prepare the infrastructure and overlap answers with specifics. Record yourself once and watch it back.</p> <h2>Break point 4 · Final stages, no offer</h2> <p><strong>Symptom:</strong> you reach the last two or three, repeatedly, and lose.</p> <p><strong>What it means:</strong> this is the good problem. You are competitive. It is usually fit, salary expectation, or being marginally behind someone with direct sector experience.</p> <p><strong>Fix:</strong> ask for feedback every time — at this stage people often give it. Bring a ninety-day plan. Check your stated range against the market. And keep going: at this break point, the numbers are already on your side.</p> <h2>The diagnostic habit</h2> <p>Keep a column in your tracker for how far each application got. After twenty, the pattern is obvious and it points at exactly one of the four fixes above.</p> <p>Without that column, every rejection feels like the same undifferentiated failure — which is what makes people conclude the market is closed, when in fact one specific, fixable thing is breaking.</p> <h2>The email worth sending</h2> <p><em>"Thanks for letting me know, and for closing the loop. If you have thirty seconds: was there one thing that would have made me stronger? Genuinely trying to improve rather than argue the decision."</em></p> <p>About one in four replies. That reply is frequently worth more than the interview was.</p> <blockquote>If you know which break point is yours and want it fixed rather than diagnosed, the stages map onto it directly. <a href="../../register.html">See the stages.</a></blockquote></div>
 <div class="tags"><span>rejection</span><span>resilience</span><span>diagnosis</span><span>job-search</span></div>
+<aside class="door">
+<span class="door-k">Your supply, fixed for free</span>
+<h2>Real roles, checked, and open to Africans</h2>
+<p>Reading about the search is one thing; having roles reach you is another. Our free WhatsApp channel carries verified global remote roles open to applicants from Africa — posted continuously, no fee, no gatekeeping, and you can leave whenever you like.</p>
+<a href="https://whatsapp.com/channel/0029Vaym4DE3mFY2wCrC713S" rel="noopener" target="_blank">Join The Free Job Channel &rarr;</a>
+</aside>
 <aside class="cta">
-<h2>Work the whole system, at your own pace</h2>
-<p>Twenty sessions across four stages — remote mindset, the digital toolkit and AI fluency, async communication, and the global job search. Four finished assets you keep. ₦35,000, one payment, instant download.</p>
-<a href="../../selflearn/">See the Self-Learn Pack →</a>
+<h2>Not sure that is your leak?</h2>
+<p>Every remote job search fails at one of four points &mdash; supply, representation, aim or conversion &mdash; and most people spend months repairing the other three. Four questions, about ninety seconds, no payment and no email, and you will know which one is actually yours.</p>
+<div class="cta-pair">
+<a href="../../diagnose/">Find My Leak &mdash; Free &rarr;</a>
+<a class="ghost" href="../../free.html">See Everything That Is Free &rarr;</a>
+</div>
 </aside>
 <nav class="more">
 <h2>Read next</h2>
@@ -115,5 +141,5 @@ footer a{color:var(--muted);text-decoration:none}
 <nav><a href="../../">Home</a><a href="../../starthere.html">Your Starting Line</a><a href="../../free.html">Free For You</a><a href="../../blog.html">Blog</a><a href="../">Blog Archive</a><a href="../../register.html">Register</a></nav>
 </footer>
 <script defer="" src="../../erj-theme.js"></script>
-<script defer="" src="../../erj-nav.js?site=20260825"></script>
+<script defer="" src="../../erj-nav.js?site=20260825c"></script>
 </body></html>

@@ -4,7 +4,7 @@
 <head><style id="erjCanvasGuard">html{background:#000000}html[data-theme="day"]{background:#FAFAF8}</style>
 <meta charset="utf-8"/>
 <!-- Meta Pixel + Google Tag Manager -->
-<script async="" src="erj-track.js"></script>
+<script async="" src="erj-track.js?v=20260827a"></script>
 <link href="manifest.json" rel="manifest"/>
 <meta content="#FAFAF8" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="#000000" media="(prefers-color-scheme: dark)" name="theme-color"/>
@@ -459,14 +459,17 @@ footer a{color:var(--glow);text-decoration:none;}
   .nav{padding:0 5%;}
   .page{
     display:grid;
-    grid-template-columns:1fr 280px;
+    /* minmax(0,...) not 1fr: a bare 1fr cannot shrink below its min-content,
+       which pushed the 280px sidebar off-screen between 900px and ~1150px. */
+    grid-template-columns:minmax(0,1fr) 280px;
     gap:2rem;
     align-items:start;
     padding:24px 5%;
     max-width:1140px;
     margin:0 auto;
   }
-  .page-content{width:100%;}
+  .page-content{width:100%;min-width:0;}
+  .page-sidebar{min-width:0;}
   .page-sidebar{display:block;}
   .mob-sb-btn{display:none !important;}
   .sb-sticky{position:sticky;top:68px;}
@@ -503,7 +506,7 @@ h1 strong,h1 em{ -webkit-text-fill-color:currentColor!important;background:none!
 <meta content="index,follow,max-image-preview:large,max-snippet:-1" name="robots"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://everythingremotejob.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://everythingremotejob.com/blog.html"}]}</script>
 <style id="erjNavReserve">body{padding-top:63px}@media(min-width:980px){body{padding-top:65px}}</style>
-</meta></meta></meta></meta></meta><link rel="stylesheet" href="erj-buttons.css"/><link href="/favicon.ico" rel="icon" sizes="48x48 32x32 16x16"/>
+</meta></meta></meta></meta></meta><link rel="stylesheet" href="erj-buttons.css?v=20260827a"/><link href="/favicon.ico" rel="icon" sizes="48x48 32x32 16x16"/>
 <link href="/favicon-96.png" rel="icon" sizes="96x96" type="image/png"/>
 <link href="/appletouchicon.png" rel="apple-touch-icon"/>
 </head>
@@ -3054,10 +3057,10 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
   }
 })();
 </script>
-<script src="erj-theme.js?v=20260823a"></script>
-<script defer="" src="erj-nav.js?site=20260825c"></script>
-<script defer="" src="erj-config.js"></script>
-<script defer="" src="erj-capture.js"></script>
-<script defer="" src="erj-schema.js"></script>
+<script src="erj-theme.js?v=20260827a"></script>
+<script defer="" src="erj-nav.js?v=20260827a"></script>
+<script defer="" src="erj-config.js?v=20260827a"></script>
+<script defer="" src="erj-capture.js?v=20260827a"></script>
+<script defer="" src="erj-schema.js?v=20260827a"></script>
 </body>
 </html>

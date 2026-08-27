@@ -184,6 +184,7 @@
         if (!panels.length)
             return;
         const seen = new Set();
+        const pending = [];
         panels.forEach(panel => {
             if (panel.hasAttribute('data-no-evergreen'))
                 return;
@@ -196,7 +197,15 @@
                 .join('');
             /* Follow the host's alignment. A centred hero (register.html) or a
                centred countdown section should centre the doors too; a
-               left-aligned page must stay left. Read it, never assume it. */
+               left-aligned page must stay left. Read it, never assume it.
+
+               READ NOW, WRITE LATER. Reading getComputedStyle and inserting a
+               node in the same iteration forces a synchronous style-and-layout
+               pass on every loop, because each insertion dirties the DOM that
+               the next read has to resolve. Lighthouse measured 2.8 SECONDS of
+               main-thread time against this file for 23ms of actual script.
+               Every read is done first, against a clean DOM; the writes are
+               batched afterwards. */
             let centred = false;
             try {
                 const ref = (panel.parentNode && panel.parentNode.nodeType === 1)
@@ -204,12 +213,15 @@
                 centred = getComputedStyle(ref).textAlign === 'center';
             }
             catch (e) { }
-            const box = el('div', 'evergreen reveal in' + (centred ? ' eg-center' : ''));
+            pending.push({ panel: panel, centred: centred, doors: doors });
+        });
+        pending.forEach(function (job) {
+            const box = el('div', 'evergreen reveal in' + (job.centred ? ' eg-center' : ''));
             box.innerHTML =
                 '<div class="eg-k">Not waiting for a gate?</div>' +
                     '<p class="eg-lead"><b>' + CFG.evergreen.lead + '</b> ' + CFG.evergreen.body + '</p>' +
-                    '<div class="eg-doors">' + doors + '</div>';
-            panel.parentNode.insertBefore(box, panel.nextSibling);
+                    '<div class="eg-doors">' + job.doors + '</div>';
+            job.panel.parentNode.insertBefore(box, job.panel.nextSibling);
         });
     }
     /* ═══ 4 · HONEST CAPACITY ═════════════════════════════════

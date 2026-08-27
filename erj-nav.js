@@ -121,6 +121,11 @@
         '.erj-bar-item.is-current>.erj-bar-link::before{content:"";width:6px;height:6px;border-radius:50%;',
         'background:var(--enAccent);margin-right:0.15rem;flex-shrink:0;}',
         '.erj-bar-chev{background:transparent;border:0;color:var(--enFaint);cursor:pointer;font-size:0.6rem;',
+        /* WCAG 2.2 wants 24x24 for a tap target. The glyph is 0.6rem, so
+           without a declared box this button was about 10px wide. The
+           min-width/min-height and the flex centre grow the hit area to
+           meet the rule without moving the chevron a pixel. */
+        'min-width:24px;min-height:24px;display:inline-flex;align-items:center;justify-content:center;',
         'padding:0.55rem 0.4rem 0.55rem 0;line-height:1;transition:transform .22s,color .2s;}',
         '.erj-bar-item.open .erj-bar-chev{transform:rotate(180deg);color:var(--enAccent);}',
         '.erj-bar-item:hover .erj-bar-chev{color:var(--enAccent);}',
@@ -239,9 +244,13 @@
             /* Both marks ship; CSS shows one. Swapping an img src on the theme
                toggle means a network fetch mid-click and a blink where the logo
                used to be — this way the correct one is already decoded and the
-               switch is instant. Same geometry, so nothing shifts. */
-            '<img class="erj-mark erj-mark-night" src="' + P('erj-mark-dark.png') + '" alt="ERJ" width="31" height="30">' +
-            '<img class="erj-mark erj-mark-day" src="' + P('erj-mark-light.png') + '" alt="" aria-hidden="true" width="31" height="30">' +
+               switch is instant. Same geometry, so nothing shifts.
+               The 128px files, NOT the 1072px masters: both marks ship on
+               every page, and the masters are 562 KB and 436 KB for a
+               31x30 slot -- 998 KB per page view to draw two small icons.
+               128px is still 4x for the 31px it renders at. */
+            '<img class="erj-mark erj-mark-night" src="' + P('erj-mark-dark-128.png') + '" alt="ERJ" width="31" height="30">' +
+            '<img class="erj-mark erj-mark-day" src="' + P('erj-mark-light-128.png') + '" alt="" aria-hidden="true" width="31" height="30">' +
             '<b>Everything</b><i>RemoteJob</i></a>' +
             (IS_PORTAL ? '' : '<nav class="erj-bar" aria-label="Main menu">' + buildBar() + '</nav>') +
             '<div class="erj-right">' +

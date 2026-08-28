@@ -10,15 +10,49 @@
     e.classList.add('in');
     if(obs)obs.unobserve(e);
   }
+  /* Reveal on APPROACH, not on arrival.
+
+     The old settings were threshold:0.14 with rootMargin '0px 0px 120px 0px'.
+     Against a flick of roughly 2000px/s that is 60ms of warning for a fade
+     that takes 700ms, so tall blocks -- the "Four Problem" cards are ~400px
+     each, two of them a full phone screen -- were still near-invisible well
+     after they arrived. Empty black space in the night theme; a white blank in
+     the day theme.
+
+     700px of margin on the top AND bottom gives about a third of a second of
+     lead in both scroll directions (the old margin extended downwards only, so
+     scrolling back up had none at all). threshold:0 because with a margin that
+     size the margin should decide, not a percentage of an element whose height
+     varies eightfold down the page. */
+  function revealIn(el, idx){
+    /* stagger capped at three steps: the fourth card in a group should not
+       still be waiting 150ms after the first has finished. */
+    el.style.transitionDelay = (Math.min(Math.max(0, idx), 3) * 0.05) + 's';
+    el.classList.add('in');
+    if (obs) obs.unobserve(el);
+  }
   if('IntersectionObserver' in window){
     obs=new IntersectionObserver(function(es){es.forEach(function(e){
       if(e.isIntersecting){
         var sibs=[].slice.call(e.target.parentNode.querySelectorAll(':scope > .reveal'));
-        var idx=sibs.indexOf(e.target);
-        e.target.style.transitionDelay=(Math.max(0,idx)*0.05)+'s';
-        e.target.classList.add('in'); obs.unobserve(e.target);
-      }});},{threshold:0.14,rootMargin:'0px 0px 120px 0px'});
+        revealIn(e.target, sibs.indexOf(e.target));
+      }});},{threshold:0,rootMargin:'700px 0px 700px 0px'});
     els.forEach(function(e){obs.observe(e);});
+
+    /* Anything already on screen when this runs has no reason to animate --
+       the reader is looking at it now. */
+    els.forEach(function(e){
+      var b=e.getBoundingClientRect();
+      if(b.top < (window.innerHeight||0) && b.bottom > 0) showNow(e);
+    });
+
+    /* Safety net. A transition is decoration; the content underneath is not.
+       If anything is still hidden 1.2s after load -- a stalled observer, a
+       throttled background tab, a device that coalesced the callbacks -- show
+       it and stop waiting. */
+    setTimeout(function(){
+      els.forEach(function(e){ if(!e.classList.contains('in')) showNow(e); });
+    }, 1200);
   } else { els.forEach(function(e){e.classList.add('in');}); }
   /* Jumping straight into a section — the nav's "quick tour" links, any
      in-page anchor (#joints etc.), or a URL that already carries a #hash on

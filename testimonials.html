@@ -4,7 +4,7 @@
 <head><style id="erjCanvasGuard">html{background:#000000}html[data-theme="day"]{background:#FAFAF8}</style>
 <meta charset="utf-8"/>
 <!-- Meta Pixel + Google Tag Manager -->
-<script async="" src="erj-track.js?v=20260827b"></script>
+<script async="" src="erj-track.js?v=20260827c"></script>
 <meta content="#000000" id="metaThemeColor" name="theme-color"/>
 <meta content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport"/>
 <title>Success Stories — Real People, Real Remote Offers | Everything Remote Job</title>
@@ -89,6 +89,29 @@ button{-webkit-tap-highlight-color:transparent;}
 .dfy-h em{font-style:normal;color:var(--accent);}
 .dfy-sub{font-size:clamp(.95rem,1.6vw,1.05rem);color:var(--muted);line-height:1.75;max-width:640px;margin-bottom:2.6rem;}
 .dfy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.4rem;align-items:start;}
+  /* Only one card lives here now. Left in the old three-column track it
+     rendered as a narrow strip in a wide space, which reads as two cards
+     that failed to load. It is the single conversion point on this page, so
+     it takes the full measure and lays its own contents out in two columns
+     -- the pitch on the left, the proof and the action on the right. */
+  .dfy-sec .dfy-grid-solo{grid-template-columns:minmax(0,1fr)!important;max-width:920px;margin-inline:auto;}
+  .dfy-sec .dfy-grid-solo .dfy-free{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:1.6rem 2.2rem;align-items:start;padding:2rem 2.1rem;}
+  .dfy-sec .dfy-grid-solo .dfy-free-tag{grid-column:1/-1;}
+  .dfy-sec .dfy-grid-solo .dfy-free-title{font-size:1.45rem;line-height:1.2;}
+  /* the list spans both columns in two tracks, so the right half is not
+     left empty under the sub-line */
+  .dfy-sec .dfy-grid-solo .dfy-free-list{grid-column:1/-1;margin:0;display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));gap:.55rem 2.2rem;}
+  .dfy-sec .dfy-grid-solo .dfy-free-list li:last-child{grid-column:1/-1;}
+  .dfy-sec .dfy-grid-solo .dfy-free-cta{grid-column:1/-1;justify-self:start;min-width:min(320px,100%);
+    text-align:center;font-size:1.18rem;font-weight:700;padding:1rem 1.6rem;}
+  @media(max-width:700px){
+    .dfy-sec .dfy-grid-solo .dfy-free{grid-template-columns:1fr;gap:1.1rem;padding:1.4rem 1.2rem;}
+    .dfy-sec .dfy-grid-solo .dfy-free-cta{width:100%;}
+    .dfy-sec .dfy-grid-solo .dfy-free-list{grid-template-columns:1fr;}
+  }
+
 @media(min-width:900px){.dfy-grid{grid-template-columns:1fr 1fr;}}
 .dfy-grid .cap-bridge{grid-column:1/-1;}
 .dfy-card{background:var(--card);border:1.5px solid var(--accent);border-radius:20px;padding:2rem;box-shadow:0 8px 30px rgba(255,87,34,.12);}
@@ -186,9 +209,23 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
 
 
 </style>
-<link as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="preload"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/></noscript>
+<link rel="preload" href="/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<style id="erjFonts">
+/* Self-hosted, subset to the characters this site renders. Same family names
+   as the Google versions, so nothing downstream changes. swap matches what
+   Google's stylesheet set: text paints in the fallback, then upgrades. */
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url('/fonts/space-grotesk-var.woff2') format('woff2-variations'),
+      url('/fonts/space-grotesk-var.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;
+  src:url('/fonts/inter-300.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;
+  src:url('/fonts/inter-400.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;
+  src:url('/fonts/inter-500.woff2') format('woff2');}
+</style>
+<noscript></noscript>
 <meta content="https://everythingremotejob.com/preview-testimonials.jpg" property="og:image">
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
@@ -486,57 +523,26 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
 </div>
 </section>
 <!-- ══ DONE-FOR-YOU · 7 DAYS ══ -->
-<section class="ts-wrap dfy-sec" id="dfy7">
-<div class="dfy-label"><span class="mark"></span>Done For You · 7 Days</div>
-<h2 class="dfy-h">Would rather not job hunt at all? <em>We'll run it for you.</em></h2>
-<p class="dfy-sub">Every story above belongs to someone who did the searching themselves — and that is the part most people never find time for. So we took it off the table. You pick the field; we find the roles, tailor the CV to each one, and send the applications on your behalf. Three or more verified roles applied to within seven days.</p>
-<div class="dfy-grid">
-<div class="dfy-card">
-<span class="dfy-tag">Job Hunt &amp; Application · Done For You</span>
-<div class="dfy-price">₦50,000<small>One payment · your job hunt and application done for you in 7 days</small></div>
-<ul class="dfy-feat">
-<li>Job hunt for one field — local and foreign roles</li>
-<li>A CV tailored to that field and to each company</li>
-<li>Applications written and submitted for you</li>
-<li>3+ verified roles sourced and applied within 7 days</li>
-<li>A written record of everything sent, and where it went</li>
-</ul>
-<a class="btn-primary-ui dfy-btn" href="https://paystack.shop/pay/dfy7days"><span>Start My Job Hunt</span><span class="arrow-wrap"><span class="arrow">→</span></span></a>
-<div class="dfy-trust"><span>Secure Paystack checkout</span><span>·</span><span>Your slot is booked within 24 hours</span></div>
-<p class="dfy-note">After payment, send your receipt to <a href="https://wa.me/2348032925957" rel="noopener" target="_blank">+234 803 292 5957</a> on WhatsApp with the message <em>"DFY 7 DAYS"</em> and the field you want us to search. We'll confirm your slot and start the same week.</p>
-</div>
+<section class="ts-wrap dfy-sec" id="jobboard">
+<div class="dfy-label"><span class="mark"></span>Free · No payment, ever</div>
+<h2 class="dfy-h">Every story above started the same way: <em>seeing a role they were eligible for.</em></h2>
+<p class="dfy-sub">Not with a course, not with a payment &mdash; with a job advert from a company that could legally pay someone in their country. That is the part most searches never fix, and it is the part that costs nothing. Our WhatsApp channel carries verified global remote roles open to applicants across Africa, posted continuously. No fee, no gatekeeping, and you can leave the moment it stops being useful.</p>
+<div class="dfy-grid dfy-grid-solo">
 <a class="dfy-free" href="https://whatsapp.com/channel/0029Vaym4DE3mFY2wCrC713S" rel="noopener" target="_blank">
-<span class="dfy-free-tag"><span class="dfy-free-dot"></span> 100% Free · No Payment</span>
-<div class="dfy-free-title">Global Remote Job Board <span>(Africans)</span></div>
-<p class="dfy-free-sub">Not ready to pay for anything? Get real, verified global remote roles open to Africans — shared free on our WhatsApp channel. No fees, no gatekeeping.</p>
+<span class="dfy-free-tag"><span class="dfy-free-dot"></span> 100% Free &middot; No Payment</span>
+<div class="dfy-free-title">Global Remote Job Board <span>(open to Africans)</span></div>
+<p class="dfy-free-sub">Real roles, checked before they are posted, from companies that can actually hire and pay across borders. The same channel the people above were reading while they were still deciding.</p>
 <ul class="dfy-free-list">
-<li>Verified global remote roles, regularly updated</li>
-<li>Open to every African — no payment needed</li>
-<li>Delivered straight to your WhatsApp</li>
+<li>Verified global remote roles, posted continuously</li>
+<li>Every role screened for whether it can pay someone in your country</li>
+<li>Scam adverts filtered out before you ever see them</li>
+<li>Delivered to WhatsApp &mdash; nothing to install, nothing to log into</li>
+<li>Leave whenever you like. No email, no card, no upsell in the channel</li>
 </ul>
-<span class="dfy-free-cta">Join free on WhatsApp →</span>
+<span class="dfy-free-cta">Join The Free Job Channel &rarr;</span>
 </a>
-<!-- ══ CV ENGINE PASS · ₦5,000 · 30 days ══ -->
-<div class="cvp" id="cvpass">
-<div>
-<span class="cvp-tag"><span class="mark"></span>New · 30-day pass</span>
-<h3 class="cvp-h">Only your CV is broken? <em>Rent the engine for a month.</em></h3>
-<p class="cvp-sub">The same CV Engine our participants use — the one built against the ten-point ATS scan — for thirty days, on its own. No cohort, no training, no stages. You get an access code, and the thirty days start the first time you use it, not the day you pay.</p>
-<ul class="cvp-feat">
-<li>Build and rebuild as many versions as you want for thirty days</li>
-<li>Export to .docx and PDF — formatting a parser can actually read</li>
-<li>Scored against the same ten points that decide if a human ever sees it</li>
-<li>Tailor a fresh version per application instead of sending one CV everywhere</li>
-</ul>
 </div>
-<div class="cvp-buy">
-<div class="cvp-price">₦5,000<small>One payment · thirty days from first use · no auto-renewal, ever</small></div>
-<a class="btn-primary-ui cvp-btn" href="https://paystack.shop/pay/erj-cvpass"><span>Get My 30-Day Pass</span><span class="arrow-wrap"><span class="arrow">→</span></span></a>
-<p class="cvp-note">After payment, send your receipt to <a href="https://wa.me/2348032925957" rel="noopener" target="_blank">+234 803 292 5957</a> with the message <em>"CV PASS"</em> and we send your code the same day. Want to see what it scores first? The <a href="cvscan/">CV self-scan is free</a>.</p>
-</div>
-</div>
-</div>
-<p class="dfy-more">Want the full placement engine instead — all four career assets built in 7 days, then 30+ roles sourced and applied every week for a month until an offer letter lands? <a href="jobapplication/">See Job Application DFY →</a></p>
+<p class="dfy-more">Roles reaching you and still no replies? Then supply is not your leak. <a href="diagnose/">Find which of the four points is</a> &mdash; four questions, about ninety seconds, no payment and no email.</p>
 </section>
 <!-- ===== Unified Theme Control (Day / System / Night) — header based ===== -->
 <script id="erjThemeJS">
@@ -583,9 +589,9 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
 })();
 </script>
 <!-- ===== /Unified Theme Control ===== -->
-<script defer="" src="erj-nav.js?v=20260827b"></script>
-<script defer="" src="erj-config.js?v=20260827b"></script>
-<script defer="" src="erj-capture.js?v=20260827b"></script>
+<script defer="" src="erj-nav.js?v=20260827c"></script>
+<script defer="" src="erj-config.js?v=20260827c"></script>
+<script defer="" src="erj-capture.js?v=20260827c"></script>
 <!-- ══ WHATSAPP TOGGLE ══ -->
 <div class="wa-card" id="waCard">
 <div class="wa-card-h">Talk to us on WhatsApp</div>
@@ -614,6 +620,6 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
 <nav class="foot-links"><a href="index.html">Home</a><a href="starthere.html">Your Starting Line</a><a href="free.html">Free For You</a><a href="blog.html">Blog</a><a href="blog/">Blog Archive</a><a href="register.html">Register</a><a href="login.html">Participant Login</a></nav>
 <div class="erj-rights-line" role="note" style="max-width:900px;margin:1rem auto 0;padding-top:.85rem;border-top:1px solid rgba(127,127,127,.18);font-size:.72rem;line-height:1.6;letter-spacing:.02em;text-align:center;color:#8A8A86;">© 2026 Business Play Limited · Everything Remote Job. Built for <span style="color:var(--accent,#FF5722)">global career scale.</span> All rights reserved. ERJ frameworks, curriculum and paid resources are not licensed for redistribution. <a href="terms.html" style="color:var(--accent,#FF5722);text-decoration:none">Terms</a> · <a href="privacy.html" style="color:var(--accent,#FF5722);text-decoration:none">Privacy</a></div>
 </footer>
-<script defer="" src="erj-schema.js?v=20260827b"></script>
+<script defer="" src="erj-schema.js?v=20260827c"></script>
 </body>
 </html>

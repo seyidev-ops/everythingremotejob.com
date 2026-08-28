@@ -2,7 +2,7 @@
    EVERYTHING REMOTE JOB — SERVICE WORKER
    Cache-first for app shell, network-first for fonts
 ═══════════════════════════════════════════════════════ */
-const CACHE = 'erj-site-20260827b';
+const CACHE = 'erj-site-20260827c';
 const OFFLINE = '/offline.html';
 
 const SHELL = [
@@ -22,21 +22,21 @@ const SHELL = [
   '/free.html',
   '/starthere.html',
   '/testimonials.html',
-  '/erj-nav.js?v=20260827b',
-  '/erj-track.js?v=20260827b',
+  '/erj-nav.js?v=20260827c',
+  '/erj-track.js?v=20260827c',
   '/founder-oluwaseyi.webp',
-  '/erj-theme.js?v=20260827b',
-  '/erj-product.js?v=20260827b',
-  '/erj-passcode.js?v=20260827b',
+  '/erj-theme.js?v=20260827c',
+  '/erj-product.js?v=20260827c',
+  '/erj-passcode.js?v=20260827c',
   '/404.html',
-  '/erj-schema.js?v=20260827b',
-  '/diagnose/dx.js?v=20260827b',
-  '/diagnose/report-pdf.js?v=20260827b',
+  '/erj-schema.js?v=20260827c',
+  '/diagnose/dx.js?v=20260827c',
+  '/diagnose/report-pdf.js?v=20260827c',
   '/diagnose/index.html',
-  '/erj-capture.js?v=20260827b',
-  '/erj-config.js?v=20260827b',
+  '/erj-capture.js?v=20260827c',
+  '/erj-config.js?v=20260827c',
   '/sitemap.xml',
-  '/product.css?v=20260827b',
+  '/product.css?v=20260827c',
   '/manifest.json',
   '/erj-mark-dark-128.png',
   '/erj-mark-light-128.png',
@@ -52,6 +52,10 @@ const SHELL = [
   '/icon512.png',
   '/favicon.ico',
   '/favicon-96.png',
+  '/fonts/space-grotesk-var.woff2',
+  '/fonts/inter-300.woff2',
+  '/fonts/inter-400.woff2',
+  '/fonts/inter-500.woff2',
   OFFLINE,
 ];
 

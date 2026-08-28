@@ -9,10 +9,23 @@
 <meta content="#000000" id="metaThemeColor" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Offline | ERJ Training</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="preload"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/></noscript>
+<link rel="preload" href="/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<style id="erjFonts">
+/* Self-hosted, subset to the characters this site renders. Same family names
+   as the Google versions, so nothing downstream changes. swap matches what
+   Google's stylesheet set: text paints in the fallback, then upgrades. */
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url('/fonts/space-grotesk-var.woff2') format('woff2-variations'),
+      url('/fonts/space-grotesk-var.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;
+  src:url('/fonts/inter-300.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;
+  src:url('/fonts/inter-400.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;
+  src:url('/fonts/inter-500.woff2') format('woff2');}
+</style>
+<noscript></noscript>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
 :root{--paper:#000000;--ink:#FFFFFF;--ink-soft:#A1A1A1;--ink-faint:#858585;--accent:#FF5722;--line:rgba(255,255,255,0.10);}
@@ -138,6 +151,6 @@ p{color:var(--ink-soft);font-size:0.95rem;line-height:1.7;margin-bottom:2rem;}
 })();
 </script>
 <!-- ===== /Unified Theme Control ===== -->
-<script defer="" src="erj-nav.js?v=20260827b"></script>
+<script defer="" src="erj-nav.js?v=20260827c"></script>
 </body>
 </html>

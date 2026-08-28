@@ -149,9 +149,23 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
 .featured-badge,.badge,.tag,.pill{box-shadow:none!important;}
 .cover,.post-cover,.art-cover,.card-cover,.featured-img{filter:saturate(0.6);}
 </style>
-<link as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="preload"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/></noscript>
+<link rel="preload" href="/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<style id="erjFonts">
+/* Self-hosted, subset to the characters this site renders. Same family names
+   as the Google versions, so nothing downstream changes. swap matches what
+   Google's stylesheet set: text paints in the fallback, then upgrades. */
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url('/fonts/space-grotesk-var.woff2') format('woff2-variations'),
+      url('/fonts/space-grotesk-var.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;
+  src:url('/fonts/inter-300.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;
+  src:url('/fonts/inter-400.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;
+  src:url('/fonts/inter-500.woff2') format('woff2');}
+</style>
+<noscript></noscript>
 <meta content="https://everythingremotejob.com/preview-portal.jpg" property="og:image">
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
@@ -440,6 +454,6 @@ function applyTheme(t) {
 })();
 </script>
 <!-- ===== /Unified Theme Control ===== -->
-<script defer="" src="erj-nav.js?v=20260827b"></script>
+<script defer="" src="erj-nav.js?v=20260827c"></script>
 </body>
 </html>

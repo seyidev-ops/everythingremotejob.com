@@ -4,7 +4,7 @@
 <head><style id="erjCanvasGuard">html{background:#000000}html[data-theme="day"]{background:#FAFAF8}</style>
 <meta charset="utf-8"/>
 <!-- Meta Pixel + Google Tag Manager -->
-<script async="" src="../erj-track.js?v=20260827b"></script>
+<script async="" src="../erj-track.js?v=20260827c"></script>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../manifest.json" rel="manifest"/>
 <meta content="#FAFAF8" media="(prefers-color-scheme: light)" name="theme-color"/>
@@ -25,10 +25,23 @@
 <meta content="https://everythingremotejob.com/preview-diagnose.jpg" name="twitter:image"/>
 <meta content="Find Your Leak — Four Questions, One Answer" name="twitter:title"/>
 <meta content="Most people patch the wrong point for months. Four questions tells you which one is actually yours." name="twitter:description"/>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
-<link href="../product.css?v=20260827b" rel="stylesheet"/>
+<link rel="preload" href="/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<style id="erjFonts">
+/* Self-hosted, subset to the characters this site renders. Same family names
+   as the Google versions, so nothing downstream changes. swap matches what
+   Google's stylesheet set: text paints in the fallback, then upgrades. */
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url('/fonts/space-grotesk-var.woff2') format('woff2-variations'),
+      url('/fonts/space-grotesk-var.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;
+  src:url('/fonts/inter-300.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;
+  src:url('/fonts/inter-400.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;
+  src:url('/fonts/inter-500.woff2') format('woff2');}
+</style>
+<link href="../product.css?v=20260827c" rel="stylesheet"/>
 <style>
   /* The pipeline diagram, moved here from starthere.html — it explains
      the model this page diagnoses, so it belongs with the questions. */
@@ -282,13 +295,13 @@
   {label:'How This Works',href:'#four',sub:'The four points, and why only one of them is yours'},
   {label:'The 4 Questions',href:'#dx',sub:'About 90 seconds · instant result · nothing stored'}
 ]};</script>
-<script src="../erj-theme.js?v=20260827b"></script>
-<script src="../erj-nav.js?v=20260827b"></script>
-<script src="../erj-config.js?v=20260827b"></script>
-<script src="../erj-capture.js?v=20260827b"></script>
-<script src="report-pdf.js?v=20260827b"></script>
-<script src="dx.js?v=20260827b"></script>
-<script src="../erj-product.js?v=20260827b"></script>
-<script src="../erj-schema.js?v=20260827b"></script>
+<script src="../erj-theme.js?v=20260827c"></script>
+<script src="../erj-nav.js?v=20260827c"></script>
+<script src="../erj-config.js?v=20260827c"></script>
+<script src="../erj-capture.js?v=20260827c"></script>
+<script src="report-pdf.js?v=20260827c"></script>
+<script src="dx.js?v=20260827c"></script>
+<script src="../erj-product.js?v=20260827c"></script>
+<script src="../erj-schema.js?v=20260827c"></script>
 </body>
 </html>

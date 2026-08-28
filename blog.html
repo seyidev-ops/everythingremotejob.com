@@ -4,7 +4,7 @@
 <head><style id="erjCanvasGuard">html{background:#000000}html[data-theme="day"]{background:#FAFAF8}</style>
 <meta charset="utf-8"/>
 <!-- Meta Pixel + Google Tag Manager -->
-<script async="" src="erj-track.js?v=20260827b"></script>
+<script async="" src="erj-track.js?v=20260827c"></script>
 <link href="manifest.json" rel="manifest"/>
 <meta content="#FAFAF8" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="#000000" media="(prefers-color-scheme: dark)" name="theme-color"/>
@@ -490,9 +490,23 @@ h1 strong,h1 em{ -webkit-text-fill-color:currentColor!important;background:none!
 .wa-float svg{fill:var(--bg)!important;}
 .wa-float:hover{box-shadow:none!important;}
 </style>
-<link as="style" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="preload"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/></noscript>
+<link rel="preload" href="/fonts/space-grotesk-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<style id="erjFonts">
+/* Self-hosted, subset to the characters this site renders. Same family names
+   as the Google versions, so nothing downstream changes. swap matches what
+   Google's stylesheet set: text paints in the fallback, then upgrades. */
+@font-face{font-family:'Space Grotesk';font-style:normal;font-weight:300 800;font-display:swap;
+  src:url('/fonts/space-grotesk-var.woff2') format('woff2-variations'),
+      url('/fonts/space-grotesk-var.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:300;font-display:swap;
+  src:url('/fonts/inter-300.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;
+  src:url('/fonts/inter-400.woff2') format('woff2');}
+@font-face{font-family:'Inter';font-style:normal;font-weight:500;font-display:swap;
+  src:url('/fonts/inter-500.woff2') format('woff2');}
+</style>
+<noscript></noscript>
 <meta content="https://everythingremotejob.com/preview-blog.jpg" property="og:image">
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
@@ -2632,7 +2646,7 @@ function sidebarHTML(){
   posts.forEach(p=>{
     const d=new Date(p.date), k=`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
     const l=d.toLocaleDateString('en-US',{year:'numeric',month:'long'});
-    months[k]={l,n:(months[k]?.n||0)+1};
+    months[k]={l,n:((months[k]?months[k].n:0)||0)+1};
   });
   const arch=Object.entries(months).sort((a,b)=>b[0].localeCompare(a[0]))
     .map(([,v])=>`<li class="arch-item"><span class="arch-m">${v.l}</span><span class="arch-n">${v.n}</span></li>`).join('');
@@ -2889,7 +2903,7 @@ function showPostNotif(post) {
   _notifPostId = post.id;
   document.getElementById('postNotifTitle').textContent = post.title;
   document.getElementById('postNotifBar').classList.add('show');
-  document.getElementById('bellDot')?.classList.add('show');
+  (function(b){if(b)b.classList.add('show');})(document.getElementById('bellDot'));
   // Auto-dismiss after 12 seconds
   setTimeout(() => dismissPostNotif(), 12000);
 }
@@ -2900,7 +2914,7 @@ function dismissPostNotif(e) {
   bar.classList.remove('show');
   if (_notifPostId) { markSeen(_notifPostId); _notifPostId = null; }
   // Remove bell dot if no more new posts
-  if (!getNewPost()) document.getElementById('bellDot')?.classList.remove('show');
+  if (!getNewPost()) (function(b){if(b)b.classList.remove('show');})(document.getElementById('bellDot'));
 }
 
 function openNotifPost() {
@@ -2969,7 +2983,7 @@ function pushNewPostNotif(post) {
   const np = getNewPost();
   if (!np) return;
   // Show bell dot
-  document.getElementById('bellDot')?.classList.add('show');
+  (function(b){if(b)b.classList.add('show');})(document.getElementById('bellDot'));
   // Delay the bar by 2s so page loads first
   setTimeout(() => showPostNotif(np), 2000);
   // Fire browser push if permission already granted
@@ -3057,10 +3071,10 @@ html[data-theme="day"] .nav,html[data-theme="day"] nav{background:var(--bg)!impo
   }
 })();
 </script>
-<script src="erj-theme.js?v=20260827b"></script>
-<script defer="" src="erj-nav.js?v=20260827b"></script>
-<script defer="" src="erj-config.js?v=20260827b"></script>
-<script defer="" src="erj-capture.js?v=20260827b"></script>
-<script defer="" src="erj-schema.js?v=20260827b"></script>
+<script src="erj-theme.js?v=20260827c"></script>
+<script defer="" src="erj-nav.js?v=20260827c"></script>
+<script defer="" src="erj-config.js?v=20260827c"></script>
+<script defer="" src="erj-capture.js?v=20260827c"></script>
+<script defer="" src="erj-schema.js?v=20260827c"></script>
 </body>
 </html>
